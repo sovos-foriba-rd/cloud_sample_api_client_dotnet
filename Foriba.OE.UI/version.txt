@@ -1,0 +1,74 @@
+﻿01.06.2018 v1.4
+=================================================================================================================================
+ e-Fatura 
+ 
+  Yapılan İşler:  
+
+  e-Fatura web servis metodlarının açıklamaları düzenlendi.
+
+
+
+ 15.05.2018 v1.3
+=================================================================================================================================
+  e-Fatura 
+ 
+  Yapılan İşler:  
+ 
+   1.Foriba Bulut veya INGeF web servis adreslerine bağlanmak için combobox eklendi
+   2.Combobox dan seçilene göre web servis erişimi Foriba Bulut veya INGeF olacak şekilde güncellendi
+   3.Foriba Logo'su güncellendi
+
+  e-Arşiv
+
+  Yapılan İşler:
+   
+   1.Foriba Bulut veya INGeF web servis adreslerine bağlanmak için combobox eklendi
+   2.Combobox dan seçilene göre web servis erişimi Foriba Bulut veya INGeF olacak şekilde güncellendi
+   3.Foriba Logo'su güncellendi
+
+
+   e-İrsaliye  
+
+   Yapılan İşler:
+
+   1.Foriba Logo'su güncellendi
+
+
+   Test Adımları:
+   1.Combobox dan seçilen dataya (Foriba Bulut/INGeF) göre Foriba Bulut veya INGeF servislerine erişim yapılabilirliği test edilmeli.
+
+
+ 20.02.2018 v1.2
+=================================================================================================================================
+ Örnek Foriba Bulut API test projesi oluşturuldu.
+
+ e-Fatura  
+
+ Yapılan İşler:  
+
+     1. e-Fatura mükellef bilgileri sorgulaması 
+     2. e-Fatura ve uygulama yanıtlarını web servis kullanarak gönderme
+     3. e-Fatura ve uygulama yanıtı zarflarının web servis kullanarak statülerinin sorgulanması
+     4. Gelen ve gönderilen zarflı veya zarfsız e-fatura ve uygulama yanıtlarının web servis kullanarak sistemden alınması
+     5. Gelen ve gönderilen e-faturaların web servis kullanarak  html, pdf ve xml formatında datalarının alınması
+
+ e-İrsaliye  
+
+ Yapılan İşler:
+
+     1. e-İrsaliye mükellef bilgileri sorgulaması 
+     2. e-İrsaliye ve e-irsaliye yanıtlarını web servis kullanarak  gönderme
+	 3. e-İrsaliye ve e-irsaliye yanıtı zarflarının web servis kullanarak statülerinin sorgulanması
+     4. Gelen ve gönderilen zarflı veya zarfsız e-irsaliye ve e-irsaliye yanıtlarının web servis kullanarak sistemden alınması
+     5. Gelen ve gönderilen e-irsaliye ve e-irsaliye yanıtlarının web servis kullanarak html, pdf ve xml formatında datalarının alınması
+
+ e-Arşiv
+
+ Yapılan İşler:
+
+     1. e-Arşiv faturalarının web servis kullanarak gönderilmesi
+     2. e-Arşiv faturalarının web servis kullanarak html, pdf ve xml formatında datalarının alınması
+
+
+
+	

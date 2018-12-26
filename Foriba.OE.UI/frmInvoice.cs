@@ -1,0 +1,885 @@
+﻿using Foriba.OE.CLIENT.serviceInvoicee;
+using Foriba.OE.COMMON;
+using Foriba.OE.COMMON.WebServices;
+using Foriba.OE.UBL.UBLCreate;
+using Foriba.OE.UI.Exceptions;
+using Microsoft.VisualBasic;
+using System;
+using System.Collections;
+using System.Data;
+using System.IO;
+using System.ServiceModel;
+using System.Windows.Forms;
+using Foriba.OE.COMMON.Model;
+
+
+/// <summary>
+/// Copyright © 2018 Foriba Teknoloji
+/// Bu proje örnek bir web servis test projesidir. Yalnızca test sisteminde çalışmaktadır.
+/// Version Info    : Version.txt
+/// Readme          : Readme.txt
+/// </summary>
+
+namespace Foriba.OE.UI
+{
+    public partial class FrmInvoice : Form
+    {
+        public string InvUUID;
+
+        public FrmInvoice()
+        {
+            InitializeComponent();
+
+        }
+
+        /// <summary>
+        /// Formun en üstünde bağlantı için kullanılan alanların dolu olmasını kontrol eder
+        /// </summary>
+        private bool CheckConnParam()
+        {
+            var check = true;
+
+            foreach (var item in panelControls.Controls)
+            {
+                if (item.GetType() != typeof(TextBox)) continue;
+                var t = (TextBox)item;
+                if (string.IsNullOrEmpty(t.Text.Trim()))
+                    check = false;
+            }
+
+            return check;
+        }
+
+
+
+
+
+        /// <summary>
+        /// Gelen ve gönderilen faturalar butonlarına tıklanınca html, pdf ve ubl indir butonlarını aktif eder
+        /// </summary>
+        /// <returns></returns>
+        private void ButtonAktifPasif(bool html, bool pdf, bool ubl)
+        {
+            btnFaturaHtmlIndir.Enabled = html;
+            btnFaturaPdfIndir.Enabled = pdf;
+            btnFaturaUblIndir.Enabled = ubl;
+        }
+
+
+        /// <summary>
+        /// Text ve grid alanlarını temizleme
+        /// </summary>
+        private void ClearText()
+        {
+            lblBaslik.Text = "";
+            InvUUID = null;
+        }
+
+
+        /// <summary>
+        ///  CheckBoxlarda işaretlenen  SSL/TLS versionlarını listeye ekler
+        /// </summary>
+        /// <returns>CheckBoxlarda işaretlenen SSL/TLS listesi </returns>
+        private ArrayList CheckedSSL()
+        {
+            var checkSSLList = new ArrayList();
+            foreach (var item in panelControls.Controls)
+            {
+                if (item.GetType() == typeof(CheckBox))
+                {
+                    CheckBox t = (CheckBox)item;
+                    if (t.Checked)
+                    {
+                        checkSSLList.Add(t.Text.Trim());
+                    }
+
+                }
+            }
+            return checkSSLList;
+        }
+
+
+
+        /// <summary>
+        /// Gelen veya Gönderilen Faturaların UUID değişkenini alır
+        /// </summary>
+        /// <returns>Gelen veya Gönderilen Faturaların UUID'si</returns>
+        private void grdListFatura_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                InvUUID = grdListFatura.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception)
+            {
+
+                InvUUID = "0";
+            }
+        }
+
+
+
+        /// <summary>
+        /// TextBoxlardan gelen bilgileri model nesnesine ekler
+        /// </summary>
+        /// <returns>Model nesnesi</returns>
+        private TextModel SetValue()
+        {
+
+            var model = new TextModel
+            {
+                VknTckn = txtTcVkn.Text.Trim(),
+                Kullanici = txtKullanici.Text.Trim(),
+                Sifre = txtSifre.Text.Trim(),
+                GbEtiketi = txtGonBirim.Text.Trim(),
+                PkEtiketi = txtPostaKutusu.Text.Trim(),
+                IssueDate = new DateTime(dtpFaturaTarih1.Value.Year, dtpFaturaTarih1.Value.Month,
+                    dtpFaturaTarih1.Value.Day, 00, 00, 00),
+                EndDate = new DateTime(dtpFaturaTarih2.Value.Year, dtpFaturaTarih2.Value.Month,
+                    dtpFaturaTarih2.Value.Day, 23, 59, 59)
+            };
+
+            return model;
+        }
+
+
+
+        /// <summary>
+        /// TCKN/VKN parametresi ile sisteme kayıtlı e-fatura mükellefi sorgular
+        /// </summary>
+        /// <returns> e-Fatura Mükellef Listesi</returns>
+        private void btnMukSorgu_Click(object sender, EventArgs e)
+        {
+
+            ButtonAktifPasif(false, false, false);
+         
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException(
+                        "TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                string FilterVknTckn =
+                    Interaction.InputBox("Lütfen sorgulamak istediğiniz mükellefin TCKN/VKN bilgisini giriniz.",
+                        "Mükellef Sorgulama");
+
+                double numeric;
+
+                if (string.IsNullOrEmpty(FilterVknTckn))
+                    throw new UUIDNullException("Lütfen bir VKN/TCKN giriniz!");
+
+                if (!double.TryParse(FilterVknTckn, out numeric))
+                    throw new NumericVknTcknException("Lütfen VKN/TCKN için sayısal karakterler giriniz");
+
+                if (FilterVknTckn.Length == 10 || FilterVknTckn.Length == 11)
+                {
+                    InvoiceWebService fatura = new InvoiceWebService();
+                    var res = fatura.MukellefSorgula(SetValue(), FilterVknTckn, CheckedSSL());
+                    grdListFatura.DataSource = null;
+                    ClearText();
+                    lblBaslik.Text = "Mükellef Sorgulama";
+                    grdListFatura.DataSource = res;
+                    grdListFatura.ClearSelection();
+                }
+                else
+                    MessageBox.Show("Girilen VKN/TCKN 10 veya 11 haneli olmalıdır.");
+
+            }
+            catch (UUIDNullException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (NumericVknTcknException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
+
+        }
+
+
+
+
+        /// <summary>
+        /// Sisteme gelen zarf listesini getirir
+        /// </summary>
+        /// <returns>Gelen Zarf Listesi</returns>
+        private void btnGelZarf_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException(
+                        "TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+
+                lblBaslik.Text = "Gelen Zarflar";
+                ButtonAktifPasif(false, false, false);
+
+                grdListFatura.DataSource = null;
+                InvoiceWebService fatura = new InvoiceWebService();
+                grdListFatura.DataSource = fatura.GelenZarflar(SetValue(), CheckedSSL());
+                grdListFatura.ClearSelection();
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+
+
+        }
+
+
+
+        /// <summary>
+        /// Sisteme gelen e-fatura listesini getirir
+        /// </summary>
+        /// <returns> Gelen e-Fatura Listesi</returns>
+        private void btnGelFatura_Click(object sender, EventArgs e)
+        {
+            ClearText();
+
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                lblBaslik.Text = "Gelen Faturalar";
+                grdListFatura.DataSource = null;
+                ButtonAktifPasif(true, true, true);
+                InvoiceWebService fatura = new InvoiceWebService();
+                grdListFatura.DataSource = fatura.GelenFaturalar(SetValue(), CheckedSSL());
+                grdListFatura.ClearSelection();
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+
+
+        /// <summary>
+        /// Gelen e-faturalara gönderdiğimiz uygulama yanıtlarının (kabul,red) listesini getirir
+        /// </summary>
+        /// <returns>Gelen e-faturalara gönderdiğimiz uygulama yanıtlarının (kabul,red) listesi</returns>
+        private void btnGelenUygYanıt_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                lblBaslik.Text = "Gelen Uygulama Yanıtları";
+                ButtonAktifPasif(false, false, false);
+                InvoiceWebService fatura = new InvoiceWebService();
+                grdListFatura.DataSource = null;
+                grdListFatura.DataSource = fatura.GelenUygulamaYanitlari(SetValue(), CheckedSSL());
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
+
+
+        /// <summary>
+        /// Sisteme gönderilen zarf listesini getirir
+        /// </summary>
+        /// <returns> Gönderilen Zarf Listesi</returns>
+        private void btnGondrlZarf_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                grdListFatura.DataSource = null;
+                lblBaslik.Text = "Gönderilen Zarflar";
+                ButtonAktifPasif(false, false, false);
+                InvoiceWebService fatura = new InvoiceWebService();
+                grdListFatura.DataSource = fatura.GonderilenZarflar(SetValue(), CheckedSSL());
+                grdListFatura.ClearSelection();
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+        /// <summary>
+        /// Sisteme gönderilen e-fatura listesini getirir
+        /// </summary>
+        /// <returns> Gönderilen e-Fatura Listesi</returns>
+        private void btnGonFatura_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                grdListFatura.DataSource = null;
+                lblBaslik.Text = "Gönderilen Faturalar";
+                ButtonAktifPasif(true, true, true);
+                InvoiceWebService fatura = new InvoiceWebService();
+                grdListFatura.DataSource = fatura.GonderilenFaturalar(SetValue(), CheckedSSL());
+                grdListFatura.ClearSelection();
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// Gönderilen e-faturalara gelen uygulama yanıtlarının (kabul,red) listesini getirir
+        /// </summary>
+        /// <returns>Gönderilen e-faturalara gelen uygulama yanıtlarının (kabul,red) listesi</returns>
+        private void btnGondrlnUyg_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                lblBaslik.Text = "Gönderilen Uygulama Yanıtları";
+                ButtonAktifPasif(false, false, false);
+                var fatura = new InvoiceWebService();
+                grdListFatura.DataSource = null;
+                grdListFatura.DataSource = fatura.GonderilenUygulamaYanitlari(SetValue(), CheckedSSL());
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+        /// <summary>
+        /// Oluşturulan faturanın gönderimini gerçekleştirir
+        /// </summary>
+        /// <returns>e-Fatura Gönderme</returns>
+        private void btnFaturaGonder_Click(object sender, EventArgs e)
+        {
+            ClearText();
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                grdListFatura.DataSource = null;
+                lblBaslik.Text = "Fatura Gönderiliyor..";
+                ButtonAktifPasif(false, false, false);
+                var fatura = new InvoiceWebService();
+                var result = fatura.FaturaGonder(SetValue(), CheckedSSL(), GetUBLInvoiceData());
+                grdListFatura.DataSource = result;
+                lblBaslik.Text = "Fatura Gönderildi.";
+                MessageBox.Show("e-Fatura başarıyla gönderildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// Gelen ticari e-Fatura'ya uygulama yanıtı (kabul,red) gönderir
+        /// </summary>
+        /// <returns>Ticari faturaya uygulama yanıtı gönderme</returns>
+        private void btnUygYanitGon_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                var UUID = Interaction.InputBox("Uygulama yanıtı göndermek için Fatura UUID giriniz", "Uygulama Yanıtı Gönderme", "", -1, -1);
+
+                if (string.IsNullOrEmpty(UUID))
+                    throw new UUIDNullException("Uygulama yanıtı göndermek için lütfen bir Fatura UUID giriniz!");
+
+
+                var uygulamaYaniti = new InvoiceWebService();
+                var result = uygulamaYaniti.UygulamaYanitiGonder(SetValue(), UUID, CheckedSSL());
+                grdListFatura.DataSource = null;
+                ButtonAktifPasif(false, false, false);
+                ClearText();
+                grdListFatura.DataSource = result;
+                lblBaslik.Text = "Uygulama Yanıtı Gönderildi.";
+                MessageBox.Show("Uygulama yanıtı başarıyla gönderildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (UUIDNullException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (FaultException<ProcessingFault> ex)
+            {
+
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+        /// <summary>
+        /// Gönderilen e-Fatura'nın durumunu sorgular
+        /// </summary>
+        /// <returns>e-Fatura Durum Sorgulama</returns>
+        private void btnZarfDurumSorgula_Click(object sender, EventArgs e)
+        {
+
+            ButtonAktifPasif(false, false, false);
+
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException(
+                        "TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+
+                var UUID = Interaction.InputBox("Lütfen sorgulamak istediğiniz Zarf UUID'sini giriniz.",
+                    "Zarf Durum Sorgulama", "", -1, -1);
+                //grid üzerinden fatura seçimi yapılıp yapılmadığı kontrol ediyoruz.
+
+                if (string.IsNullOrEmpty(UUID))
+                    throw new UUIDNullException("Geçerli bir Zarf UUID giriniz!");
+
+
+                var fatura = new InvoiceWebService();
+                var result = fatura.ZarfDurumSorgula(SetValue(), UUID, CheckedSSL());
+                grdListFatura.DataSource = null;
+                ClearText();
+                lblBaslik.Text = "Zarf Durumu Sorgulandı.";
+
+                var dt = new DataTable();
+                dt.Columns.Add("ZarfUUID");
+                dt.Columns.Add("IssueDate");
+                dt.Columns.Add("DocumentTypeCode");
+                dt.Columns.Add("DocumentType");
+                dt.Columns.Add("ResponseCode");
+                dt.Columns.Add("Description");
+
+                var dRow = dt.NewRow();
+                dRow["ZarfUUID"] = result[0].UUID;
+                dRow["IssueDate"] = result[0].IssueDate;
+                dRow["DocumentTypeCode"] = result[0].DocumentTypeCode;
+                dRow["DocumentType"] = result[0].DocumentType;
+                dRow["ResponseCode"] = result[0].ResponseCode;
+                dRow["Description"] = result[0].Description;
+
+                dt.Rows.Add(dRow);
+
+
+                grdListFatura.DataSource = dt;
+
+            }
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (UUIDNullException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        /// <summary>
+        /// Grid üzerinden seçilen faturanın id bilgisini aldıktan sonra html formatında bilgisayara kayıt eder
+        /// </summary>
+        /// <returns>e-Fatura HTML Kaydetme</returns>
+        private void btnFaturaHtmlIndir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                if (InvUUID == "0" || InvUUID == null)
+                    throw new UUIDNullException("Lütfen bir fatura seçiniz!");
+
+                var fatura = new InvoiceWebService();
+                var result = fatura.FaturaHTMLIndir(SetValue(), InvUUID, CheckedSSL());
+                var fbDialog = new FolderBrowserDialog();
+                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
+                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
+                if (fbDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //dialog ile kullanıcıya seçtirilen dizine fatura UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
+                    File.WriteAllBytes(fbDialog.SelectedPath + "\\" + InvUUID + ".html", result.DocData);
+                    MessageBox.Show("Fatura HTML İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+
+            catch (UUIDNullException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// Grid üzerinden seçilen faturanın id bilgisini aldıktan sonra pdf formatında bilgisayara kayıt eder
+        /// </summary>
+        /// <returns>e-Fatura PDF Kaydetme</returns>
+        private void btnFaturaPdfIndir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                if (InvUUID == "0" || InvUUID == null)
+                    throw new UUIDNullException("Lütfen bir fatura seçiniz!");
+
+                var fatura = new InvoiceWebService();
+                var result = fatura.FaturaPDFIndir(SetValue(), InvUUID, CheckedSSL());
+                var fbDialog = new FolderBrowserDialog();
+                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
+                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
+                if (fbDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //dialog ile kullanıcıya seçtirilen dizine fatura UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
+                    File.WriteAllBytes(fbDialog.SelectedPath + "\\" + InvUUID + ".pdf", result.DocData);
+                    MessageBox.Show("Fatura PDF İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+
+            catch (UUIDNullException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
+        }
+
+
+        /// <summary>
+        /// Grid üzerinden seçilen faturanın id bilgisini aldıktan sonra xml formatında bilgisayara kayıt eder
+        /// </summary>
+        /// <returns>e-Fatura XML Kaydetme</returns>
+        private void btnFaturaUblIndir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CheckConnParam())
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                if (InvUUID == "0" || InvUUID == null)
+                    throw new UUIDNullException("Lütfen bir fatura seçiniz!");
+
+                var fatura = new InvoiceWebService();
+                byte[][] result = fatura.FaturaUBLIndir(SetValue(), InvUUID, CheckedSSL());
+                var fbDialog = new FolderBrowserDialog();
+                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
+                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
+                if (fbDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //dialog ile kullanıcıya seçtirilen dizine fatura UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
+                    File.WriteAllBytes(Path.Combine(fbDialog.SelectedPath, InvUUID + ".xml"), result[0]);
+                    MessageBox.Show("Fatura UBL İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            catch (UUIDNullException ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (CheckConnParamException ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            catch (FaultException<ProcessingFault> ex)
+            {
+                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FaultException ex)
+            {
+                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblBaslik.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+
+
+        /// <summary>
+        ///  Fatura UBL'inin alanlarını kalıtım alınan BaseInvoiceUBL sınıfında oluşturulan  metodları kullanarak doldurur
+        /// </summary>
+        /// <returns>OLuşturulan e-Fatura UBL'i </returns>
+        private BaseInvoiceUBL GetUBLInvoiceData()
+        {
+            BaseInvoiceUBL ublInvoice = new InvoiceUBL("TICARIFATURA", "SATIS", "TRY");
+            ublInvoice.SetCustInvIdDocumentReference();
+            ublInvoice.SetSignature();
+            ublInvoice.SetInvoiceLines(ublInvoice.GetInvoiceLines());
+            switch (txtTcVkn.Text.Length)
+            {
+                case 10:
+                    ublInvoice.SetSupplierParty(ublInvoice.GetParty(txtTcVkn.Text, "VKN"));
+                    ublInvoice.SetCustomerParty(ublInvoice.GetParty(txtTcVkn.Text, "VKN"));
+                    break;
+                case 11:
+                    ublInvoice.SetSupplierParty(ublInvoice.GetParty(txtTcVkn.Text, "TCKN"));
+                    ublInvoice.SetCustomerParty(ublInvoice.GetParty(txtTcVkn.Text, "TCKN"));
+                    break;
+            }
+
+            ublInvoice.SetLegalMonetaryTotal(ublInvoice.CalculateLegalMonetaryTotal());
+            ublInvoice.SetTaxTotal(ublInvoice.CalculateTaxTotal());
+            ublInvoice.SetAllowanceCharge(ublInvoice.CalculateAllowanceCharges());
+            return ublInvoice;
+        }
+
+        /// <summary>
+        ///  e-Fatura Test Web Servis Adresi
+        /// </summary>
+        private void linkTestURL_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(linkLabel1.Text);
+        }
+
+
+        /// <summary>
+        ///  Foriba Bulut API Adresi
+        /// </summary>
+        private void linkAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://api.fitbulut.com/");
+        }
+
+        private void FrmInvoice_Load(object sender, EventArgs e)
+        {
+            comboBoxUrlAdres.Items.Add("Foriba Bulut");
+            comboBoxUrlAdres.Items.Add("INGeF");
+            comboBoxUrlAdres.SelectedIndex = 0;
+            UrlModel.SelectedItem = comboBoxUrlAdres.SelectedItem.ToString();
+            linkLabel1.Text =
+                "https://efaturawstest.fitbulut.com/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc";
+        }
+
+        private void comboBoxUrlAdres_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UrlModel.SelectedItem = comboBoxUrlAdres.SelectedItem.ToString();
+            linkLabel1.Text = UrlModel.SelectedItem != "INGeF" ? "https://efaturawstest.fitbulut.com/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc" 
+                : "https://ingefservicestest.ingbank.com.tr/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc";
+
+        }
+    }
+}

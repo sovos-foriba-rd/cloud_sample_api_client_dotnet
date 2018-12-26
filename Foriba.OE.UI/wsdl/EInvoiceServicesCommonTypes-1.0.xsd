@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ©2013 FIT Consulting -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http:/fitcons.com/eInvoice/" targetNamespace="http:/fitcons.com/eInvoice/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ProcessingFault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="xs:int"/>
+				<xs:element name="Message" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

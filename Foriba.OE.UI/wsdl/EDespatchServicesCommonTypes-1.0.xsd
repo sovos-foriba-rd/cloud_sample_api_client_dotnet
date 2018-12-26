@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ©2018 Foriba -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns="http://foriba.com/eDespatch/" 
+targetNamespace="http://foriba.com/eDespatch/" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified">
+	<xs:element name="ProcessingFault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="xs:int"/>
+				<xs:element name="Message" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

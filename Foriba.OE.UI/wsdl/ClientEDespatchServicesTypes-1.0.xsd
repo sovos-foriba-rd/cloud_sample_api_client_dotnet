@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ©2018 Foriba -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://foriba.com/eDespatch/" targetNamespace="http://foriba.com/eDespatch/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="sendDesUBLRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="SenderIdentifier" type="xs:string" minOccurs="0"/>
+				<xs:element name="ReceiverIdentifier" type="xs:string" minOccurs="0"/>
+				<xs:element name="DocType" type="xs:string"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DocData" type="xs:base64Binary"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sendDesUBLResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response" type="SendDesUBLResponseType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SendDesUBLResponseType">
+		<xs:sequence>
+			<xs:element name="EnvUUID" type="xs:string"/>
+			<xs:element name="UUID" type="xs:string"/>
+			<xs:element name="ID" type="xs:string"/>
+			<xs:element name="CustDesID" type="xs:string" minOccurs="0"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="getDesUBLListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="xs:string"/>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="DocType" type="xs:string"/>
+				<xs:element name="Type" type="xs:string"/>
+				<xs:element name="UUID" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="FromDate" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="ToDate" type="xs:dateTime" minOccurs="0"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getDesUBLListResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response" type="GetDesUBLListResponseType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GetDesUBLListResponseType">
+		<xs:sequence>
+			<xs:element name="UUID" type="xs:string"/>
+			<xs:element name="Identifier" type="xs:string"/>
+			<xs:element name="VKN_TCKN" type="xs:string"/>
+			<xs:element name="EnvType" type="xs:string" minOccurs="0"/>
+			<xs:element name="EnvElementType" type="xs:string" minOccurs="0"/>
+			<xs:element name="EnvUUID" minOccurs="0"/>
+			<xs:element name="ID" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustDesID" type="xs:string" minOccurs="0"/>
+			<xs:element name="InsertDateTime" type="xs:dateTime"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="getDesUBLRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="xs:string"/>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="UUID" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="DocType" type="xs:string"/>
+				<xs:element name="Type" type="xs:string"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getDesUBLResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response" type="GetDesUBLResponseType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GetDesUBLResponseType">
+		<xs:sequence>
+			<xs:element name="UUID" type="xs:string"/>
+			<xs:element name="DocData" type="xs:base64Binary"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="getDesReceiptsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="xs:string"/>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="UUID" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Type" type="xs:string"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getDesReceiptsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response" type="GetDesReceiptsResponseType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GetDesReceiptsResponseType">
+		<xs:sequence>
+			<xs:element name="DespatchUUID" type="xs:string"/>
+			<xs:element name="Receipts" type="GetDesReceiptsResponseReceiptsType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetDesReceiptsResponseReceiptsType">
+		<xs:sequence>
+			<xs:element name="EnvUUID" type="xs:string"/>
+			<xs:element name="UUID" type="xs:string"/>
+			<xs:element name="ID" type="xs:string"/>
+			<xs:element name="InsertDateTime" type="xs:dateTime"/>
+			<xs:element name="IssueDate" type="xs:dateTime"/>
+			<xs:element name="DocData" type="xs:base64Binary"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="getDesEnvelopeStatusRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="xs:string"/>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="UUID" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getDesEnvelopeStatusResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response" type="GetDesEnvelopeStatusResponseType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GetDesEnvelopeStatusResponseType">
+		<xs:sequence>
+			<xs:element name="UUID" type="xs:string"/>
+			<xs:element name="IssueDate" type="xs:date"/>
+			<xs:element name="DocumentTypeCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocumentType" type="xs:string" minOccurs="0"/>
+			<xs:element name="ResponseCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocData" type="xs:base64Binary" minOccurs="0"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="getDesViewRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="xs:string"/>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="DocDetails" type="GetDesViewRequestType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getDesViewResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response" type="GetDesViewResponseType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GetDesViewRequestType">
+		<xs:sequence>
+			<xs:element name="UUID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CustDesID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Type" type="xs:string"/>
+			<xs:element name="DocType" type="xs:string"/>
+			<xs:element name="ViewType" type="xs:string"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetDesViewResponseType">
+		<xs:sequence>
+			<xs:element name="UUID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CustDesID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Type" type="xs:string"/>
+			<xs:element name="DocType" type="xs:string"/>
+			<xs:element name="ViewType" type="xs:string"/>
+			<xs:element name="DocData" type="xs:base64Binary" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Result" type="xs:integer"/>
+			<xs:element name="ResultDescription" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="getDesUserListRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="xs:string"/>
+				<xs:element name="VKN_TCKN" type="xs:string"/>
+				<xs:element name="Role" type="xs:string"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getDesUserListResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DocData" type="xs:base64Binary"/>
+				<xs:element name="Parameters" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e218e7e8-d2d9-4a03-8868-01c39c0f229c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\meltem.yilmaz\Desktop\ForibaBulutFaturaTestProject\Foriba.OE.UI\wsdl\ClientEDespatchServices-1.0.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClientEDespatchServicesTypes-1.xsd" MetadataType="Schema" ID="d2df1f54-3b96-4a3f-82cc-9e9470aa0490" SourceId="1" SourceUrl="file:///C:/Users/meltem.yilmaz/Desktop/ForibaBulutFaturaTestProject/Foriba.OE.UI/wsdl/ClientEDespatchServicesTypes-1.0.xsd" />
+    <MetadataFile FileName="ClientEDespatchServices-1.wsdl" MetadataType="Wsdl" ID="00e01366-fa3d-4970-bc95-081c2f942c9e" SourceId="1" SourceUrl="file:///C:/Users/meltem.yilmaz/Desktop/ForibaBulutFaturaTestProject/Foriba.OE.UI/wsdl/ClientEDespatchServices-1.0.wsdl" />
+    <MetadataFile FileName="EDespatchServicesCommonTypes-1.xsd" MetadataType="Schema" ID="92a02a03-3ff6-421c-bb73-83d9080618c3" SourceId="1" SourceUrl="file:///C:/Users/meltem.yilmaz/Desktop/ForibaBulutFaturaTestProject/Foriba.OE.UI/wsdl/EDespatchServicesCommonTypes-1.0.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

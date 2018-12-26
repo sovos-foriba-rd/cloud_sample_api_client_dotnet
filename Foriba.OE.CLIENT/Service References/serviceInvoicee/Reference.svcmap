@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="baafe5d8-6bef-412f-bfd5-a003b04f1157" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\meltem.yilmaz\Desktop\ForibaBulutFaturaTestProject\Foriba.OE.UI\wsdl\ClientEInvoiceServices-2.0.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClientEInvoiceServicesTypes-2.xsd" MetadataType="Schema" ID="0407c690-6293-4441-9658-fad082702919" SourceId="1" SourceUrl="file:///C:/Users/meltem.yilmaz/Desktop/ForibaBulutFaturaTestProject/Foriba.OE.UI/wsdl/ClientEInvoiceServicesTypes-2.0.xsd" />
+    <MetadataFile FileName="ClientEInvoiceServices-2.wsdl" MetadataType="Wsdl" ID="a28ec813-9a57-4c81-9686-5b4b424a0cba" SourceId="1" SourceUrl="file:///C:/Users/meltem.yilmaz/Desktop/ForibaBulutFaturaTestProject/Foriba.OE.UI/wsdl/ClientEInvoiceServices-2.0.wsdl" />
+    <MetadataFile FileName="EInvoiceServicesCommonTypes-1.xsd" MetadataType="Schema" ID="bf2dcf15-200b-4f11-bf1f-2848dc04693c" SourceId="1" SourceUrl="file:///C:/Users/meltem.yilmaz/Desktop/ForibaBulutFaturaTestProject/Foriba.OE.UI/wsdl/EInvoiceServicesCommonTypes-1.0.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
