@@ -57,6 +57,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblAPI = new System.Windows.Forms.LinkLabel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelControls = new System.Windows.Forms.Panel();
             this.comboBoxUrlAdres = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTcVkn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -87,8 +87,8 @@
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panelControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,7 +100,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 883);
+            this.panel1.Size = new System.Drawing.Size(1282, 840);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -111,7 +111,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 164);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1280, 717);
+            this.panel3.Size = new System.Drawing.Size(1280, 674);
             this.panel3.TabIndex = 1;
             // 
             // panel5
@@ -121,7 +121,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1280, 717);
+            this.panel5.Size = new System.Drawing.Size(1280, 674);
             this.panel5.TabIndex = 0;
             // 
             // panel7
@@ -133,7 +133,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1280, 717);
+            this.panel7.Size = new System.Drawing.Size(1280, 674);
             this.panel7.TabIndex = 1;
             // 
             // grdListFatura
@@ -146,9 +146,10 @@
             this.grdListFatura.MultiSelect = false;
             this.grdListFatura.Name = "grdListFatura";
             this.grdListFatura.RowTemplate.Height = 24;
-            this.grdListFatura.Size = new System.Drawing.Size(1008, 673);
+            this.grdListFatura.Size = new System.Drawing.Size(1008, 630);
             this.grdListFatura.TabIndex = 3;
             this.grdListFatura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListFatura_CellClick);
+            this.grdListFatura.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdListFatura_DataBindingComplete);
             // 
             // lblBaslik
             // 
@@ -170,7 +171,7 @@
             this.panel6.Location = new System.Drawing.Point(1008, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(272, 717);
+            this.panel6.Size = new System.Drawing.Size(272, 674);
             this.panel6.TabIndex = 0;
             // 
             // panel8
@@ -197,7 +198,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(272, 717);
+            this.panel8.Size = new System.Drawing.Size(272, 674);
             this.panel8.TabIndex = 2;
             // 
             // label11
@@ -244,7 +245,7 @@
             this.btnGondrlZarf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGondrlZarf.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGondrlZarf.Location = new System.Drawing.Point(34, 225);
-            this.btnGondrlZarf.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGondrlZarf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGondrlZarf.Name = "btnGondrlZarf";
             this.btnGondrlZarf.Size = new System.Drawing.Size(209, 40);
             this.btnGondrlZarf.TabIndex = 110;
@@ -257,7 +258,7 @@
             this.btnGelZarf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelZarf.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGelZarf.Location = new System.Drawing.Point(34, 66);
-            this.btnGelZarf.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGelZarf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGelZarf.Name = "btnGelZarf";
             this.btnGelZarf.Size = new System.Drawing.Size(209, 40);
             this.btnGelZarf.TabIndex = 107;
@@ -271,7 +272,7 @@
             this.btnFaturaHtmlIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaHtmlIndir.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFaturaHtmlIndir.Location = new System.Drawing.Point(34, 538);
-            this.btnFaturaHtmlIndir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaturaHtmlIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFaturaHtmlIndir.Name = "btnFaturaHtmlIndir";
             this.btnFaturaHtmlIndir.Size = new System.Drawing.Size(209, 40);
             this.btnFaturaHtmlIndir.TabIndex = 116;
@@ -284,7 +285,7 @@
             this.btnGondrlnUyg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGondrlnUyg.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGondrlnUyg.Location = new System.Drawing.Point(34, 325);
-            this.btnGondrlnUyg.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGondrlnUyg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGondrlnUyg.Name = "btnGondrlnUyg";
             this.btnGondrlnUyg.Size = new System.Drawing.Size(209, 42);
             this.btnGondrlnUyg.TabIndex = 112;
@@ -297,7 +298,7 @@
             this.btnFaturaGonder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaGonder.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFaturaGonder.Location = new System.Drawing.Point(34, 383);
-            this.btnFaturaGonder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaturaGonder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFaturaGonder.Name = "btnFaturaGonder";
             this.btnFaturaGonder.Size = new System.Drawing.Size(209, 40);
             this.btnFaturaGonder.TabIndex = 113;
@@ -311,7 +312,7 @@
             this.btnFaturaPdfIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaPdfIndir.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFaturaPdfIndir.Location = new System.Drawing.Point(34, 586);
-            this.btnFaturaPdfIndir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaturaPdfIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFaturaPdfIndir.Name = "btnFaturaPdfIndir";
             this.btnFaturaPdfIndir.Size = new System.Drawing.Size(209, 40);
             this.btnFaturaPdfIndir.TabIndex = 117;
@@ -325,7 +326,7 @@
             this.btnFaturaUblIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaUblIndir.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnFaturaUblIndir.Location = new System.Drawing.Point(34, 634);
-            this.btnFaturaUblIndir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaturaUblIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFaturaUblIndir.Name = "btnFaturaUblIndir";
             this.btnFaturaUblIndir.Size = new System.Drawing.Size(209, 40);
             this.btnFaturaUblIndir.TabIndex = 118;
@@ -338,7 +339,7 @@
             this.btnZarfDurumSorgula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnZarfDurumSorgula.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnZarfDurumSorgula.Location = new System.Drawing.Point(34, 479);
-            this.btnZarfDurumSorgula.Margin = new System.Windows.Forms.Padding(4);
+            this.btnZarfDurumSorgula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnZarfDurumSorgula.Name = "btnZarfDurumSorgula";
             this.btnZarfDurumSorgula.Size = new System.Drawing.Size(209, 40);
             this.btnZarfDurumSorgula.TabIndex = 115;
@@ -351,7 +352,7 @@
             this.btnUygYanitGon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUygYanitGon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUygYanitGon.Location = new System.Drawing.Point(34, 431);
-            this.btnUygYanitGon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUygYanitGon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUygYanitGon.Name = "btnUygYanitGon";
             this.btnUygYanitGon.Size = new System.Drawing.Size(209, 40);
             this.btnUygYanitGon.TabIndex = 114;
@@ -364,7 +365,7 @@
             this.btnGonFatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGonFatura.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGonFatura.Location = new System.Drawing.Point(34, 275);
-            this.btnGonFatura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGonFatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGonFatura.Name = "btnGonFatura";
             this.btnGonFatura.Size = new System.Drawing.Size(209, 40);
             this.btnGonFatura.TabIndex = 111;
@@ -377,7 +378,7 @@
             this.btnGelenUygYanıt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelenUygYanıt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGelenUygYanıt.Location = new System.Drawing.Point(34, 166);
-            this.btnGelenUygYanıt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGelenUygYanıt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGelenUygYanıt.Name = "btnGelenUygYanıt";
             this.btnGelenUygYanıt.Size = new System.Drawing.Size(209, 40);
             this.btnGelenUygYanıt.TabIndex = 109;
@@ -392,7 +393,7 @@
             this.btnMukSorgu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMukSorgu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnMukSorgu.Location = new System.Drawing.Point(34, 8);
-            this.btnMukSorgu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMukSorgu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMukSorgu.Name = "btnMukSorgu";
             this.btnMukSorgu.Size = new System.Drawing.Size(209, 40);
             this.btnMukSorgu.TabIndex = 106;
@@ -405,7 +406,7 @@
             this.btnGelFatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelFatura.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGelFatura.Location = new System.Drawing.Point(34, 116);
-            this.btnGelFatura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGelFatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGelFatura.Name = "btnGelFatura";
             this.btnGelFatura.Size = new System.Drawing.Size(209, 40);
             this.btnGelFatura.TabIndex = 108;
@@ -448,6 +449,18 @@
             this.lblAPI.Text = "https://api.fitbulut.com/";
             this.lblAPI.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAPI_LinkClicked);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Foriba.OE.UI.Properties.Resources.Foriba_Logo;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(272, 116);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 53;
+            this.pictureBox3.TabStop = false;
+            // 
             // panelControls
             // 
             this.panelControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -476,6 +489,7 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(1280, 164);
             this.panelControls.TabIndex = 0;
+            this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
             // 
             // comboBoxUrlAdres
             // 
@@ -514,7 +528,7 @@
             // checkboxTLS11
             // 
             this.checkboxTLS11.AutoSize = true;
-            this.checkboxTLS11.Location = new System.Drawing.Point(22, 133);
+            this.checkboxTLS11.Location = new System.Drawing.Point(22, 132);
             this.checkboxTLS11.Name = "checkboxTLS11";
             this.checkboxTLS11.Size = new System.Drawing.Size(87, 21);
             this.checkboxTLS11.TabIndex = 80;
@@ -527,7 +541,7 @@
             this.dtpFaturaTarih2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpFaturaTarih2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFaturaTarih2.Location = new System.Drawing.Point(800, 90);
-            this.dtpFaturaTarih2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFaturaTarih2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFaturaTarih2.Name = "dtpFaturaTarih2";
             this.dtpFaturaTarih2.Size = new System.Drawing.Size(149, 26);
             this.dtpFaturaTarih2.TabIndex = 78;
@@ -537,7 +551,7 @@
             this.checkboxTLS12.AutoSize = true;
             this.checkboxTLS12.Checked = true;
             this.checkboxTLS12.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkboxTLS12.Location = new System.Drawing.Point(115, 134);
+            this.checkboxTLS12.Location = new System.Drawing.Point(115, 132);
             this.checkboxTLS12.Name = "checkboxTLS12";
             this.checkboxTLS12.Size = new System.Drawing.Size(87, 21);
             this.checkboxTLS12.TabIndex = 81;
@@ -549,7 +563,7 @@
             this.txtSifre.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSifre.Location = new System.Drawing.Point(576, 90);
-            this.txtSifre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSifre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(170, 26);
             this.txtSifre.TabIndex = 77;
@@ -559,7 +573,7 @@
             this.txtPostaKutusu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtPostaKutusu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPostaKutusu.Location = new System.Drawing.Point(224, 90);
-            this.txtPostaKutusu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPostaKutusu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPostaKutusu.Name = "txtPostaKutusu";
             this.txtPostaKutusu.Size = new System.Drawing.Size(312, 26);
             this.txtPostaKutusu.TabIndex = 76;
@@ -594,7 +608,7 @@
             this.dtpFaturaTarih1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpFaturaTarih1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFaturaTarih1.Location = new System.Drawing.Point(796, 29);
-            this.dtpFaturaTarih1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFaturaTarih1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFaturaTarih1.Name = "dtpFaturaTarih1";
             this.dtpFaturaTarih1.Size = new System.Drawing.Size(153, 26);
             this.dtpFaturaTarih1.TabIndex = 68;
@@ -616,7 +630,7 @@
             this.txtKullanici.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKullanici.Location = new System.Drawing.Point(576, 28);
-            this.txtKullanici.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKullanici.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.Size = new System.Drawing.Size(170, 26);
             this.txtKullanici.TabIndex = 67;
@@ -650,10 +664,11 @@
             this.txtGonBirim.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtGonBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtGonBirim.Location = new System.Drawing.Point(224, 28);
-            this.txtGonBirim.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGonBirim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGonBirim.Name = "txtGonBirim";
             this.txtGonBirim.Size = new System.Drawing.Size(312, 26);
             this.txtGonBirim.TabIndex = 66;
+            this.txtGonBirim.TextChanged += new System.EventHandler(this.txtGonBirim_TextChanged);
             // 
             // label3
             // 
@@ -672,7 +687,7 @@
             this.txtTcVkn.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTcVkn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTcVkn.Location = new System.Drawing.Point(22, 28);
-            this.txtTcVkn.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTcVkn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTcVkn.Name = "txtTcVkn";
             this.txtTcVkn.Size = new System.Drawing.Size(176, 26);
             this.txtTcVkn.TabIndex = 65;
@@ -689,29 +704,17 @@
             this.label2.TabIndex = 69;
             this.label2.Text = "VKN / TCKN ";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Foriba.OE.UI.Properties.Resources.Foriba_Logo;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(272, 116);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 53;
-            this.pictureBox3.TabStop = false;
-            // 
             // FrmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1282, 883);
+            this.ClientSize = new System.Drawing.Size(1282, 840);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1300, 920);
+            this.MinimumSize = new System.Drawing.Size(1300, 835);
             this.Name = "FrmInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Foriba Bulut API  -   e-Fatura Test Projesi  v1.2";
@@ -726,9 +729,9 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

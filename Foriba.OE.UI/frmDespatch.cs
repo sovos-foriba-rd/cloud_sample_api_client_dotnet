@@ -13,6 +13,7 @@ using Foriba.OE.UI.Exceptions;
 using Foriba.OE.COMMON.Zip;
 using Foriba.OE.COMMON.WebServices;
 using Foriba.OE.COMMON.Model;
+using System.Collections.Generic;
 
 /// <summary>
 /// Copyright © 2018 Foriba Teknoloji
@@ -28,6 +29,7 @@ namespace Foriba.OE.UI
         public FrmDespatch()
         {
             InitializeComponent();
+            btnZarfDurumSorgula.Enabled = false;
         }
         public string DespatchUUID;
         public byte[] XmlByte;
@@ -51,20 +53,15 @@ namespace Foriba.OE.UI
             return check;
         }
 
-
-
-
-
         /// <summary>
         ///  Gelen ve gönderilen irsaliye butonlarına tıklanınca html, pdf ve ubl indir butonlarını aktif eder.
         /// </summary>
         /// <returns></returns>
         private void ButtonAktifPasif(bool htmlAndPdf, bool ubl)
         {
-            btnIrsaliyeHtmlPdfIndir.Enabled = htmlAndPdf;
+            btnIrsaliyePdfIndir.Enabled = htmlAndPdf;
             btnIrsaliyeUblIndir.Enabled = ubl;
         }
-
 
 
         /// <summary>
@@ -109,11 +106,13 @@ namespace Foriba.OE.UI
 
         /// <summary>
         /// Text ve grid alanlarını temizleme
+        /// Zarf durumu sorgulama butonunu pasif hale getirme
         /// </summary>
         private void ClearText()
         {
             lblBaslik.Text = "";
             DespatchUUID = null;
+            btnZarfDurumSorgula.Enabled = false;
         }
 
 
@@ -291,7 +290,7 @@ namespace Foriba.OE.UI
         private void btnIrsYanitGon_Click(object sender, EventArgs e)
         {
             DespatchUUID = null;
-           
+
             try
             {
                 if (!CheckConnParam())
@@ -301,7 +300,7 @@ namespace Foriba.OE.UI
 
                 if (string.IsNullOrEmpty(UUID))
                     throw new UUIDNullException("Geçerli bir Irsaliye UUID giriniz!");
-                
+
                 var receiptAdvice = new DespatchWebService();
                 var result = receiptAdvice.IrsaliyeYanitiGonder(SetTextModel(), UUID, CheckedSSL());
                 ButtonAktifPasif(false, false);
@@ -334,7 +333,6 @@ namespace Foriba.OE.UI
         }
 
 
-
         /// <summary>
         ///  Zarf durumunu sorgular
         /// </summary>
@@ -342,43 +340,69 @@ namespace Foriba.OE.UI
         private void btnZarfDurumSorgula_Click(object sender, EventArgs e)
         {
             DespatchUUID = null;
-           
+
+            List<string> allUUID = new List<string>();
+            List<GetDesEnvelopeStatusResponseType> resultList = new List<GetDesEnvelopeStatusResponseType>();
+            var despatch = new DespatchWebService();
 
             try
             {
                 if (!CheckConnParam())
                     throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
 
-                var envelopeUUID = Interaction.InputBox("Lütfen sorgulamak istediğiniz Zarf UUID giriniz.", "Zarf Durum Sorgulama", "", -1, -1);
+                foreach (DataGridViewRow item in grdListIrsaliye.Rows)
+                {
+                    allUUID.Add(item.Cells[0].Value.ToString());
+                }
 
-                if (string.IsNullOrEmpty(envelopeUUID))
-                    throw new UUIDNullException("Geçerli bir Zarf UUID giriniz!");
-               
+                if (allUUID.Count != 0)
+                {
 
-                var despatch = new DespatchWebService();
-                var result = despatch.ZarfDurumSorgula(SetTextModel(), envelopeUUID, CheckedSSL());
-                grdListIrsaliye.DataSource = null;
-                ButtonAktifPasif(false, false);
 
-                var dt = new DataTable();
-                dt.Columns.Add("ZarfUUID");
-                dt.Columns.Add("IssueDate");
-                dt.Columns.Add("DocumentTypeCode");
-                dt.Columns.Add("DocumentType");
-                dt.Columns.Add("ResponseCode");
-                dt.Columns.Add("Description");
+                    var splitUUIDArray = allUUID.Split(20);
 
-                DataRow dRow = dt.NewRow();
-                dRow["ZarfUUID"] = result[0].UUID;
-                dRow["IssueDate"] = result[0].IssueDate;
-                dRow["DocumentTypeCode"] = result[0].DocumentTypeCode;
-                dRow["DocumentType"] = result[0].DocumentType;
-                dRow["ResponseCode"] = result[0].ResponseCode;
-                dRow["Description"] = result[0].Description;
+                    foreach (var UUIDList in splitUUIDArray)
+                    {
+                        GetDesEnvelopeStatusResponseType[] result = despatch.ZarfDurumSorgula(SetTextModel(), UUIDList.ToArray(), CheckedSSL());
 
-                dt.Rows.Add(dRow);
-                grdListIrsaliye.DataSource = dt;
-                lblBaslik.Text = "Zarf Durumu Sorgulandı.";
+                        foreach (var item in result)
+                        {
+                            resultList.Add(item);
+                        }
+                    }
+
+                    grdListIrsaliye.DataSource = null;
+                    ButtonAktifPasif(false, false);
+
+                    var dt = new DataTable();
+                    dt.Columns.Add("ZarfUUID");
+                    dt.Columns.Add("IssueDate");
+                    dt.Columns.Add("DocumentTypeCode");
+                    dt.Columns.Add("DocumentType");
+                    dt.Columns.Add("ResponseCode");
+                    dt.Columns.Add("Description");
+
+                    foreach (var item in resultList)
+                    {
+
+                        DataRow dRow = dt.NewRow();
+                        dRow["ZarfUUID"] = item.UUID;
+                        dRow["IssueDate"] = item.IssueDate;
+                        dRow["DocumentTypeCode"] = item.DocumentTypeCode;
+                        dRow["DocumentType"] = item.DocumentType;
+                        dRow["ResponseCode"] = item.ResponseCode;
+                        dRow["Description"] = item.Description;
+
+                        dt.Rows.Add(dRow);
+                    }
+
+                    grdListIrsaliye.DataSource = dt;
+                    lblBaslik.Text = "Zarf Durumu Sorgulandı.";
+                }
+                else
+                {
+                    MessageBox.Show("Sorgulanacak Zarf Bulunamadı.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (CheckConnParamException ex)
             {
@@ -387,7 +411,7 @@ namespace Foriba.OE.UI
             catch (UUIDNullException ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-              
+
             }
             catch (FaultException<ProcessingFault> ex)
             {
@@ -406,8 +430,6 @@ namespace Foriba.OE.UI
 
 
 
-
-
         /// <summary>
         /// Sisteme gönderilen zarf listesini getirir
         /// </summary>
@@ -415,6 +437,7 @@ namespace Foriba.OE.UI
         private void btnGonZarf_Click(object sender, EventArgs e)
         {
             ClearText();
+            btnZarfDurumSorgula.Enabled = true;
             try
             {
                 if (!CheckConnParam())
@@ -444,7 +467,6 @@ namespace Foriba.OE.UI
                 MessageBox.Show(ex.ToString());
             }
         }
-
 
 
         /// <summary>
@@ -487,8 +509,6 @@ namespace Foriba.OE.UI
                 MessageBox.Show(ex.ToString());
             }
         }
-
-
 
 
         /// <summary>
@@ -663,40 +683,51 @@ namespace Foriba.OE.UI
 
 
         /// <summary>
-        /// Grid üzerinden seçilen irsaliye id bilgisini aldıktan sonra html ve pdf formatında bilgisayara kaydını yapar
+        /// Grid üzerindeki gelen veya gönderilen e-irsaliyeleri PDF olarak masaüstünde oluşturulacak klasöre kayıt eder
         /// </summary>
-        /// <returns>e-İrsaliye HTML ve PDF Kaydetme</returns>
-        private void btnIrsaliyeHtmlPdfIndir_Click(object sender, EventArgs e)
+        /// <returns>e-İrsaliye HTML veya PDF Kaydetme</returns>
+        private void btnIrsaliyePdfIndir_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!CheckConnParam())
                     throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
 
-                if (DespatchUUID == "0" || DespatchUUID == null)
-                    throw new UUIDNullException("Lütfen bir irsaliye seçiniz!");
+                List<string> allUUID = new List<string>();
+                var despatch = new DespatchWebService();
 
-                var fatura = new DespatchWebService();
-
-                var result = fatura.IrsaliyeHTMLPDFIndir(SetTextModel(), DespatchUUID, CheckedSSL(), RequestModel).Response;
-
-                FolderBrowserDialog fbDialog = new FolderBrowserDialog();
-
-                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
-
-                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
-
-                if (fbDialog.ShowDialog() == DialogResult.OK)
+                foreach (DataGridViewRow item in grdListIrsaliye.Rows)
                 {
-                    //dialog ile kullanıcıya seçtirilen dizine irsaliye UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
-
-                    File.WriteAllBytes(fbDialog.SelectedPath + "\\" + DespatchUUID + ".html", ZipUtility.UncompressFile(result[0].DocData));
-
-                    File.WriteAllBytes(fbDialog.SelectedPath + "\\" + DespatchUUID + ".pdf", ZipUtility.UncompressFile(result[1].DocData));
-
-                    MessageBox.Show("HTML ve PDF İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    allUUID.Add(item.Cells[0].Value.ToString());
                 }
 
+                if (allUUID.Count != 0)
+                {
+
+                    string recordPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + String.Format("\\{0}-PDF", RequestModel.DocType);
+
+                    if (File.Exists(recordPath) == false)
+                        Directory.CreateDirectory(recordPath);
+
+                    var splitUUIDArray = allUUID.Split(20);
+
+
+                    foreach (var UUIDList in splitUUIDArray)
+                    {
+                        var result = despatch.IrsaliyePDFIndir(SetTextModel(), UUIDList.ToArray(), CheckedSSL(), RequestModel).Response;
+
+                        for (int i = 0; i < result.Count(); i++)
+                        {
+                            File.WriteAllBytes(Path.Combine(recordPath, UUIDList[i] + ".pdf"), ZipUtility.UncompressFile(result[i].DocData));
+                        }
+                    }
+
+                    MessageBox.Show("PDF İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("PDFi İndirilecek Bir Faturanız Bulunmamaktadır.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
             catch (UUIDNullException ex)
@@ -726,9 +757,8 @@ namespace Foriba.OE.UI
         }
 
 
-
         /// <summary>
-        /// Grid üzerinden seçilen irsaliyenin id bilgisini aldıktan sonra XML(UBL) formatında bilgisayara kaydını yapar
+        /// Grid üzerindeki irsaliyelerin XML(UBL) formatında masaüstünde oluşturulan bir klasöre kaydını yapar
         /// </summary>
         /// <returns>e-İrsaliye UBL Kaydetme</returns>
         private void btnIrsaliyeUblIndir_Click(object sender, EventArgs e)
@@ -738,26 +768,40 @@ namespace Foriba.OE.UI
                 if (!CheckConnParam())
                     throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
 
-                if (DespatchUUID == "0" || DespatchUUID == null)
-                    throw new UUIDNullException("Lütfen bir irsaliye seçiniz!");
 
-                var fatura = new DespatchWebService();
-
-                var result = fatura.IrsaliyeUBLIndir(SetTextModel(), DespatchUUID, CheckedSSL(), RequestModel).Response;
-
-                FolderBrowserDialog fbDialog = new FolderBrowserDialog();
-
-                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
-
-                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
-
-                if (fbDialog.ShowDialog() == DialogResult.OK)
+                List<string> allUUID = new List<string>();
+                var despatch = new DespatchWebService();
+                
+                foreach (DataGridViewRow item in grdListIrsaliye.Rows)
                 {
-                    //dialog ile kullanıcıya seçtirilen dizine irsaliye UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
+                    allUUID.Add(item.Cells[0].Value.ToString());
+                }
 
-                    File.WriteAllBytes(fbDialog.SelectedPath + "\\" + DespatchUUID + ".xml", ZipUtility.UncompressFile(result[0].DocData));
+                if (allUUID.Count != 0)
+                {
+
+                    string recordPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + String.Format("\\{0}-UBL", RequestModel.DocType);
+                    if (File.Exists(recordPath) == false)
+                        Directory.CreateDirectory(recordPath);
+
+
+                    var splitUUIDArray = allUUID.Split(20);
+
+                    foreach (var UUIDList in splitUUIDArray)
+                    {
+                        var result = despatch.IrsaliyeUBLIndir(SetTextModel(), UUIDList.ToArray(), CheckedSSL(), RequestModel).Response;
+
+                        for (int i = 0; i < result.Count(); i++)
+                        {
+                            File.WriteAllBytes(Path.Combine(recordPath, UUIDList[i] + ".xml"), ZipUtility.UncompressFile(result[i].DocData));
+                        }
+                    }
 
                     MessageBox.Show("UBL İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("İndirilecek Bir UBL Bulunmamaktadır.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -801,6 +845,18 @@ namespace Foriba.OE.UI
         private void linkAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://api.fitbulut.com/");
+        }
+
+        private void grdListIrsaliye_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridView gridView = sender as DataGridView;
+            if (null != gridView)
+            {
+                foreach (DataGridViewRow r in gridView.Rows)
+                {
+                    gridView.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
+            }
         }
     }
 }

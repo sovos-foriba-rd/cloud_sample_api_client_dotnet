@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authorization.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Model\RequestModel.cs" />
     <Compile Include="Model\TextModel.cs" />
     <Compile Include="Model\UrlModel.cs" />

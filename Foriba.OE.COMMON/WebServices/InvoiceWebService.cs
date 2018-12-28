@@ -363,7 +363,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Sisteme gönderilen zarfın statüsünü sorgular
         /// </summary>
         /// <returns>Sisteme gönderilen zarfın statüsü </returns>
-        public getEnvelopeStatusResponseType[] ZarfDurumSorgula(TextModel m, string zarfUUID, ArrayList sslList)
+        public getEnvelopeStatusResponseType[] ZarfDurumSorgula(TextModel m, string[] zarfUUID, ArrayList sslList)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList);  // TLS/SSL ayarları
             WebServisAdresDegistir();
@@ -378,7 +378,7 @@ namespace Foriba.OE.COMMON.WebServices
                 {
                     Identifier = m.GbEtiketi, //gönderici birim etiketi
                     VKN_TCKN = m.VknTckn, //tckn veya vkn
-                    UUID = new[] { zarfUUID }//sisteme gönderilen faturanın zarfUUID si
+                    UUID = zarfUUID//sisteme gönderilen faturaların zarfUUID leri
                 };
 
                 return WsClient.getEnvelopeStatus(req); //gönderilen request parametrelerinden geri dönen sonuc
@@ -451,7 +451,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Grid üzerinden seçilen gelen veya gönderilen faturayı UBL olarak kayıt eder
         /// </summary>
         /// <returns>Grid üzerinden seçilen gelen veya gönderilen faturanın UBL binary datası</returns>
-        public byte[][] FaturaUBLIndir(TextModel m, string invUUID, ArrayList sslList)
+        public byte[][] FaturaUBLIndir(TextModel m, string[] invUUID, ArrayList sslList)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList);  // TLS/SSL ayarları
             WebServisAdresDegistir();
@@ -461,7 +461,7 @@ namespace Foriba.OE.COMMON.WebServices
                     WebOperationContext.Current.OutgoingRequest.Headers.Add(HttpRequestHeader.Authorization,
                         Authorization.GetAuthorization(m.Kullanici, m.Sifre));
 
-                string[] arrayUUID = { invUUID };
+                string[] arrayUUID = invUUID;
 
                 var req = new getUBLRequest //Faturanın UBL datasını almak için request parametreleri gönderiyorz.
                 {

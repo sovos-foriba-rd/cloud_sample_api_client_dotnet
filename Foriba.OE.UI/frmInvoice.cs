@@ -11,7 +11,9 @@ using System.IO;
 using System.ServiceModel;
 using System.Windows.Forms;
 using Foriba.OE.COMMON.Model;
-
+using System.Collections.Generic;
+using System.Reflection;
+using System.Linq;
 
 /// <summary>
 /// Copyright © 2018 Foriba Teknoloji
@@ -29,6 +31,7 @@ namespace Foriba.OE.UI
         public FrmInvoice()
         {
             InitializeComponent();
+            btnZarfDurumSorgula.Enabled = false;
 
         }
 
@@ -65,6 +68,7 @@ namespace Foriba.OE.UI
             btnFaturaUblIndir.Enabled = ubl;
         }
 
+        
 
         /// <summary>
         /// Text ve grid alanlarını temizleme
@@ -73,6 +77,7 @@ namespace Foriba.OE.UI
         {
             lblBaslik.Text = "";
             InvUUID = null;
+            btnZarfDurumSorgula.Enabled = false;
         }
 
 
@@ -150,7 +155,7 @@ namespace Foriba.OE.UI
         /// <returns> e-Fatura Mükellef Listesi</returns>
         private void btnMukSorgu_Click(object sender, EventArgs e)
         {
-
+          
             ButtonAktifPasif(false, false, false);
          
             try
@@ -273,6 +278,7 @@ namespace Foriba.OE.UI
         /// <returns> Gelen e-Fatura Listesi</returns>
         private void btnGelFatura_Click(object sender, EventArgs e)
         {
+           
             ClearText();
 
             try
@@ -358,6 +364,7 @@ namespace Foriba.OE.UI
         private void btnGondrlZarf_Click(object sender, EventArgs e)
         {
             ClearText();
+            btnZarfDurumSorgula.Enabled = true;
             try
             {
                 if (!CheckConnParam())
@@ -580,8 +587,7 @@ namespace Foriba.OE.UI
         /// </summary>
         /// <returns>e-Fatura Durum Sorgulama</returns>
         private void btnZarfDurumSorgula_Click(object sender, EventArgs e)
-        {
-
+        {         
             ButtonAktifPasif(false, false, false);
 
             try
@@ -591,40 +597,65 @@ namespace Foriba.OE.UI
                         "TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
 
 
-                var UUID = Interaction.InputBox("Lütfen sorgulamak istediğiniz Zarf UUID'sini giriniz.",
-                    "Zarf Durum Sorgulama", "", -1, -1);
-                //grid üzerinden fatura seçimi yapılıp yapılmadığı kontrol ediyoruz.
-
-                if (string.IsNullOrEmpty(UUID))
-                    throw new UUIDNullException("Geçerli bir Zarf UUID giriniz!");
-
-
+                List<string> allUUID = new List<string>();
+                List<getEnvelopeStatusResponseType> resultList = new List<getEnvelopeStatusResponseType>(); 
                 var fatura = new InvoiceWebService();
-                var result = fatura.ZarfDurumSorgula(SetValue(), UUID, CheckedSSL());
-                grdListFatura.DataSource = null;
-                ClearText();
-                lblBaslik.Text = "Zarf Durumu Sorgulandı.";
-
-                var dt = new DataTable();
-                dt.Columns.Add("ZarfUUID");
-                dt.Columns.Add("IssueDate");
-                dt.Columns.Add("DocumentTypeCode");
-                dt.Columns.Add("DocumentType");
-                dt.Columns.Add("ResponseCode");
-                dt.Columns.Add("Description");
-
-                var dRow = dt.NewRow();
-                dRow["ZarfUUID"] = result[0].UUID;
-                dRow["IssueDate"] = result[0].IssueDate;
-                dRow["DocumentTypeCode"] = result[0].DocumentTypeCode;
-                dRow["DocumentType"] = result[0].DocumentType;
-                dRow["ResponseCode"] = result[0].ResponseCode;
-                dRow["Description"] = result[0].Description;
-
-                dt.Rows.Add(dRow);
 
 
-                grdListFatura.DataSource = dt;
+                foreach (DataGridViewRow item in grdListFatura.Rows)
+                {
+                    allUUID.Add(item.Cells[0].Value.ToString());
+                }
+
+                if (allUUID.Count != 0)
+                {
+
+                    var splitUUIDArray = allUUID.Split(20);
+
+                    foreach (var UUIDList in splitUUIDArray)
+                    {
+                        var result = fatura.ZarfDurumSorgula(SetValue(), UUIDList.ToArray(), CheckedSSL());
+
+                        foreach (var item in result)
+                        {
+                            resultList.Add(item);
+                        }
+                    }
+
+
+                    grdListFatura.DataSource = null;
+                    ClearText();
+                    lblBaslik.Text = "Zarf Durumu Sorgulandı.";
+
+                    var dt = new DataTable();
+                    dt.Columns.Add("ZarfUUID");
+                    dt.Columns.Add("IssueDate");
+                    dt.Columns.Add("DocumentTypeCode");
+                    dt.Columns.Add("DocumentType");
+                    dt.Columns.Add("ResponseCode");
+                    dt.Columns.Add("Description");
+
+                    foreach (var item in resultList)
+                    {
+                        var dRow = dt.NewRow();
+
+                        dRow["ZarfUUID"] = item.UUID;
+                        dRow["IssueDate"] = item.IssueDate;
+                        dRow["DocumentTypeCode"] = item.DocumentTypeCode;
+                        dRow["DocumentType"] = item.DocumentType;
+                        dRow["ResponseCode"] = item.ResponseCode;
+                        dRow["Description"] = item.Description;
+
+                        dt.Rows.Add(dRow);
+                    }
+                    grdListFatura.DataSource = dt;
+
+                }else
+                {
+                    MessageBox.Show("Sorgulanacak Zarf Bulunamadı.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
 
             }
             catch (CheckConnParamException ex)
@@ -765,57 +796,78 @@ namespace Foriba.OE.UI
 
 
         /// <summary>
-        /// Grid üzerinden seçilen faturanın id bilgisini aldıktan sonra xml formatında bilgisayara kayıt eder
+        /// Grid üzerindeki tüm faturaların id bilgisini aldıktan sonra xml formatında masaüstünde oluşacak dosyaya kayıt eder.
         /// </summary>
         /// <returns>e-Fatura XML Kaydetme</returns>
         private void btnFaturaUblIndir_Click(object sender, EventArgs e)
         {
-            try
             {
-                if (!CheckConnParam())
-                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
-
-                if (InvUUID == "0" || InvUUID == null)
-                    throw new UUIDNullException("Lütfen bir fatura seçiniz!");
-
-                var fatura = new InvoiceWebService();
-                byte[][] result = fatura.FaturaUBLIndir(SetValue(), InvUUID, CheckedSSL());
-                var fbDialog = new FolderBrowserDialog();
-                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
-                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
-                if (fbDialog.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    //dialog ile kullanıcıya seçtirilen dizine fatura UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
-                    File.WriteAllBytes(Path.Combine(fbDialog.SelectedPath, InvUUID + ".xml"), result[0]);
-                    MessageBox.Show("Fatura UBL İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (!CheckConnParam())
+                        throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+
+                    List<string> allUUID = new List<string>();
+                    var fatura = new InvoiceWebService();
+
+                    foreach (DataGridViewRow item in grdListFatura.Rows)
+                    {
+                        allUUID.Add(item.Cells[0].Value.ToString());
+                    }
+
+                    if (allUUID.Count != 0)
+                    {
+
+                        string recordPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\INVOICE-UBL";
+
+                        if (File.Exists(recordPath) == false)
+                            Directory.CreateDirectory(recordPath);
+
+                        var splitUUIDArray = allUUID.Split(20);
+
+                        foreach (var UUIDList in splitUUIDArray)
+                        {
+                            var result = fatura.FaturaUBLIndir(SetValue(), UUIDList.ToArray(), CheckedSSL());
+
+                            for (int i = 0; i < result.Count(); i++)
+                            {
+                                File.WriteAllBytes(Path.Combine(recordPath, UUIDList[i] + ".xml"), result[i]);
+                            }
+                        }
+
+                        MessageBox.Show("Fatura UBL İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }else
+                    {
+                        MessageBox.Show("İndirilecek Fatura UBL'i Bulunamadı.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                catch (UUIDNullException ex)
+                {
+                    MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                catch (CheckConnParamException ex)
+                {
+                    MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                catch (FaultException<ProcessingFault> ex)
+                {
+                    MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FaultException ex)
+                {
+                    MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblBaslik.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
                 }
             }
-
-            catch (UUIDNullException ex)
-            {
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            catch (CheckConnParamException ex)
-            {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            catch (FaultException<ProcessingFault> ex)
-            {
-                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (FaultException ex)
-            {
-                MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lblBaslik.Text = "";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
         }
+                           
 
 
 
@@ -880,6 +932,28 @@ namespace Foriba.OE.UI
             linkLabel1.Text = UrlModel.SelectedItem != "INGeF" ? "https://efaturawstest.fitbulut.com/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc" 
                 : "https://ingefservicestest.ingbank.com.tr/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc";
 
+        }
+
+        private void panelControls_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtGonBirim_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdListFatura_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridView gridView = sender as DataGridView;
+            if (null != gridView)
+            {
+                foreach (DataGridViewRow r in gridView.Rows)
+                {
+                    gridView.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
+            }
         }
     }
 }

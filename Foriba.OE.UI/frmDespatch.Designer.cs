@@ -40,7 +40,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnGonZarf = new System.Windows.Forms.Button();
             this.btnGelZarf = new System.Windows.Forms.Button();
-            this.btnIrsaliyeHtmlPdfIndir = new System.Windows.Forms.Button();
+            this.btnIrsaliyePdfIndir = new System.Windows.Forms.Button();
             this.btnGonIrsYanit = new System.Windows.Forms.Button();
             this.btnIrsaliyeGon = new System.Windows.Forms.Button();
             this.btnIrsaliyeUblIndir = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 863);
+            this.panel1.Size = new System.Drawing.Size(1282, 840);
             this.panel1.TabIndex = 0;
             // 
             // panel5
@@ -100,7 +100,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 165);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1002, 696);
+            this.panel5.Size = new System.Drawing.Size(1002, 673);
             this.panel5.TabIndex = 2;
             // 
             // grdListIrsaliye
@@ -112,9 +112,10 @@
             this.grdListIrsaliye.MultiSelect = false;
             this.grdListIrsaliye.Name = "grdListIrsaliye";
             this.grdListIrsaliye.RowTemplate.Height = 24;
-            this.grdListIrsaliye.Size = new System.Drawing.Size(1002, 649);
+            this.grdListIrsaliye.Size = new System.Drawing.Size(1002, 626);
             this.grdListIrsaliye.TabIndex = 1;
             this.grdListIrsaliye.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListIrsaliye_CellClick);
+            this.grdListIrsaliye.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdListIrsaliye_DataBindingComplete);
             // 
             // lblBaslik
             // 
@@ -136,7 +137,7 @@
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.btnGonZarf);
             this.panel4.Controls.Add(this.btnGelZarf);
-            this.panel4.Controls.Add(this.btnIrsaliyeHtmlPdfIndir);
+            this.panel4.Controls.Add(this.btnIrsaliyePdfIndir);
             this.panel4.Controls.Add(this.btnGonIrsYanit);
             this.panel4.Controls.Add(this.btnIrsaliyeGon);
             this.panel4.Controls.Add(this.btnIrsaliyeUblIndir);
@@ -149,7 +150,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(1002, 165);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(278, 696);
+            this.panel4.Size = new System.Drawing.Size(278, 673);
             this.panel4.TabIndex = 1;
             // 
             // label11
@@ -196,7 +197,7 @@
             this.btnGonZarf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGonZarf.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGonZarf.Location = new System.Drawing.Point(24, 238);
-            this.btnGonZarf.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGonZarf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGonZarf.Name = "btnGonZarf";
             this.btnGonZarf.Size = new System.Drawing.Size(224, 40);
             this.btnGonZarf.TabIndex = 110;
@@ -209,7 +210,7 @@
             this.btnGelZarf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelZarf.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGelZarf.Location = new System.Drawing.Point(24, 405);
-            this.btnGelZarf.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGelZarf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGelZarf.Name = "btnGelZarf";
             this.btnGelZarf.Size = new System.Drawing.Size(224, 40);
             this.btnGelZarf.TabIndex = 107;
@@ -217,26 +218,26 @@
             this.btnGelZarf.UseVisualStyleBackColor = true;
             this.btnGelZarf.Click += new System.EventHandler(this.btnGelZarf_Click);
             // 
-            // btnIrsaliyeHtmlPdfIndir
+            // btnIrsaliyePdfIndir
             // 
-            this.btnIrsaliyeHtmlPdfIndir.Enabled = false;
-            this.btnIrsaliyeHtmlPdfIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnIrsaliyeHtmlPdfIndir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnIrsaliyeHtmlPdfIndir.Location = new System.Drawing.Point(24, 569);
-            this.btnIrsaliyeHtmlPdfIndir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIrsaliyeHtmlPdfIndir.Name = "btnIrsaliyeHtmlPdfIndir";
-            this.btnIrsaliyeHtmlPdfIndir.Size = new System.Drawing.Size(224, 40);
-            this.btnIrsaliyeHtmlPdfIndir.TabIndex = 116;
-            this.btnIrsaliyeHtmlPdfIndir.Text = "İrsaliye HTML ve PDF  İndir";
-            this.btnIrsaliyeHtmlPdfIndir.UseVisualStyleBackColor = true;
-            this.btnIrsaliyeHtmlPdfIndir.Click += new System.EventHandler(this.btnIrsaliyeHtmlPdfIndir_Click);
+            this.btnIrsaliyePdfIndir.Enabled = false;
+            this.btnIrsaliyePdfIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIrsaliyePdfIndir.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnIrsaliyePdfIndir.Location = new System.Drawing.Point(24, 569);
+            this.btnIrsaliyePdfIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIrsaliyePdfIndir.Name = "btnIrsaliyePdfIndir";
+            this.btnIrsaliyePdfIndir.Size = new System.Drawing.Size(224, 40);
+            this.btnIrsaliyePdfIndir.TabIndex = 116;
+            this.btnIrsaliyePdfIndir.Text = "İrsaliye PDF  İndir";
+            this.btnIrsaliyePdfIndir.UseVisualStyleBackColor = true;
+            this.btnIrsaliyePdfIndir.Click += new System.EventHandler(this.btnIrsaliyePdfIndir_Click);
             // 
             // btnGonIrsYanit
             // 
             this.btnGonIrsYanit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGonIrsYanit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGonIrsYanit.Location = new System.Drawing.Point(24, 336);
-            this.btnGonIrsYanit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGonIrsYanit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGonIrsYanit.Name = "btnGonIrsYanit";
             this.btnGonIrsYanit.Size = new System.Drawing.Size(224, 46);
             this.btnGonIrsYanit.TabIndex = 112;
@@ -249,7 +250,7 @@
             this.btnIrsaliyeGon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIrsaliyeGon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnIrsaliyeGon.Location = new System.Drawing.Point(24, 80);
-            this.btnIrsaliyeGon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIrsaliyeGon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIrsaliyeGon.Name = "btnIrsaliyeGon";
             this.btnIrsaliyeGon.Size = new System.Drawing.Size(224, 40);
             this.btnIrsaliyeGon.TabIndex = 113;
@@ -262,8 +263,8 @@
             this.btnIrsaliyeUblIndir.Enabled = false;
             this.btnIrsaliyeUblIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIrsaliyeUblIndir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnIrsaliyeUblIndir.Location = new System.Drawing.Point(24, 616);
-            this.btnIrsaliyeUblIndir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIrsaliyeUblIndir.Location = new System.Drawing.Point(24, 617);
+            this.btnIrsaliyeUblIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIrsaliyeUblIndir.Name = "btnIrsaliyeUblIndir";
             this.btnIrsaliyeUblIndir.Size = new System.Drawing.Size(224, 40);
             this.btnIrsaliyeUblIndir.TabIndex = 118;
@@ -276,7 +277,7 @@
             this.btnZarfDurumSorgula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnZarfDurumSorgula.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnZarfDurumSorgula.Location = new System.Drawing.Point(24, 176);
-            this.btnZarfDurumSorgula.Margin = new System.Windows.Forms.Padding(4);
+            this.btnZarfDurumSorgula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnZarfDurumSorgula.Name = "btnZarfDurumSorgula";
             this.btnZarfDurumSorgula.Size = new System.Drawing.Size(224, 40);
             this.btnZarfDurumSorgula.TabIndex = 115;
@@ -289,7 +290,7 @@
             this.btnGonIrsaliye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGonIrsaliye.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGonIrsaliye.Location = new System.Drawing.Point(24, 288);
-            this.btnGonIrsaliye.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGonIrsaliye.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGonIrsaliye.Name = "btnGonIrsaliye";
             this.btnGonIrsaliye.Size = new System.Drawing.Size(224, 40);
             this.btnGonIrsaliye.TabIndex = 111;
@@ -302,7 +303,7 @@
             this.btnGelIrsYanit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelIrsYanit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGelIrsYanit.Location = new System.Drawing.Point(24, 501);
-            this.btnGelIrsYanit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGelIrsYanit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGelIrsYanit.Name = "btnGelIrsYanit";
             this.btnGelIrsYanit.Size = new System.Drawing.Size(224, 40);
             this.btnGelIrsYanit.TabIndex = 109;
@@ -315,7 +316,7 @@
             this.btnIrsYanitGon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnIrsYanitGon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnIrsYanitGon.Location = new System.Drawing.Point(24, 128);
-            this.btnIrsYanitGon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIrsYanitGon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIrsYanitGon.Name = "btnIrsYanitGon";
             this.btnIrsYanitGon.Size = new System.Drawing.Size(224, 40);
             this.btnIrsYanitGon.TabIndex = 114;
@@ -330,7 +331,7 @@
             this.btnMukSorgu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMukSorgu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnMukSorgu.Location = new System.Drawing.Point(24, 15);
-            this.btnMukSorgu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMukSorgu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMukSorgu.Name = "btnMukSorgu";
             this.btnMukSorgu.Size = new System.Drawing.Size(224, 40);
             this.btnMukSorgu.TabIndex = 106;
@@ -343,7 +344,7 @@
             this.btnGelIrsaliye.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelIrsaliye.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGelIrsaliye.Location = new System.Drawing.Point(24, 453);
-            this.btnGelIrsaliye.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGelIrsaliye.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGelIrsaliye.Name = "btnGelIrsaliye";
             this.btnGelIrsaliye.Size = new System.Drawing.Size(224, 40);
             this.btnGelIrsaliye.TabIndex = 108;
@@ -441,7 +442,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(-3, -3);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(282, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -466,7 +467,7 @@
             this.dtpIrsaliyeTarih2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpIrsaliyeTarih2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpIrsaliyeTarih2.Location = new System.Drawing.Point(796, 91);
-            this.dtpIrsaliyeTarih2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpIrsaliyeTarih2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpIrsaliyeTarih2.Name = "dtpIrsaliyeTarih2";
             this.dtpIrsaliyeTarih2.Size = new System.Drawing.Size(149, 26);
             this.dtpIrsaliyeTarih2.TabIndex = 92;
@@ -476,7 +477,7 @@
             this.txtSifre.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSifre.Location = new System.Drawing.Point(572, 91);
-            this.txtSifre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSifre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(170, 26);
             this.txtSifre.TabIndex = 91;
@@ -486,7 +487,7 @@
             this.txtPostaKutusu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtPostaKutusu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPostaKutusu.Location = new System.Drawing.Point(220, 91);
-            this.txtPostaKutusu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPostaKutusu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPostaKutusu.Name = "txtPostaKutusu";
             this.txtPostaKutusu.Size = new System.Drawing.Size(312, 26);
             this.txtPostaKutusu.TabIndex = 90;
@@ -521,7 +522,7 @@
             this.dtpIrsaliyeTarih1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpIrsaliyeTarih1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpIrsaliyeTarih1.Location = new System.Drawing.Point(796, 30);
-            this.dtpIrsaliyeTarih1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpIrsaliyeTarih1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpIrsaliyeTarih1.Name = "dtpIrsaliyeTarih1";
             this.dtpIrsaliyeTarih1.Size = new System.Drawing.Size(149, 26);
             this.dtpIrsaliyeTarih1.TabIndex = 82;
@@ -543,7 +544,7 @@
             this.txtKullanici.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKullanici.Location = new System.Drawing.Point(572, 29);
-            this.txtKullanici.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKullanici.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.Size = new System.Drawing.Size(170, 26);
             this.txtKullanici.TabIndex = 81;
@@ -577,7 +578,7 @@
             this.txtGonBirim.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtGonBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtGonBirim.Location = new System.Drawing.Point(220, 29);
-            this.txtGonBirim.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGonBirim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGonBirim.Name = "txtGonBirim";
             this.txtGonBirim.Size = new System.Drawing.Size(312, 26);
             this.txtGonBirim.TabIndex = 80;
@@ -599,7 +600,7 @@
             this.txtTcVkn.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTcVkn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTcVkn.Location = new System.Drawing.Point(24, 29);
-            this.txtTcVkn.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTcVkn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTcVkn.Name = "txtTcVkn";
             this.txtTcVkn.Size = new System.Drawing.Size(177, 26);
             this.txtTcVkn.TabIndex = 79;
@@ -622,10 +623,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1282, 863);
+            this.ClientSize = new System.Drawing.Size(1282, 840);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1300, 900);
+            this.MinimumSize = new System.Drawing.Size(1300, 835);
             this.Name = "FrmDespatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Foriba Bulut API   -   e-İrsaliye Test Projesi  v1.2";
@@ -658,7 +659,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnGonZarf;
         private System.Windows.Forms.Button btnGelZarf;
-        private System.Windows.Forms.Button btnIrsaliyeHtmlPdfIndir;
+        private System.Windows.Forms.Button btnIrsaliyePdfIndir;
         private System.Windows.Forms.Button btnGonIrsYanit;
         private System.Windows.Forms.Button btnIrsaliyeGon;
         private System.Windows.Forms.Button btnIrsaliyeUblIndir;

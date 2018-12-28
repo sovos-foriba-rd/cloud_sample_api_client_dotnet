@@ -9,6 +9,7 @@ using Foriba.OE.COMMON.Model;
 using Foriba.OE.UBL.UBLCreate;
 using Foriba.OE.COMMON.Zip;
 using System.Text;
+using System.Collections.Generic;
 
 /// <summary>
 /// Copyright © 2018 Foriba Teknoloji
@@ -37,14 +38,14 @@ namespace Foriba.OE.COMMON.WebServices
                     WebOperationContext.Current.OutgoingRequest.Headers.Add(HttpRequestHeader.Authorization,
                         Authorization.GetAuthorization(m.Kullanici, m.Sifre));
 
-                var req = new getDesUserListRequest  
+                var req = new getDesUserListRequest
                 {
                     Identifier = m.GbEtiketi, //kullanıcı etiketi
                     VKN_TCKN = m.VknTckn,   //kullanıcı vkn vaya tckn
                     Role = "PK"           //sorgulanacak GB veya PK etiketi
                 };
-                return wsClient.getDesUserList(req);  
-               
+                return wsClient.getDesUserList(req);
+
 
             }
 
@@ -80,7 +81,7 @@ namespace Foriba.OE.COMMON.WebServices
                     DocData = zipliFile   //gönderilecek irsaliyenin ziplenmiş byte datası
                 };
                 return wsClient.sendDesUBL(req);
-                
+
             }
 
         }
@@ -92,7 +93,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// <returns>Gönderilen irsaliye yanıtı bilgileri</returns>
         public sendDesUBLResponse IrsaliyeYanitiGonder(TextModel m, string UUID, ArrayList sslList)
         {
-            IrsaliyeYanitiUBL receiptAdvice = new IrsaliyeYanitiUBL(); 
+            IrsaliyeYanitiUBL receiptAdvice = new IrsaliyeYanitiUBL();
             var createdUBL = receiptAdvice.CreateReceiptAdvice(m.VknTckn, m.IssueDate, UUID); // İrsaliye yanıtı UBL i oluşturulur
             UBLBaseSerializer serializer = new ReceiptAdviceSerializer();  // UBL  XML e dönüştürülür
             var strIrsaliyeYaniti = serializer.GetXmlAsString(createdUBL); // XML byte tipinden string tipine dönüştürülür
@@ -115,7 +116,7 @@ namespace Foriba.OE.COMMON.WebServices
                 };
 
                 return wsClient.sendDesUBL(req);
-                
+
             }
         }
 
@@ -147,7 +148,7 @@ namespace Foriba.OE.COMMON.WebServices
                     ToDateSpecified = true //başlangıç ve bitiş tarihi verildikten sonra bu iki alanın true olarak set edilmesi gerekmektedir.
                 };
                 return wsClient.getDesUBLList(req);
-                
+
             }
         }
 
@@ -156,7 +157,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Sisteme gelen e-İrsaliye listesini alır
         /// </summary>
         /// <returns>Sisteme gelen e-İrsaliye listesi</returns>
-        public getDesUBLListResponse GelenIrsaliyeler(TextModel textModel, ArrayList sslList,RequestModel reqModel)
+        public getDesUBLListResponse GelenIrsaliyeler(TextModel textModel, ArrayList sslList, RequestModel reqModel)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList); // TLS/SSL ayarları
             ClientEDespatchServicesPortClient wsClient = new ClientEDespatchServicesPortClient();
@@ -178,7 +179,7 @@ namespace Foriba.OE.COMMON.WebServices
                     ToDateSpecified = true   //başlangıç ve bitiş tarihi verildikten sonra bu iki alanın true olarak set edilmesi gerekmektedir.
                 };
                 return wsClient.getDesUBLList(req);
-               
+
             }
         }
 
@@ -187,7 +188,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Sisteme gelen irsaliye yanıtlarının listesini alır
         /// </summary>
         /// <returns>Sisteme gelen irsaliye yanıtlarının listesi</returns>
-        public getDesUBLListResponse GelenIrsaliyeYanitlari(TextModel textModel, ArrayList sslList,RequestModel reqModel)
+        public getDesUBLListResponse GelenIrsaliyeYanitlari(TextModel textModel, ArrayList sslList, RequestModel reqModel)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList); // TLS/SSL ayarları
             ClientEDespatchServicesPortClient wsClient = new ClientEDespatchServicesPortClient();
@@ -209,7 +210,7 @@ namespace Foriba.OE.COMMON.WebServices
                     ToDateSpecified = true //başlangıç ve bitiş tarihi verildikten sonra bu iki alanın true olarak set edilmesi gerekmektedir.
                 };
                 return wsClient.getDesUBLList(req);
-                
+
             }
         }
 
@@ -218,7 +219,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Sisteme gönderilen zarfın statüsünü sorgular
         /// </summary>
         /// <returns>Sisteme gönderilen zarfın statüsü </returns>
-        public GetDesEnvelopeStatusResponseType[] ZarfDurumSorgula(TextModel m, string envelopeUUID, ArrayList sslList)
+        public GetDesEnvelopeStatusResponseType[] ZarfDurumSorgula(TextModel m, string[] envelopeUUID, ArrayList sslList)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList); // TLS/SSL ayarları
             ClientEDespatchServicesPortClient wsClient = new ClientEDespatchServicesPortClient();
@@ -232,11 +233,11 @@ namespace Foriba.OE.COMMON.WebServices
                 {
                     Identifier = m.GbEtiketi, // gönderici birim etiketi
                     VKN_TCKN = m.VknTckn,  // gönderici VKN veya TCKN
-                    UUID = new[] { envelopeUUID } // statüsü sorgulanacak zarf UUID
+                    UUID = envelopeUUID // zarf UUIDleri
 
                 };
                 return wsClient.getDesEnvelopeStatus(req).Response;
-               
+
             }
         }
 
@@ -263,13 +264,13 @@ namespace Foriba.OE.COMMON.WebServices
                     Type = "OUTBOUND", //gelen dosyalar için INBOUND, gönderilen dosyalar için ise OUTBOUND yazılmalı
                     FromDate = m.IssueDate, //sorgulanacak başlangıç tarihi Max 1 günlük tarih aralığı limiti verilmeli
                     ToDate = m.EndDate,   //sorgulanacak bitiş tarihi
-                    FromDateSpecified = true, 
+                    FromDateSpecified = true,
                     ToDateSpecified = true   //başlangıç ve bitiş tarihi verildikten sonra bu iki alanın true olarak set edilmesi gerekmektedir.
                 };
 
                 return wsClient.getDesUBLList(req).Response;
 
-               
+
             }
         }
 
@@ -296,13 +297,13 @@ namespace Foriba.OE.COMMON.WebServices
                     Type = reqModel.DespatchType.Trim(), //gelen dosyalar için INBOUND, gönderilen dosyalar için ise OUTBOUND yazılmalı
                     FromDate = textModel.IssueDate,//sorgulanacak başlangıç tarihi. Max 1 günlük tarih aralığı limiti verilmeli
                     ToDate = textModel.EndDate, //sorgulanacak bitiş tarihi
-                    FromDateSpecified = true, 
+                    FromDateSpecified = true,
                     ToDateSpecified = true //başlangıç ve bitiş tarihi verildikten sonra bu iki alanın true olarak set edilmesi gerekmektedir.
                 };
 
                 return wsClient.getDesUBLList(req).Response;
 
-                
+
             }
         }
 
@@ -311,7 +312,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Sisteme gönderilen e-irsaliye yanıtlarının listesini alır
         /// </summary>
         /// <returns>Sisteme gönderilen e-irsaliye yanıtlarının listesi</returns>
-        public GetDesUBLListResponseType[] GonderilenIrsaliyeYanitlari(TextModel textModel, ArrayList sslList,RequestModel reqModel)
+        public GetDesUBLListResponseType[] GonderilenIrsaliyeYanitlari(TextModel textModel, ArrayList sslList, RequestModel reqModel)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList); // TLS/SSL ayarları
             ClientEDespatchServicesPortClient wsClient = new ClientEDespatchServicesPortClient();
@@ -329,25 +330,25 @@ namespace Foriba.OE.COMMON.WebServices
                     Type = reqModel.DespatchType, //gelen dosyalar için INBOUND, gönderilen dosyalar için ise OUTBOUND yazılmalı
                     FromDate = textModel.IssueDate,  //sorgulanacak başlangıç tarihi. Max 1 günlük tarih aralığı limiti verilmeli.
                     ToDate = textModel.EndDate,  //sorgulanacak bitiş tarihi
-                    FromDateSpecified = true, 
+                    FromDateSpecified = true,
                     ToDateSpecified = true  //başlangıç ve bitiş tarihi verildikten sonra bu iki alanın true olarak set edilmesi gerekmektedir.
                 };
 
                 return wsClient.getDesUBLList(req).Response;
 
-               
+
             }
         }
 
-
-       
-
         /// <summary>
-        /// Grid üzerinden seçilen gelen veya gönderilen e-irsaliyeyi HTML ve PDF olarak kayıt eder
+        /// Aşağıdaki metodda Grid üzerindeki gelen veya gönderilen e-irsaliyelerin sadece PDF binary datası alınmaktadır.
+        /// Aynı request içerisinde DocDetails alanından max 20 adet olabilir . 
+        /// Aynı request içerisinde istenirse (gönderilen etiket ve VKN aynı olmak şartıyla) aynı veya farklı UUID lere ait belgelerin HTML, PDF, XSLT, PDF_DEFAULT veya HTML_DEFAULT belgeleride alınabilir.
         /// </summary>
-        /// <returns>Grid üzerinden seçilen gelen veya gönderilen e-irsaliyenin HTML ve PDF binary datası</returns>
-        public getDesViewResponse IrsaliyeHTMLPDFIndir(TextModel m, string UUID, ArrayList sslList,RequestModel reqModel)
+        /// <returns>Grid üzerindeki gelen veya gönderilen e-irsaliyelerin PDF binary datası</returns>
+        public getDesViewResponse IrsaliyePDFIndir(TextModel m, string[] UUID, ArrayList sslList, RequestModel reqModel)
         {
+            List<GetDesViewRequestType> docDetails = new List<GetDesViewRequestType>();
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList);  // TLS/SSL ayarları
             ClientEDespatchServicesPortClient wsClient = new ClientEDespatchServicesPortClient();
             using (new OperationContextScope(wsClient.InnerChannel))
@@ -358,36 +359,32 @@ namespace Foriba.OE.COMMON.WebServices
 
                 var req = new getDesViewRequest
                 {
-                    Identifier =reqModel.Identifier,  // Alınacak dosyanın bulunduğu  etiket
-                    VKN_TCKN = m.VknTckn,             // VKN veya TCKN
-                    DocDetails = new[]
-                    {
-                        new GetDesViewRequestType //Her requestType da bulunan UUID  aynı veya farklı olabilir.
-                        {
-                            UUID=UUID,   // datagrid de seçilen irsaliye veya irsaliye yanıtının UUID si
-                            Type=reqModel.DespatchType, // Alınacak dosya gelen ise INBOUND , gönderilen ise OUTBOUND olmalı.
-                            DocType=reqModel.DocType, // Alınacak dosya irsaliye ise DESPATCH, irsaliye yanıtı ise RECEIPT yazılmalı
-                            
-                            ViewType ="HTML" // Dosyanın tipi HTML ,PDF, XSLT, PDF_DEFAULT veya HTML_DEFAULT olabilir
-                            
-         
-                        },
-                         new GetDesViewRequestType //Her requestType da bulunan UUID  aynı veya farklı olabilir.
-                        {
-                            UUID=UUID,  // datagrid de seçilen irsaliye veya irsaliye yanıtının UUID si
-                            Type=reqModel.DespatchType, // Alınacak dosya gelen ise INBOUND , gönderilen ise OUTBOUND olmalı.
-                            DocType=reqModel.DocType, // Alınacak dosya irsaliye ise DESPATCH, irsaliye yanıtı ise RECEIPT yazılmalı
-                            ViewType="PDF"   // Dosyanın tipi HTML ,PDF, XSLT, PDF_DEFAULT veya HTML_DEFAULT olabilir
-                        }
-
-                    }
-
+                    Identifier = reqModel.Identifier,  // Alınacak dosyanın bulunduğu  etiket
+                    VKN_TCKN = m.VknTckn, // gönderici VKN veya TCKN
                 };
 
-              return wsClient.getDesView(req); // Yazılan her UUID için istenilen dosya tipinde data dönülür.
+               
+                foreach (var item in UUID)
+                {
 
-                
-            }
+                    var data = new GetDesViewRequestType //Her requestType da bulunan UUID  aynı veya farklı olabilir.
+                    {
+                        UUID = item,   // datagrid de seçilen irsaliye veya irsaliye yanıtının UUID si
+                        Type = reqModel.DespatchType, // Alınacak dosya gelen ise INBOUND , gönderilen ise OUTBOUND olmalı.
+                        DocType = reqModel.DocType, // Alınacak dosya irsaliye ise DESPATCH, irsaliye yanıtı ise RECEIPT yazılmalı
+                        ViewType = "PDF" // Dosyanın tipi HTML ,PDF, XSLT, PDF_DEFAULT veya HTML_DEFAULT olabilir
+
+
+                    };
+                    docDetails.Add(data);
+
+                }
+
+                req.DocDetails = docDetails.ToArray();
+
+                return wsClient.getDesView(req); // Yazılan her UUID için istenilen dosya tipinde data dönülür.
+
+                }
         }
 
 
@@ -395,7 +392,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Grid üzerinden seçilen gelen veya gönderilen e-irsaliyeyi UBL olarak kayıt eder
         /// </summary>
         /// <returns>Grid üzerinden seçilen gelen veya gönderilen e-irsaliyenin UBL binary datası</returns>
-        public getDesUBLResponse IrsaliyeUBLIndir(TextModel m, string UUID, ArrayList sslList,RequestModel reqModel)
+        public getDesUBLResponse IrsaliyeUBLIndir(TextModel m, string[] UUID, ArrayList sslList, RequestModel reqModel)
         {
             ServicePointManager.SecurityProtocol = TlsSetting.TlsSet(sslList);  // TLS/SSL ayarları
             ClientEDespatchServicesPortClient wsClient = new ClientEDespatchServicesPortClient();
@@ -409,19 +406,17 @@ namespace Foriba.OE.COMMON.WebServices
                 {
                     Identifier = reqModel.Identifier,  // Alınacak dosyanın bulunduğu etiket
                     VKN_TCKN = m.VknTckn,           // VKN veya TCKN
-                    UUID = new[] { UUID },  // datagrid de seçilen irsaliye veya irsaliye yanıtının UUID si (en fazla 20 UUID sorgulanabilir)
-                    DocType =reqModel.DocType,      // Alınacak dosya irsaliye ise DESPATCH, irsaliye yanıtı ise RECEIPT yazılmalı
+                    UUID = UUID,  // datagrid deki irsaliye veya irsaliye yanıtlarının UUID si (en fazla 20 UUID sorgulanabilir)
+                    DocType = reqModel.DocType,      // Alınacak dosya irsaliye ise DESPATCH, irsaliye yanıtı ise RECEIPT yazılmalı
                     Type = reqModel.DespatchType   // Alınacak dosya gelen ise INBOUND , gönderilen ise OUTBOUND olmalı.
                 };
 
                 return wsClient.getDesUBL(req); // UBL in zipli base64 formatındaki datası döner
-
                 
-
             }
 
         }
 
-        
+
     }
 }
