@@ -1,6 +1,4 @@
-
-
-# Foriba Bulut API Test Projesi
+#Foriba Bulut API Test Projesi
 
 Bu proje e-Fatura, e-Arşiv ve e-İrsaliye Foriba Bulut API web servis metodlarının nasıl kullanılması gerektiği ile ilgili örnek olması için oluşturulmuştur. 
 Projede üç farklı ürünün web servis metodlarının kullanımı ve açıklamaları her metod için bulunmaktadır. Yalnızca test sisteminde çalışmakta ve web servislere bağlantı ayarları da projede bulunmaktadır.
@@ -26,6 +24,21 @@ Projede üç farklı ürünün web servis metodlarının kullanımı ve açıkla
 
 işlemleri yapılmaktadır.
 
+**e-Smm Ürünü İçin:**
+
+-Serbest Makbuz gönderme
+-Serbest Makbuz PDF indirme
+
+işlemleri yapılmaktadır.
+
+**e-Mm Ürünü İçin:**
+
+-Mühtahsil Makbuz gönderme
+-Mühtahsil Makbuz PDF indirme
+
+işlemleri yapılmaktadır.
+
+e-Smm ve e-Mm aynı WSDL'ı kullanmaktadır.
 
 # Kurulum
 
@@ -46,3 +59,5 @@ Project-> Add Service Reference takip ederek Servis ekleme ekranına gelinir.
 # Lisans
   
 Foriba Bulut API Test Projesi, **Foriba R&D** ekibi tarafından API kullanımını anlatmak için hazırlanmıştır, izinsiz olarak ticari uygulamalarda kullanılması yasaktır.  
+
+Uygulamaya katılımda bulunmak için yaptığınız değişiklikleri açıklayıcı commit mesajları ve doğrudan isteklerinizi tanımlayan pull requestleri sağlamanız gerek.
