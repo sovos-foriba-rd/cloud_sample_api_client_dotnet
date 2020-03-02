@@ -12,8 +12,9 @@ using System.ServiceModel;
 using System.Windows.Forms;
 using Foriba.OE.COMMON.Model;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
+using System.IO.Compression;
+using Foriba.OE.COMMON.Zip;
 
 /// <summary>
 /// Copyright © 2018 Foriba Teknoloji
@@ -27,6 +28,7 @@ namespace Foriba.OE.UI
     public partial class FrmInvoice : Form
     {
         public string InvUUID;
+        public byte[] XmlByte;
 
         public FrmInvoice()
         {
@@ -54,8 +56,39 @@ namespace Foriba.OE.UI
         }
 
 
+        /// <summary>
+        /// Web servisde getRAWUserList metodundan  gelen mükellef listesi tablolarını tek 
+        /// DataGridview de göstermeyi sağlar
+        /// </summary>
+        /// <returns>Array tipinde Linq Sorgusu</returns>
+        private Array JoinTable()
+        {
+            var ds = new DataSet("tUserList");
+            ds.ReadXml(new MemoryStream(XmlByte));
+            var userTable = ds.Tables["User"];
+            var documentsTable = ds.Tables["Documents"];
+            var documentTable = ds.Tables["Document"];
+            var aliasTable = ds.Tables["Alias"];
 
-
+            var query = from a in userTable.AsEnumerable()
+                        join b in documentsTable.AsEnumerable() on a.Field<int>("User_Id") equals b.Field<int>("User_Id")
+                        join c in documentTable.AsEnumerable() on b.Field<int>("Documents_Id") equals c.Field<int>(
+                            "Documents_Id")
+                        join d in aliasTable.AsEnumerable() on c.Field<int>("Document_Id") equals d.Field<int>("Document_Id")
+                        where c.Field<string>("type") == "Invoice"
+                        select new
+                        {
+                            Identifier = a.Field<string>("Identifier"),
+                            Name = d.Field<string>("Name"),
+                            Title = a.Field<string>("Title"),
+                            Type = a.Field<string>("Type"),
+                            DocumentType = c.Field<string>("type"),
+                            AccountType = a.Field<string>("AccountType"),
+                            FirstCreationTime = a.Field<string>("FirstCreationTime"),
+                            CreationTime = d.Field<string>("CreationTime")
+                        };
+            return query.ToArray();
+        }
 
         /// <summary>
         /// Gelen ve gönderilen faturalar butonlarına tıklanınca html, pdf ve ubl indir butonlarını aktif eder
@@ -155,39 +188,40 @@ namespace Foriba.OE.UI
         /// <returns> e-Fatura Mükellef Listesi</returns>
         private void btnMukSorgu_Click(object sender, EventArgs e)
         {
-          
-            ButtonAktifPasif(false, false, false);
-         
             try
             {
                 if (!CheckConnParam())
-                    throw new CheckConnParamException(
-                        "TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
+                    throw new CheckConnParamException("TCKN/VKN, Gönderici Birim Etiketi, Posta Kutusu Etiketi, WS Kullanıcı Adı ve WS Şifre alanları boş bırakılamaz!");
 
-                string FilterVknTckn =
-                    Interaction.InputBox("Lütfen sorgulamak istediğiniz mükellefin TCKN/VKN bilgisini giriniz.",
-                        "Mükellef Sorgulama");
+                lblBaslik.Text = "Mükellef Sorgulanıyor";
+                ButtonAktifPasif(false, false, false);
+                grdListFatura.DataSource = null;
 
-                double numeric;
-
-                if (string.IsNullOrEmpty(FilterVknTckn))
-                    throw new UUIDNullException("Lütfen bir VKN/TCKN giriniz!");
-
-                if (!double.TryParse(FilterVknTckn, out numeric))
-                    throw new NumericVknTcknException("Lütfen VKN/TCKN için sayısal karakterler giriniz");
-
-                if (FilterVknTckn.Length == 10 || FilterVknTckn.Length == 11)
+                InvoiceWebService invoice = new InvoiceWebService();
+                var result = invoice.MukellefSorgula(SetValue(),CheckedSSL()).DocData;
+                var zippedStream = new MemoryStream(result);
+                using (var archive = new ZipArchive(zippedStream))
                 {
-                    InvoiceWebService fatura = new InvoiceWebService();
-                    var res = fatura.MukellefSorgula(SetValue(), FilterVknTckn, CheckedSSL());
-                    grdListFatura.DataSource = null;
-                    ClearText();
-                    lblBaslik.Text = "Mükellef Sorgulama";
-                    grdListFatura.DataSource = res;
-                    grdListFatura.ClearSelection();
+                    foreach (var entry in archive.Entries)
+                    {
+                        var ms = new MemoryStream();
+                        var zipStream = entry.Open();
+                        zipStream.CopyTo(ms);
+                        XmlByte = ms.ToArray();
+                    }
                 }
-                else
-                    MessageBox.Show("Girilen VKN/TCKN 10 veya 11 haneli olmalıdır.");
+
+                var fbDialog = new FolderBrowserDialog();
+                fbDialog.Description = "Lütfen kaydetmek istediğiniz dizini seçiniz...";
+                fbDialog.RootFolder = Environment.SpecialFolder.Desktop;
+                if (fbDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //dialog ile kullanıcıya seçtirilen dizine irsaliye UUID si ile dosya ismini set ederek kayıt işlemi yapıyoruz.
+                    File.WriteAllBytes(fbDialog.SelectedPath + "\\" + "mükellefListesi" + ".xml", ZipUtility.UncompressFile(result));
+                    MessageBox.Show("Mükellef Listesi İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                lblBaslik.Text = "Mükellef Sorgulama";
+                grdListFatura.DataSource = JoinTable();
 
             }
             catch (UUIDNullException ex)
@@ -217,10 +251,6 @@ namespace Foriba.OE.UI
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
-
-
         }
 
 
@@ -506,13 +536,13 @@ namespace Foriba.OE.UI
             catch (FaultException<ProcessingFault> ex)
             {
 
-                MessageBox.Show(ex.Detail.Message, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Detail.Message+"    "+ex.Detail.Code, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (FaultException ex)
             {
 
                 MessageBox.Show(ex.Message, "FaultException", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lblBaslik.Text = "";
+                lblBaslik.Text = ex.Code.Name;
             }
             catch (Exception ex)
             {

@@ -1,4 +1,30 @@
-﻿
+﻿24.02.2020 v1.7
+=================================================================================================================================
+e-Smm ve e-Mm ürünü eklendi.
+
+ e-Smm
+	
+	Yapılan İşler :
+
+	1-e-Smm makbuz gönderimi yapıldı.
+	2-e-Smm gönderilen makbuzu UUID bilgisi veya Fatura ID bilgisi görüntü alma sağlandı.
+
+ e-Mm
+	
+	Yapılan İşler :
+
+	1-e-Mm makbuz gönderimi yapıldı.
+	2-e-Mm gönderilen makbuzu UUID bilgisi veya Fatura ID bilgisi görüntü alma sağlandı.
+
+26.11.2019 v1.6
+=================================================================================================================================
+ e-Fatura 
+ 
+  Yapılan İşler:  
+
+  1- e-Fatura wsdl dosyası güncellendi. 
+  2. Mükellef listesini almak için getUserList metodu yerine getRAWUserList metodu kullanılarak, fonksiyonlar düzenlendi.
+
 14.12.2018 v1.5
 =================================================================================================================================
  e-Fatura 

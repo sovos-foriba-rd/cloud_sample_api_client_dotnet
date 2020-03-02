@@ -18,6 +18,10 @@ namespace Foriba.OE.UI
         protected FrmInvoice FaturaForm = new FrmInvoice();
         protected FrmArchive ArsivForm = new FrmArchive();
         protected FrmDespatch IrsaliyeForm = new FrmDespatch();
+        protected frmSmm SmmForm = new frmSmm();
+        protected frmMm MmForm = new frmMm();
+
+
 
         /// <summary>
         /// Temel Form 
@@ -87,7 +91,31 @@ namespace Foriba.OE.UI
             System.Diagnostics.Process.Start("https://api.fitbulut.com/");
         }
 
-     
+        private void btnSmm_Click(object sender, EventArgs e)
+        {
+            if (SmmForm == null || SmmForm.IsDisposed)
+            {
+                SmmForm = new frmSmm();
+                SmmForm.Show();
+            }
+            else
+            {
+                SmmForm.Show();
+            }
+        }
+
+        private void btnMm_Click(object sender, EventArgs e)
+        {
+            if (MmForm == null || MmForm.IsDisposed)
+            {
+                MmForm = new frmMm();
+                MmForm.Show();
+            }
+            else
+            {
+                MmForm.Show();
+            }
+        }
     }
 }
 

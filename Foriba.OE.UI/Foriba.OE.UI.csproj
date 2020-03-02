@@ -97,6 +97,18 @@
     <Compile Include="frmDespatch.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMm.Designer.cs">
+      <DependentUpon>frmMm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSmm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSmm.Designer.cs">
+      <DependentUpon>frmSmm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmArchive.resx">
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMm.resx">
+      <DependentUpon>frmMm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmm.resx">
+      <DependentUpon>frmSmm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,8 +152,11 @@
     <None Include="wsdl\ClientEDespatchServicesTypes-1.0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="wsdl\ClientEInvoiceServices-2.0.wsdl" />
-    <None Include="wsdl\ClientEInvoiceServicesTypes-2.0.xsd">
+    <None Include="wsdl\ClientEInvoiceServices-2.1.wsdl" />
+    <None Include="wsdl\ClientEInvoiceServicesTypes-2.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="wsdl\ClientESmmServicesTypes-1.0.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="wsdl\EArchiveInvoiceService.wsdl" />
@@ -145,6 +166,10 @@
     <None Include="wsdl\EInvoiceServicesCommonTypes-1.0.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="wsdl\ForibaCommonTypes-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="wsdl\ForibaESmmServices.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

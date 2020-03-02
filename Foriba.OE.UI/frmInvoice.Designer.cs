@@ -98,9 +98,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 840);
+            this.panel1.Size = new System.Drawing.Size(963, 682);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -108,10 +108,10 @@
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 164);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 133);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1280, 674);
+            this.panel3.Size = new System.Drawing.Size(961, 547);
             this.panel3.TabIndex = 1;
             // 
             // panel5
@@ -119,9 +119,9 @@
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1280, 674);
+            this.panel5.Size = new System.Drawing.Size(961, 547);
             this.panel5.TabIndex = 0;
             // 
             // panel7
@@ -131,9 +131,9 @@
             this.panel7.Controls.Add(this.panel6);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1280, 674);
+            this.panel7.Size = new System.Drawing.Size(961, 547);
             this.panel7.TabIndex = 1;
             // 
             // grdListFatura
@@ -142,11 +142,12 @@
             this.grdListFatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdListFatura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdListFatura.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.grdListFatura.Location = new System.Drawing.Point(0, 44);
+            this.grdListFatura.Location = new System.Drawing.Point(0, 36);
+            this.grdListFatura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdListFatura.MultiSelect = false;
             this.grdListFatura.Name = "grdListFatura";
             this.grdListFatura.RowTemplate.Height = 24;
-            this.grdListFatura.Size = new System.Drawing.Size(1008, 630);
+            this.grdListFatura.Size = new System.Drawing.Size(757, 511);
             this.grdListFatura.TabIndex = 3;
             this.grdListFatura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListFatura_CellClick);
             this.grdListFatura.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdListFatura_DataBindingComplete);
@@ -159,8 +160,9 @@
             this.lblBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblBaslik.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
+            this.lblBaslik.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1008, 44);
+            this.lblBaslik.Size = new System.Drawing.Size(757, 36);
             this.lblBaslik.TabIndex = 2;
             this.lblBaslik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -168,10 +170,10 @@
             // 
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1008, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel6.Location = new System.Drawing.Point(757, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(272, 674);
+            this.panel6.Size = new System.Drawing.Size(204, 547);
             this.panel6.TabIndex = 0;
             // 
             // panel8
@@ -197,57 +199,53 @@
             this.panel8.Controls.Add(this.btnGelFatura);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(272, 674);
+            this.panel8.Size = new System.Drawing.Size(204, 547);
             this.panel8.TabIndex = 2;
             // 
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(3, 531);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(2, 431);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(263, 1);
+            this.label11.Size = new System.Drawing.Size(198, 1);
             this.label11.TabIndex = 122;
             // 
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(3, 376);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(2, 306);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(263, 1);
+            this.label10.Size = new System.Drawing.Size(198, 1);
             this.label10.TabIndex = 121;
             // 
             // label9
             // 
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(3, 217);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(2, 176);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(263, 1);
+            this.label9.Size = new System.Drawing.Size(198, 1);
             this.label9.TabIndex = 120;
             // 
             // label12
             // 
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(3, 58);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(2, 47);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(265, 1);
+            this.label12.Size = new System.Drawing.Size(199, 1);
             this.label12.TabIndex = 119;
             // 
             // btnGondrlZarf
             // 
             this.btnGondrlZarf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGondrlZarf.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGondrlZarf.Location = new System.Drawing.Point(34, 225);
-            this.btnGondrlZarf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGondrlZarf.Location = new System.Drawing.Point(26, 183);
             this.btnGondrlZarf.Name = "btnGondrlZarf";
-            this.btnGondrlZarf.Size = new System.Drawing.Size(209, 40);
+            this.btnGondrlZarf.Size = new System.Drawing.Size(157, 32);
             this.btnGondrlZarf.TabIndex = 110;
             this.btnGondrlZarf.Text = "Gönderilen Zarflar";
             this.btnGondrlZarf.UseVisualStyleBackColor = true;
@@ -257,10 +255,9 @@
             // 
             this.btnGelZarf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelZarf.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGelZarf.Location = new System.Drawing.Point(34, 66);
-            this.btnGelZarf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGelZarf.Location = new System.Drawing.Point(26, 54);
             this.btnGelZarf.Name = "btnGelZarf";
-            this.btnGelZarf.Size = new System.Drawing.Size(209, 40);
+            this.btnGelZarf.Size = new System.Drawing.Size(157, 32);
             this.btnGelZarf.TabIndex = 107;
             this.btnGelZarf.Text = "Gelen Zarflar";
             this.btnGelZarf.UseVisualStyleBackColor = true;
@@ -271,10 +268,9 @@
             this.btnFaturaHtmlIndir.Enabled = false;
             this.btnFaturaHtmlIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaHtmlIndir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFaturaHtmlIndir.Location = new System.Drawing.Point(34, 538);
-            this.btnFaturaHtmlIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFaturaHtmlIndir.Location = new System.Drawing.Point(26, 437);
             this.btnFaturaHtmlIndir.Name = "btnFaturaHtmlIndir";
-            this.btnFaturaHtmlIndir.Size = new System.Drawing.Size(209, 40);
+            this.btnFaturaHtmlIndir.Size = new System.Drawing.Size(157, 32);
             this.btnFaturaHtmlIndir.TabIndex = 116;
             this.btnFaturaHtmlIndir.Text = "Fatura HTML İndir";
             this.btnFaturaHtmlIndir.UseVisualStyleBackColor = true;
@@ -284,10 +280,9 @@
             // 
             this.btnGondrlnUyg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGondrlnUyg.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGondrlnUyg.Location = new System.Drawing.Point(34, 325);
-            this.btnGondrlnUyg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGondrlnUyg.Location = new System.Drawing.Point(26, 264);
             this.btnGondrlnUyg.Name = "btnGondrlnUyg";
-            this.btnGondrlnUyg.Size = new System.Drawing.Size(209, 42);
+            this.btnGondrlnUyg.Size = new System.Drawing.Size(157, 34);
             this.btnGondrlnUyg.TabIndex = 112;
             this.btnGondrlnUyg.Text = "Gönderilen Uygulama Yanıtları";
             this.btnGondrlnUyg.UseVisualStyleBackColor = true;
@@ -297,10 +292,9 @@
             // 
             this.btnFaturaGonder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaGonder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFaturaGonder.Location = new System.Drawing.Point(34, 383);
-            this.btnFaturaGonder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFaturaGonder.Location = new System.Drawing.Point(26, 311);
             this.btnFaturaGonder.Name = "btnFaturaGonder";
-            this.btnFaturaGonder.Size = new System.Drawing.Size(209, 40);
+            this.btnFaturaGonder.Size = new System.Drawing.Size(157, 32);
             this.btnFaturaGonder.TabIndex = 113;
             this.btnFaturaGonder.Text = "Fatura Gönder";
             this.btnFaturaGonder.UseVisualStyleBackColor = true;
@@ -311,10 +305,9 @@
             this.btnFaturaPdfIndir.Enabled = false;
             this.btnFaturaPdfIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaPdfIndir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFaturaPdfIndir.Location = new System.Drawing.Point(34, 586);
-            this.btnFaturaPdfIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFaturaPdfIndir.Location = new System.Drawing.Point(26, 476);
             this.btnFaturaPdfIndir.Name = "btnFaturaPdfIndir";
-            this.btnFaturaPdfIndir.Size = new System.Drawing.Size(209, 40);
+            this.btnFaturaPdfIndir.Size = new System.Drawing.Size(157, 32);
             this.btnFaturaPdfIndir.TabIndex = 117;
             this.btnFaturaPdfIndir.Text = "Fatura PDF İndir";
             this.btnFaturaPdfIndir.UseVisualStyleBackColor = true;
@@ -325,10 +318,9 @@
             this.btnFaturaUblIndir.Enabled = false;
             this.btnFaturaUblIndir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFaturaUblIndir.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFaturaUblIndir.Location = new System.Drawing.Point(34, 634);
-            this.btnFaturaUblIndir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFaturaUblIndir.Location = new System.Drawing.Point(26, 515);
             this.btnFaturaUblIndir.Name = "btnFaturaUblIndir";
-            this.btnFaturaUblIndir.Size = new System.Drawing.Size(209, 40);
+            this.btnFaturaUblIndir.Size = new System.Drawing.Size(157, 32);
             this.btnFaturaUblIndir.TabIndex = 118;
             this.btnFaturaUblIndir.Text = "Fatura UBL İndir";
             this.btnFaturaUblIndir.UseVisualStyleBackColor = true;
@@ -338,10 +330,9 @@
             // 
             this.btnZarfDurumSorgula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnZarfDurumSorgula.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnZarfDurumSorgula.Location = new System.Drawing.Point(34, 479);
-            this.btnZarfDurumSorgula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnZarfDurumSorgula.Location = new System.Drawing.Point(26, 389);
             this.btnZarfDurumSorgula.Name = "btnZarfDurumSorgula";
-            this.btnZarfDurumSorgula.Size = new System.Drawing.Size(209, 40);
+            this.btnZarfDurumSorgula.Size = new System.Drawing.Size(157, 32);
             this.btnZarfDurumSorgula.TabIndex = 115;
             this.btnZarfDurumSorgula.Text = "Zarf Durumu Sorgula";
             this.btnZarfDurumSorgula.UseVisualStyleBackColor = true;
@@ -351,10 +342,9 @@
             // 
             this.btnUygYanitGon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUygYanitGon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnUygYanitGon.Location = new System.Drawing.Point(34, 431);
-            this.btnUygYanitGon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUygYanitGon.Location = new System.Drawing.Point(26, 350);
             this.btnUygYanitGon.Name = "btnUygYanitGon";
-            this.btnUygYanitGon.Size = new System.Drawing.Size(209, 40);
+            this.btnUygYanitGon.Size = new System.Drawing.Size(157, 32);
             this.btnUygYanitGon.TabIndex = 114;
             this.btnUygYanitGon.Text = "Uygulama Yanıtı Gönder";
             this.btnUygYanitGon.UseVisualStyleBackColor = true;
@@ -364,10 +354,9 @@
             // 
             this.btnGonFatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGonFatura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGonFatura.Location = new System.Drawing.Point(34, 275);
-            this.btnGonFatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGonFatura.Location = new System.Drawing.Point(26, 223);
             this.btnGonFatura.Name = "btnGonFatura";
-            this.btnGonFatura.Size = new System.Drawing.Size(209, 40);
+            this.btnGonFatura.Size = new System.Drawing.Size(157, 32);
             this.btnGonFatura.TabIndex = 111;
             this.btnGonFatura.Text = "Gönderilen Faturalar";
             this.btnGonFatura.UseVisualStyleBackColor = true;
@@ -377,10 +366,9 @@
             // 
             this.btnGelenUygYanıt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelenUygYanıt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGelenUygYanıt.Location = new System.Drawing.Point(34, 166);
-            this.btnGelenUygYanıt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGelenUygYanıt.Location = new System.Drawing.Point(26, 135);
             this.btnGelenUygYanıt.Name = "btnGelenUygYanıt";
-            this.btnGelenUygYanıt.Size = new System.Drawing.Size(209, 40);
+            this.btnGelenUygYanıt.Size = new System.Drawing.Size(157, 32);
             this.btnGelenUygYanıt.TabIndex = 109;
             this.btnGelenUygYanıt.Text = "Gelen Uygulama Yanıtları";
             this.btnGelenUygYanıt.UseVisualStyleBackColor = true;
@@ -392,10 +380,9 @@
             this.btnMukSorgu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnMukSorgu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMukSorgu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMukSorgu.Location = new System.Drawing.Point(34, 8);
-            this.btnMukSorgu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMukSorgu.Location = new System.Drawing.Point(26, 6);
             this.btnMukSorgu.Name = "btnMukSorgu";
-            this.btnMukSorgu.Size = new System.Drawing.Size(209, 40);
+            this.btnMukSorgu.Size = new System.Drawing.Size(157, 32);
             this.btnMukSorgu.TabIndex = 106;
             this.btnMukSorgu.Text = "Mükellef Sorgula";
             this.btnMukSorgu.UseVisualStyleBackColor = true;
@@ -405,10 +392,9 @@
             // 
             this.btnGelFatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGelFatura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGelFatura.Location = new System.Drawing.Point(34, 116);
-            this.btnGelFatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGelFatura.Location = new System.Drawing.Point(26, 94);
             this.btnGelFatura.Name = "btnGelFatura";
-            this.btnGelFatura.Size = new System.Drawing.Size(209, 40);
+            this.btnGelFatura.Size = new System.Drawing.Size(157, 32);
             this.btnGelFatura.TabIndex = 108;
             this.btnGelFatura.Text = "Gelen Faturalar";
             this.btnGelFatura.UseVisualStyleBackColor = true;
@@ -420,9 +406,9 @@
             this.panel2.Controls.Add(this.panelControls);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1280, 164);
+            this.panel2.Size = new System.Drawing.Size(961, 133);
             this.panel2.TabIndex = 0;
             // 
             // panel4
@@ -431,19 +417,20 @@
             this.panel4.Controls.Add(this.lblAPI);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1008, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(757, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(272, 164);
+            this.panel4.Size = new System.Drawing.Size(204, 133);
             this.panel4.TabIndex = 1;
             // 
             // lblAPI
             // 
             this.lblAPI.AutoSize = true;
             this.lblAPI.LinkColor = System.Drawing.Color.MediumBlue;
-            this.lblAPI.Location = new System.Drawing.Point(63, 133);
+            this.lblAPI.Location = new System.Drawing.Point(47, 108);
+            this.lblAPI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAPI.Name = "lblAPI";
-            this.lblAPI.Size = new System.Drawing.Size(150, 17);
+            this.lblAPI.Size = new System.Drawing.Size(119, 13);
             this.lblAPI.TabIndex = 55;
             this.lblAPI.TabStop = true;
             this.lblAPI.Text = "https://api.fitbulut.com/";
@@ -454,9 +441,8 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Foriba.OE.UI.Properties.Resources.Foriba_Logo;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(272, 116);
+            this.pictureBox3.Size = new System.Drawing.Size(204, 94);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 53;
             this.pictureBox3.TabStop = false;
@@ -485,18 +471,19 @@
             this.panelControls.Controls.Add(this.label2);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControls.Location = new System.Drawing.Point(0, 0);
-            this.panelControls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelControls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(1280, 164);
+            this.panelControls.Size = new System.Drawing.Size(961, 133);
             this.panelControls.TabIndex = 0;
             this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
             // 
             // comboBoxUrlAdres
             // 
             this.comboBoxUrlAdres.FormattingEnabled = true;
-            this.comboBoxUrlAdres.Location = new System.Drawing.Point(22, 90);
+            this.comboBoxUrlAdres.Location = new System.Drawing.Point(16, 73);
+            this.comboBoxUrlAdres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxUrlAdres.Name = "comboBoxUrlAdres";
-            this.comboBoxUrlAdres.Size = new System.Drawing.Size(176, 24);
+            this.comboBoxUrlAdres.Size = new System.Drawing.Size(133, 21);
             this.comboBoxUrlAdres.TabIndex = 102;
             this.comboBoxUrlAdres.SelectedIndexChanged += new System.EventHandler(this.comboBoxUrlAdres_SelectedIndexChanged);
             // 
@@ -504,9 +491,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(221, 133);
+            this.label13.Location = new System.Drawing.Point(166, 108);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 18);
+            this.label13.Size = new System.Drawing.Size(63, 15);
             this.label13.TabIndex = 101;
             this.label13.Text = "WS Adres:";
             // 
@@ -516,9 +504,10 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.MediumBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(306, 133);
+            this.linkLabel1.Location = new System.Drawing.Point(230, 108);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(583, 18);
+            this.linkLabel1.Size = new System.Drawing.Size(474, 15);
             this.linkLabel1.TabIndex = 100;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://efaturawstest.fitbulut.com/ClientEInvoiceServices/ClientEInvoiceServicesP" +
@@ -528,9 +517,10 @@
             // checkboxTLS11
             // 
             this.checkboxTLS11.AutoSize = true;
-            this.checkboxTLS11.Location = new System.Drawing.Point(22, 132);
+            this.checkboxTLS11.Location = new System.Drawing.Point(16, 107);
+            this.checkboxTLS11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkboxTLS11.Name = "checkboxTLS11";
-            this.checkboxTLS11.Size = new System.Drawing.Size(87, 21);
+            this.checkboxTLS11.Size = new System.Drawing.Size(70, 17);
             this.checkboxTLS11.TabIndex = 80;
             this.checkboxTLS11.Text = "TLS v1.1";
             this.checkboxTLS11.UseVisualStyleBackColor = true;
@@ -540,10 +530,9 @@
             this.dtpFaturaTarih2.CalendarMonthBackground = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtpFaturaTarih2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpFaturaTarih2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFaturaTarih2.Location = new System.Drawing.Point(800, 90);
-            this.dtpFaturaTarih2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFaturaTarih2.Location = new System.Drawing.Point(600, 73);
             this.dtpFaturaTarih2.Name = "dtpFaturaTarih2";
-            this.dtpFaturaTarih2.Size = new System.Drawing.Size(149, 26);
+            this.dtpFaturaTarih2.Size = new System.Drawing.Size(113, 22);
             this.dtpFaturaTarih2.TabIndex = 78;
             // 
             // checkboxTLS12
@@ -551,9 +540,10 @@
             this.checkboxTLS12.AutoSize = true;
             this.checkboxTLS12.Checked = true;
             this.checkboxTLS12.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkboxTLS12.Location = new System.Drawing.Point(115, 132);
+            this.checkboxTLS12.Location = new System.Drawing.Point(86, 107);
+            this.checkboxTLS12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkboxTLS12.Name = "checkboxTLS12";
-            this.checkboxTLS12.Size = new System.Drawing.Size(87, 21);
+            this.checkboxTLS12.Size = new System.Drawing.Size(70, 17);
             this.checkboxTLS12.TabIndex = 81;
             this.checkboxTLS12.Text = "TLS v1.2";
             this.checkboxTLS12.UseVisualStyleBackColor = true;
@@ -562,20 +552,18 @@
             // 
             this.txtSifre.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSifre.Location = new System.Drawing.Point(576, 90);
-            this.txtSifre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSifre.Location = new System.Drawing.Point(432, 73);
             this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(170, 26);
+            this.txtSifre.Size = new System.Drawing.Size(128, 22);
             this.txtSifre.TabIndex = 77;
             // 
             // txtPostaKutusu
             // 
             this.txtPostaKutusu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtPostaKutusu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPostaKutusu.Location = new System.Drawing.Point(224, 90);
-            this.txtPostaKutusu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostaKutusu.Location = new System.Drawing.Point(168, 73);
             this.txtPostaKutusu.Name = "txtPostaKutusu";
-            this.txtPostaKutusu.Size = new System.Drawing.Size(312, 26);
+            this.txtPostaKutusu.Size = new System.Drawing.Size(235, 22);
             this.txtPostaKutusu.TabIndex = 76;
             // 
             // label8
@@ -583,10 +571,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(797, 68);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(598, 55);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 18);
+            this.label8.Size = new System.Drawing.Size(80, 15);
             this.label8.TabIndex = 75;
             this.label8.Text = "Bitiş Tarihi ";
             // 
@@ -595,10 +582,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(797, 7);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(598, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 18);
+            this.label7.Size = new System.Drawing.Size(115, 15);
             this.label7.TabIndex = 74;
             this.label7.Text = "Başlangıç Tarihi ";
             // 
@@ -607,10 +593,9 @@
             this.dtpFaturaTarih1.CalendarMonthBackground = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtpFaturaTarih1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpFaturaTarih1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFaturaTarih1.Location = new System.Drawing.Point(796, 29);
-            this.dtpFaturaTarih1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFaturaTarih1.Location = new System.Drawing.Point(597, 24);
             this.dtpFaturaTarih1.Name = "dtpFaturaTarih1";
-            this.dtpFaturaTarih1.Size = new System.Drawing.Size(153, 26);
+            this.dtpFaturaTarih1.Size = new System.Drawing.Size(116, 22);
             this.dtpFaturaTarih1.TabIndex = 68;
             // 
             // label6
@@ -618,10 +603,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(574, 68);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(430, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 18);
+            this.label6.Size = new System.Drawing.Size(66, 15);
             this.label6.TabIndex = 73;
             this.label6.Text = "WS Şifre ";
             // 
@@ -629,10 +613,9 @@
             // 
             this.txtKullanici.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullanici.Location = new System.Drawing.Point(576, 28);
-            this.txtKullanici.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtKullanici.Location = new System.Drawing.Point(432, 23);
             this.txtKullanici.Name = "txtKullanici";
-            this.txtKullanici.Size = new System.Drawing.Size(170, 26);
+            this.txtKullanici.Size = new System.Drawing.Size(128, 22);
             this.txtKullanici.TabIndex = 67;
             // 
             // label5
@@ -640,10 +623,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(574, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(430, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 18);
+            this.label5.Size = new System.Drawing.Size(116, 15);
             this.label5.TabIndex = 72;
             this.label5.Text = "WS Kullanıcı Adı ";
             // 
@@ -652,10 +634,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(221, 68);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(166, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 18);
+            this.label4.Size = new System.Drawing.Size(139, 15);
             this.label4.TabIndex = 71;
             this.label4.Text = "Posta Kutusu Etiketi ";
             // 
@@ -663,10 +644,9 @@
             // 
             this.txtGonBirim.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtGonBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtGonBirim.Location = new System.Drawing.Point(224, 28);
-            this.txtGonBirim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGonBirim.Location = new System.Drawing.Point(168, 23);
             this.txtGonBirim.Name = "txtGonBirim";
-            this.txtGonBirim.Size = new System.Drawing.Size(312, 26);
+            this.txtGonBirim.Size = new System.Drawing.Size(235, 22);
             this.txtGonBirim.TabIndex = 66;
             this.txtGonBirim.TextChanged += new System.EventHandler(this.txtGonBirim_TextChanged);
             // 
@@ -675,10 +655,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(221, 10);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(166, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 18);
+            this.label3.Size = new System.Drawing.Size(155, 15);
             this.label3.TabIndex = 70;
             this.label3.Text = "Gönderici Birim Etiketi ";
             // 
@@ -686,10 +665,9 @@
             // 
             this.txtTcVkn.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtTcVkn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTcVkn.Location = new System.Drawing.Point(22, 28);
-            this.txtTcVkn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTcVkn.Location = new System.Drawing.Point(16, 23);
             this.txtTcVkn.Name = "txtTcVkn";
-            this.txtTcVkn.Size = new System.Drawing.Size(176, 26);
+            this.txtTcVkn.Size = new System.Drawing.Size(133, 22);
             this.txtTcVkn.TabIndex = 65;
             // 
             // label2
@@ -697,27 +675,27 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(19, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(14, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 18);
+            this.label2.Size = new System.Drawing.Size(86, 15);
             this.label2.TabIndex = 69;
             this.label2.Text = "VKN / TCKN ";
             // 
             // FrmInvoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1282, 840);
+            this.ClientSize = new System.Drawing.Size(963, 682);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1300, 835);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(979, 686);
             this.Name = "FrmInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Foriba Bulut API  -   e-Fatura Test Projesi  v1.2";
+            this.Text = "Foriba Bulut API  -   e-Fatura Test Projesi  v1.7";
             this.Load += new System.EventHandler(this.FrmInvoice_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
