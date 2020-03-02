@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="http:/fitcons.com/eInvoice/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http:/fitcons.com/eInvoice/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="InvoiceList-1.3.xsd" />
   <xs:element name="sendUBLRequest">
     <xs:complexType>
       <xs:sequence>
@@ -154,4 +155,171 @@
       <xs:element name="FirstCreationTime" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="getRAWUserListRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string" />
+        <xs:element name="VKN_TCKN" type="xs:string" />
+        <xs:element name="Role" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRAWUserListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DocData" type="xs:base64Binary" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvResponsesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string" />
+        <xs:element name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="UUID" type="xs:string" />
+        <xs:element name="Type" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvResponsesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" type="GetInvResponsesResponseType" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetInvResponsesResponseType">
+    <xs:sequence>
+      <xs:element name="InvoiceUUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="InvResponses" type="GetInvResponsesResponseInvResponsesType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetInvResponsesResponseInvResponsesType">
+    <xs:sequence>
+      <xs:element name="EnvUUID" type="xs:string" />
+      <xs:element name="UUID" type="xs:string" />
+      <xs:element name="ID" type="xs:string" />
+      <xs:element name="InsertDateTime" type="xs:dateTime" />
+      <xs:element name="IssueDate" type="xs:dateTime" />
+      <xs:element name="ARType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ARNotes" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DocData" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="sendInvoiceListRequest" type="InvoiceListType" />
+  <xs:element name="sendInvoiceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="InvoiceListResponse" type="InvoiceListResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InvoiceListResponseType">
+    <xs:sequence>
+      <xs:element name="UUID" type="xs:string" />
+      <xs:element name="EnvUUID" type="xs:string" />
+      <xs:element name="ID" type="xs:string" />
+      <xs:element name="CustInvID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getInvoiceListRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string" />
+        <xs:element name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" type="xs:string" />
+        <xs:element minOccurs="0" name="ARType" type="xs:string" />
+        <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="MetadataOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvoiceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InvoiceList" type="InvoiceListType" />
+        <xs:element name="LastDate" type="xs:dateTime" />
+        <xs:element name="Pending" type="xs:integer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendARRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="UUID" type="xs:string" />
+        <xs:element name="Identifier" type="xs:string" />
+        <xs:element name="VKN_TCKN" type="xs:string" />
+        <xs:element name="AR" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Note" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendARResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="EnvUUID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvoiceStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="InvoiceStatusRequest" type="InvoiceStatusRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InvoiceStatusRequestType">
+    <xs:sequence>
+      <xs:element name="UUID" type="xs:string" />
+      <xs:element name="CustInvID" type="xs:string" />
+      <xs:element name="Identifier" type="xs:string" />
+      <xs:element name="VKN_TCKN" type="xs:string" />
+      <xs:element name="Type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getInvoiceStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="InvoiceStatusResponse" type="InvoiceStatusResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InvoiceStatusResponseType">
+    <xs:sequence>
+      <xs:element name="UUID" type="xs:string" />
+      <xs:element name="CustInvID" type="xs:string" />
+      <xs:element name="StatusCode" type="xs:string" />
+      <xs:element name="StatusDescription" type="xs:string" />
+      <xs:element name="StatusDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ARType" type="xs:string" />
+      <xs:element name="InsertDateTime" type="xs:dateTime" />
+      <xs:element name="ID" type="xs:string" />
+      <xs:element name="EnvUUID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="storeUBLRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string" />
+        <xs:element name="VKN_TCKN" type="xs:string" />
+        <xs:element name="Type" type="xs:string" />
+        <xs:element name="DocData" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="storeUBLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InsertDateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

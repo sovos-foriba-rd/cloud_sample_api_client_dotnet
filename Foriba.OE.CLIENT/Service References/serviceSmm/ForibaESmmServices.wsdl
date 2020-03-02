@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://foriba.com/eSmm/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://foriba.com/eSmm/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://foriba.com/eSmm/">
+      <xs:include schemaLocation="ClientESmmServicesTypes-1.0.xsd" />
+      <xs:include schemaLocation="ForibaCommonTypes-1.0.xsd" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sendDocumentRequestMessage">
+    <wsdl:part name="parameter" element="tns:sendDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="sendDocumentResponseMessage">
+    <wsdl:part name="parameter" element="tns:sendDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendDocumentFaultMessage">
+    <wsdl:part name="parameter" element="tns:ProcessingFault" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentRequestMessage">
+    <wsdl:part name="parameter" element="tns:getDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentResponseMessage">
+    <wsdl:part name="parameter" element="tns:getDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDocumentFaultMessage">
+    <wsdl:part name="parameter" element="tns:ProcessingFault" />
+  </wsdl:message>
+  <wsdl:message name="getReportListRequestMessage">
+    <wsdl:part name="parameter" element="tns:getReportListRequest" />
+  </wsdl:message>
+  <wsdl:message name="getReportListResponseMessage">
+    <wsdl:part name="parameter" element="tns:getReportListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportListFaultMessage">
+    <wsdl:part name="parameter" element="tns:ProcessingFault" />
+  </wsdl:message>
+  <wsdl:message name="getReportDataRequestMessage">
+    <wsdl:part name="parameter" element="tns:getReportDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="getReportDataResponseMessage">
+    <wsdl:part name="parameter" element="tns:getReportDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportDataFaultMessage">
+    <wsdl:part name="parameter" element="tns:ProcessingFault" />
+  </wsdl:message>
+  <wsdl:message name="cancelDocumentRequestMessage">
+    <wsdl:part name="parameter" element="tns:cancelDocumentRequest" />
+  </wsdl:message>
+  <wsdl:message name="cancelDocumentResponseMessage">
+    <wsdl:part name="parameter" element="tns:cancelDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelDocumentFaultMessage">
+    <wsdl:part name="parameter" element="tns:ProcessingFault" />
+  </wsdl:message>
+  <wsdl:portType name="ForibaESmmServicesPort">
+    <wsdl:operation name="sendDocument">
+      <wsdl:input message="tns:sendDocumentRequestMessage" />
+      <wsdl:output message="tns:sendDocumentResponseMessage" />
+      <wsdl:fault name="sendDocumentFault" message="tns:sendDocumentFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDocument">
+      <wsdl:input message="tns:getDocumentRequestMessage" />
+      <wsdl:output message="tns:getDocumentResponseMessage" />
+      <wsdl:fault name="getDocumentFault" message="tns:getDocumentFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportList">
+      <wsdl:input message="tns:getReportListRequestMessage" />
+      <wsdl:output message="tns:getReportListResponseMessage" />
+      <wsdl:fault name="getReportListFault" message="tns:getReportListFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportData">
+      <wsdl:input message="tns:getReportDataRequestMessage" />
+      <wsdl:output message="tns:getReportDataResponseMessage" />
+      <wsdl:fault name="getReportDataFault" message="tns:getReportDataFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelDocument">
+      <wsdl:input message="tns:cancelDocumentRequestMessage" />
+      <wsdl:output message="tns:cancelDocumentResponseMessage" />
+      <wsdl:fault name="cancelDocumentFault" message="tns:cancelDocumentFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ForibaESmmServicesBinding" type="tns:ForibaESmmServicesPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendDocument">
+      <soap:operation soapAction="sendDocument" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="sendDocumentFault">
+        <soap:fault use="literal" name="sendDocumentFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDocument">
+      <soap:operation soapAction="getDocument" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="getDocumentFault">
+        <soap:fault use="literal" name="getDocumentFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportList">
+      <soap:operation soapAction="getReportList" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="getReportListFault">
+        <soap:fault use="literal" name="getReportListFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportData">
+      <soap:operation soapAction="getReportData" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="getReportDataFault">
+        <soap:fault use="literal" name="getReportDataFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelDocument">
+      <soap:operation soapAction="cancelDocument" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="cancelDocumentFault">
+        <soap:fault use="literal" name="cancelDocumentFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ForibaESmmServices">
+    <wsdl:port name="ForibaESmmServicesPort" binding="tns:ForibaESmmServicesBinding">
+      <soap:address location="https://earsivwstest.fitbulut.com/ClientESmmServicesPort.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

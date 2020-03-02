@@ -12,7 +12,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58,7 +58,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -188,10 +188,73 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
         
         [System.ServiceModel.OperationContractAttribute(Action="getUserList", ReplyAction="*")]
         System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getUserListResponse> getUserListAsync(Foriba.OE.CLIENT.serviceInvoicee.getUserListRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation getRAWUserList is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="getRAWUserList", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="getRAWUserList", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1 getRAWUserList(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="getRAWUserList", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1> getRAWUserListAsync(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation getInvResponses is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="getInvResponses", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="getInvResponses", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1 getInvResponses(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="getInvResponses", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1> getInvResponsesAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation sendInvoiceList is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="sendInvoiceList", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="sendInvoiceList", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse sendInvoiceList(Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="sendInvoiceList", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse> sendInvoiceListAsync(Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest request);
+        
+        // CODEGEN: Generating message contract since the operation getInvoiceList is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="getInvoiceList", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="getInvoiceList", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1 getInvoiceList(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="getInvoiceList", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1> getInvoiceListAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation sendAR is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="sendAR", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="sendAR", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1 sendAR(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="sendAR", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1> sendARAsync(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1 request);
+        
+        // CODEGEN: Generating message contract since the operation getInvoiceStatus is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="getInvoiceStatus", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="getInvoiceStatus", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse getInvoiceStatus(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="getInvoiceStatus", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse> getInvoiceStatusAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest request);
+        
+        // CODEGEN: Generating message contract since the operation storeUBL is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="storeUBL", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Foriba.OE.CLIENT.serviceInvoicee.ProcessingFault), Action="storeUBL", Name="ProcessingFault")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1 storeUBL(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="storeUBL", ReplyAction="*")]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1> storeUBLAsync(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1 request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -328,7 +391,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -486,7 +549,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -651,7 +714,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -788,7 +851,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -862,7 +925,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1013,7 +1076,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1115,7 +1178,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1181,7 +1244,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1283,7 +1346,7 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1416,6 +1479,4895 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
         
         public getUserListResponse(Foriba.OE.CLIENT.serviceInvoicee.UserType[] getUserListResponse1) {
             this.getUserListResponse1 = getUserListResponse1;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class getRAWUserListRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string identifierField;
+        
+        private string vKN_TCKNField;
+        
+        private string roleField;
+        
+        private string[] parametersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VKN_TCKN {
+            get {
+                return this.vKN_TCKNField;
+            }
+            set {
+                this.vKN_TCKNField = value;
+                this.RaisePropertyChanged("VKN_TCKN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Role {
+            get {
+                return this.roleField;
+            }
+            set {
+                this.roleField = value;
+                this.RaisePropertyChanged("Role");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Parameters", Order=3)]
+        public string[] Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class getRAWUserListResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private byte[] docDataField;
+        
+        private string[] parametersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=0)]
+        public byte[] DocData {
+            get {
+                return this.docDataField;
+            }
+            set {
+                this.docDataField = value;
+                this.RaisePropertyChanged("DocData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Parameters", Order=1)]
+        public string[] Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getRAWUserListRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest getRAWUserListRequest;
+        
+        public getRAWUserListRequest1() {
+        }
+        
+        public getRAWUserListRequest1(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest getRAWUserListRequest) {
+            this.getRAWUserListRequest = getRAWUserListRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getRAWUserListResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse getRAWUserListResponse;
+        
+        public getRAWUserListResponse1() {
+        }
+        
+        public getRAWUserListResponse1(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse getRAWUserListResponse) {
+            this.getRAWUserListResponse = getRAWUserListResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class getInvResponsesRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string identifierField;
+        
+        private string vKN_TCKNField;
+        
+        private string[] uUIDField;
+        
+        private string typeField;
+        
+        private string[] parametersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VKN_TCKN {
+            get {
+                return this.vKN_TCKNField;
+            }
+            set {
+                this.vKN_TCKNField = value;
+                this.RaisePropertyChanged("VKN_TCKN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("UUID", Order=2)]
+        public string[] UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Parameters", Order=4)]
+        public string[] Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class getInvResponsesResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private GetInvResponsesResponseType[] responseField;
+        
+        private string[] parametersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Response", Order=0)]
+        public GetInvResponsesResponseType[] Response {
+            get {
+                return this.responseField;
+            }
+            set {
+                this.responseField = value;
+                this.RaisePropertyChanged("Response");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Parameters", Order=1)]
+        public string[] Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class GetInvResponsesResponseType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string invoiceUUIDField;
+        
+        private GetInvResponsesResponseInvResponsesType[] invResponsesField;
+        
+        private string[] parametersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string InvoiceUUID {
+            get {
+                return this.invoiceUUIDField;
+            }
+            set {
+                this.invoiceUUIDField = value;
+                this.RaisePropertyChanged("InvoiceUUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("InvResponses", Order=1)]
+        public GetInvResponsesResponseInvResponsesType[] InvResponses {
+            get {
+                return this.invResponsesField;
+            }
+            set {
+                this.invResponsesField = value;
+                this.RaisePropertyChanged("InvResponses");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Parameters", Order=2)]
+        public string[] Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class GetInvResponsesResponseInvResponsesType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string envUUIDField;
+        
+        private string uUIDField;
+        
+        private string idField;
+        
+        private System.DateTime insertDateTimeField;
+        
+        private System.DateTime issueDateField;
+        
+        private string aRTypeField;
+        
+        private string[] aRNotesField;
+        
+        private byte[] docDataField;
+        
+        private string[] parametersField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string EnvUUID {
+            get {
+                return this.envUUIDField;
+            }
+            set {
+                this.envUUIDField = value;
+                this.RaisePropertyChanged("EnvUUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime InsertDateTime {
+            get {
+                return this.insertDateTimeField;
+            }
+            set {
+                this.insertDateTimeField = value;
+                this.RaisePropertyChanged("InsertDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime IssueDate {
+            get {
+                return this.issueDateField;
+            }
+            set {
+                this.issueDateField = value;
+                this.RaisePropertyChanged("IssueDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string ARType {
+            get {
+                return this.aRTypeField;
+            }
+            set {
+                this.aRTypeField = value;
+                this.RaisePropertyChanged("ARType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ARNotes", Order=6)]
+        public string[] ARNotes {
+            get {
+                return this.aRNotesField;
+            }
+            set {
+                this.aRNotesField = value;
+                this.RaisePropertyChanged("ARNotes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=7)]
+        public byte[] DocData {
+            get {
+                return this.docDataField;
+            }
+            set {
+                this.docDataField = value;
+                this.RaisePropertyChanged("DocData");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Parameters", Order=8)]
+        public string[] Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getInvResponsesRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest getInvResponsesRequest;
+        
+        public getInvResponsesRequest1() {
+        }
+        
+        public getInvResponsesRequest1(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest getInvResponsesRequest) {
+            this.getInvResponsesRequest = getInvResponsesRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getInvResponsesResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse getInvResponsesResponse;
+        
+        public getInvResponsesResponse1() {
+        }
+        
+        public getInvResponsesResponse1(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse getInvResponsesResponse) {
+            this.getInvResponsesResponse = getInvResponsesResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uUIDField;
+        
+        private string envUUIDField;
+        
+        private string idField;
+        
+        private string profileIDField;
+        
+        private bool copyIndicatorField;
+        
+        private System.DateTime issueDateField;
+        
+        private System.DateTime issueTimeField;
+        
+        private bool issueTimeFieldSpecified;
+        
+        private string invoiceTypeCodeField;
+        
+        private string[] noteField;
+        
+        private string documentCurrencyCodeField;
+        
+        private string taxCurrencyCodeField;
+        
+        private string pricingCurrencyCodeField;
+        
+        private string paymentCurrencyCodeField;
+        
+        private string paymentAlternativeCurrencyCodeField;
+        
+        private decimal lineCountNumericField;
+        
+        private InvoiceTypeInvoicePeriod invoicePeriodField;
+        
+        private InvoiceTypeOrderReference orderReferenceField;
+        
+        private DocumentReferenceType[] despatchDocumentReferenceField;
+        
+        private DocumentReferenceType[] receiptDocumentReferenceField;
+        
+        private DocumentReferenceType[] additionalDocumentReferenceField;
+        
+        private PartyType accountingSupplierPartyField;
+        
+        private PartyType accountingCustomerPartyField;
+        
+        private InvoiceTypePaymentMeans[] paymentMeansField;
+        
+        private InvoiceTypePaymentTerms paymentTermsField;
+        
+        private AllowanceChargeType allowanceChargeField;
+        
+        private ExchangeRateType taxExchangeRateField;
+        
+        private ExchangeRateType pricingExchangeRateField;
+        
+        private ExchangeRateType paymentExchangeRateField;
+        
+        private ExchangeRateType paymentAlternativeExchangeRateField;
+        
+        private TaxTotalType[] taxTotalField;
+        
+        private InvoiceTypeLegalMonetaryTotal legalMonetaryTotalField;
+        
+        private InvoiceTypeInvoiceLine[] invoiceLineField;
+        
+        private InvoiceTypeExtensions extensionsField;
+        
+        private InvoiceTypeStatus statusField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string EnvUUID {
+            get {
+                return this.envUUIDField;
+            }
+            set {
+                this.envUUIDField = value;
+                this.RaisePropertyChanged("EnvUUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ProfileID {
+            get {
+                return this.profileIDField;
+            }
+            set {
+                this.profileIDField = value;
+                this.RaisePropertyChanged("ProfileID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public bool CopyIndicator {
+            get {
+                return this.copyIndicatorField;
+            }
+            set {
+                this.copyIndicatorField = value;
+                this.RaisePropertyChanged("CopyIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=5)]
+        public System.DateTime IssueDate {
+            get {
+                return this.issueDateField;
+            }
+            set {
+                this.issueDateField = value;
+                this.RaisePropertyChanged("IssueDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="time", Order=6)]
+        public System.DateTime IssueTime {
+            get {
+                return this.issueTimeField;
+            }
+            set {
+                this.issueTimeField = value;
+                this.RaisePropertyChanged("IssueTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IssueTimeSpecified {
+            get {
+                return this.issueTimeFieldSpecified;
+            }
+            set {
+                this.issueTimeFieldSpecified = value;
+                this.RaisePropertyChanged("IssueTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string InvoiceTypeCode {
+            get {
+                return this.invoiceTypeCodeField;
+            }
+            set {
+                this.invoiceTypeCodeField = value;
+                this.RaisePropertyChanged("InvoiceTypeCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Note", Order=8)]
+        public string[] Note {
+            get {
+                return this.noteField;
+            }
+            set {
+                this.noteField = value;
+                this.RaisePropertyChanged("Note");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string DocumentCurrencyCode {
+            get {
+                return this.documentCurrencyCodeField;
+            }
+            set {
+                this.documentCurrencyCodeField = value;
+                this.RaisePropertyChanged("DocumentCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string TaxCurrencyCode {
+            get {
+                return this.taxCurrencyCodeField;
+            }
+            set {
+                this.taxCurrencyCodeField = value;
+                this.RaisePropertyChanged("TaxCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string PricingCurrencyCode {
+            get {
+                return this.pricingCurrencyCodeField;
+            }
+            set {
+                this.pricingCurrencyCodeField = value;
+                this.RaisePropertyChanged("PricingCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string PaymentCurrencyCode {
+            get {
+                return this.paymentCurrencyCodeField;
+            }
+            set {
+                this.paymentCurrencyCodeField = value;
+                this.RaisePropertyChanged("PaymentCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string PaymentAlternativeCurrencyCode {
+            get {
+                return this.paymentAlternativeCurrencyCodeField;
+            }
+            set {
+                this.paymentAlternativeCurrencyCodeField = value;
+                this.RaisePropertyChanged("PaymentAlternativeCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public decimal LineCountNumeric {
+            get {
+                return this.lineCountNumericField;
+            }
+            set {
+                this.lineCountNumericField = value;
+                this.RaisePropertyChanged("LineCountNumeric");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public InvoiceTypeInvoicePeriod InvoicePeriod {
+            get {
+                return this.invoicePeriodField;
+            }
+            set {
+                this.invoicePeriodField = value;
+                this.RaisePropertyChanged("InvoicePeriod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public InvoiceTypeOrderReference OrderReference {
+            get {
+                return this.orderReferenceField;
+            }
+            set {
+                this.orderReferenceField = value;
+                this.RaisePropertyChanged("OrderReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("DespatchDocumentReference", Order=17)]
+        public DocumentReferenceType[] DespatchDocumentReference {
+            get {
+                return this.despatchDocumentReferenceField;
+            }
+            set {
+                this.despatchDocumentReferenceField = value;
+                this.RaisePropertyChanged("DespatchDocumentReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ReceiptDocumentReference", Order=18)]
+        public DocumentReferenceType[] ReceiptDocumentReference {
+            get {
+                return this.receiptDocumentReferenceField;
+            }
+            set {
+                this.receiptDocumentReferenceField = value;
+                this.RaisePropertyChanged("ReceiptDocumentReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AdditionalDocumentReference", Order=19)]
+        public DocumentReferenceType[] AdditionalDocumentReference {
+            get {
+                return this.additionalDocumentReferenceField;
+            }
+            set {
+                this.additionalDocumentReferenceField = value;
+                this.RaisePropertyChanged("AdditionalDocumentReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public PartyType AccountingSupplierParty {
+            get {
+                return this.accountingSupplierPartyField;
+            }
+            set {
+                this.accountingSupplierPartyField = value;
+                this.RaisePropertyChanged("AccountingSupplierParty");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public PartyType AccountingCustomerParty {
+            get {
+                return this.accountingCustomerPartyField;
+            }
+            set {
+                this.accountingCustomerPartyField = value;
+                this.RaisePropertyChanged("AccountingCustomerParty");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PaymentMeans", Order=22)]
+        public InvoiceTypePaymentMeans[] PaymentMeans {
+            get {
+                return this.paymentMeansField;
+            }
+            set {
+                this.paymentMeansField = value;
+                this.RaisePropertyChanged("PaymentMeans");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public InvoiceTypePaymentTerms PaymentTerms {
+            get {
+                return this.paymentTermsField;
+            }
+            set {
+                this.paymentTermsField = value;
+                this.RaisePropertyChanged("PaymentTerms");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public AllowanceChargeType AllowanceCharge {
+            get {
+                return this.allowanceChargeField;
+            }
+            set {
+                this.allowanceChargeField = value;
+                this.RaisePropertyChanged("AllowanceCharge");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public ExchangeRateType TaxExchangeRate {
+            get {
+                return this.taxExchangeRateField;
+            }
+            set {
+                this.taxExchangeRateField = value;
+                this.RaisePropertyChanged("TaxExchangeRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public ExchangeRateType PricingExchangeRate {
+            get {
+                return this.pricingExchangeRateField;
+            }
+            set {
+                this.pricingExchangeRateField = value;
+                this.RaisePropertyChanged("PricingExchangeRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public ExchangeRateType PaymentExchangeRate {
+            get {
+                return this.paymentExchangeRateField;
+            }
+            set {
+                this.paymentExchangeRateField = value;
+                this.RaisePropertyChanged("PaymentExchangeRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public ExchangeRateType PaymentAlternativeExchangeRate {
+            get {
+                return this.paymentAlternativeExchangeRateField;
+            }
+            set {
+                this.paymentAlternativeExchangeRateField = value;
+                this.RaisePropertyChanged("PaymentAlternativeExchangeRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("TaxTotal", Order=29)]
+        public TaxTotalType[] TaxTotal {
+            get {
+                return this.taxTotalField;
+            }
+            set {
+                this.taxTotalField = value;
+                this.RaisePropertyChanged("TaxTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public InvoiceTypeLegalMonetaryTotal LegalMonetaryTotal {
+            get {
+                return this.legalMonetaryTotalField;
+            }
+            set {
+                this.legalMonetaryTotalField = value;
+                this.RaisePropertyChanged("LegalMonetaryTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("InvoiceLine", Order=31)]
+        public InvoiceTypeInvoiceLine[] InvoiceLine {
+            get {
+                return this.invoiceLineField;
+            }
+            set {
+                this.invoiceLineField = value;
+                this.RaisePropertyChanged("InvoiceLine");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public InvoiceTypeExtensions Extensions {
+            get {
+                return this.extensionsField;
+            }
+            set {
+                this.extensionsField = value;
+                this.RaisePropertyChanged("Extensions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public InvoiceTypeStatus Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeInvoicePeriod : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime startDateField;
+        
+        private bool startDateFieldSpecified;
+        
+        private System.DateTime endDateField;
+        
+        private bool endDateFieldSpecified;
+        
+        private MeasureType durationMeasureField;
+        
+        private string descriptionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=0)]
+        public System.DateTime StartDate {
+            get {
+                return this.startDateField;
+            }
+            set {
+                this.startDateField = value;
+                this.RaisePropertyChanged("StartDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartDateSpecified {
+            get {
+                return this.startDateFieldSpecified;
+            }
+            set {
+                this.startDateFieldSpecified = value;
+                this.RaisePropertyChanged("StartDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime EndDate {
+            get {
+                return this.endDateField;
+            }
+            set {
+                this.endDateField = value;
+                this.RaisePropertyChanged("EndDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EndDateSpecified {
+            get {
+                return this.endDateFieldSpecified;
+            }
+            set {
+                this.endDateFieldSpecified = value;
+                this.RaisePropertyChanged("EndDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public MeasureType DurationMeasure {
+            get {
+                return this.durationMeasureField;
+            }
+            set {
+                this.durationMeasureField = value;
+                this.RaisePropertyChanged("DurationMeasure");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class MeasureType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string unitCodeField;
+        
+        private decimal valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string unitCode {
+            get {
+                return this.unitCodeField;
+            }
+            set {
+                this.unitCodeField = value;
+                this.RaisePropertyChanged("unitCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeOrderReference : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private System.DateTime issueDateField;
+        
+        private DocumentReferenceType documentReferenceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime IssueDate {
+            get {
+                return this.issueDateField;
+            }
+            set {
+                this.issueDateField = value;
+                this.RaisePropertyChanged("IssueDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public DocumentReferenceType DocumentReference {
+            get {
+                return this.documentReferenceField;
+            }
+            set {
+                this.documentReferenceField = value;
+                this.RaisePropertyChanged("DocumentReference");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class DocumentReferenceType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private System.DateTime issueDateField;
+        
+        private string documentTypeCodeField;
+        
+        private string documentTypeField;
+        
+        private DocumentReferenceTypeAttachment attachmentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime IssueDate {
+            get {
+                return this.issueDateField;
+            }
+            set {
+                this.issueDateField = value;
+                this.RaisePropertyChanged("IssueDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string DocumentTypeCode {
+            get {
+                return this.documentTypeCodeField;
+            }
+            set {
+                this.documentTypeCodeField = value;
+                this.RaisePropertyChanged("DocumentTypeCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DocumentType {
+            get {
+                return this.documentTypeField;
+            }
+            set {
+                this.documentTypeField = value;
+                this.RaisePropertyChanged("DocumentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public DocumentReferenceTypeAttachment Attachment {
+            get {
+                return this.attachmentField;
+            }
+            set {
+                this.attachmentField = value;
+                this.RaisePropertyChanged("Attachment");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class DocumentReferenceTypeAttachment : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DocumentReferenceTypeAttachmentExternalReference externalReferenceField;
+        
+        private EmbeddedDocumentBinaryObjectType embeddedDocumentBinaryObjectField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DocumentReferenceTypeAttachmentExternalReference ExternalReference {
+            get {
+                return this.externalReferenceField;
+            }
+            set {
+                this.externalReferenceField = value;
+                this.RaisePropertyChanged("ExternalReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EmbeddedDocumentBinaryObjectType EmbeddedDocumentBinaryObject {
+            get {
+                return this.embeddedDocumentBinaryObjectField;
+            }
+            set {
+                this.embeddedDocumentBinaryObjectField = value;
+                this.RaisePropertyChanged("EmbeddedDocumentBinaryObject");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class DocumentReferenceTypeAttachmentExternalReference : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uRIField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string URI {
+            get {
+                return this.uRIField;
+            }
+            set {
+                this.uRIField = value;
+                this.RaisePropertyChanged("URI");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class EmbeddedDocumentBinaryObjectType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string formatField;
+        
+        private string mimeCodeField;
+        
+        private string encodingCodeField;
+        
+        private string characterSetCodeField;
+        
+        private string uriField;
+        
+        private string filenameField;
+        
+        private byte[] valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string format {
+            get {
+                return this.formatField;
+            }
+            set {
+                this.formatField = value;
+                this.RaisePropertyChanged("format");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string mimeCode {
+            get {
+                return this.mimeCodeField;
+            }
+            set {
+                this.mimeCodeField = value;
+                this.RaisePropertyChanged("mimeCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string encodingCode {
+            get {
+                return this.encodingCodeField;
+            }
+            set {
+                this.encodingCodeField = value;
+                this.RaisePropertyChanged("encodingCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string characterSetCode {
+            get {
+                return this.characterSetCodeField;
+            }
+            set {
+                this.characterSetCodeField = value;
+                this.RaisePropertyChanged("characterSetCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string uri {
+            get {
+                return this.uriField;
+            }
+            set {
+                this.uriField = value;
+                this.RaisePropertyChanged("uri");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string filename {
+            get {
+                return this.filenameField;
+            }
+            set {
+                this.filenameField = value;
+                this.RaisePropertyChanged("filename");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        public byte[] Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string identifierField;
+        
+        private string websiteURIField;
+        
+        private PartyTypePartyIdentification[] partyIdentificationField;
+        
+        private string partyNameField;
+        
+        private PostalAddressType postalAddressField;
+        
+        private TaxSchemeType taxSchemeField;
+        
+        private PartyTypeContact contactField;
+        
+        private PartyTypePerson personField;
+        
+        private PartyTypeAgentParty agentPartyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string WebsiteURI {
+            get {
+                return this.websiteURIField;
+            }
+            set {
+                this.websiteURIField = value;
+                this.RaisePropertyChanged("WebsiteURI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PartyIdentification", Order=2)]
+        public PartyTypePartyIdentification[] PartyIdentification {
+            get {
+                return this.partyIdentificationField;
+            }
+            set {
+                this.partyIdentificationField = value;
+                this.RaisePropertyChanged("PartyIdentification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string PartyName {
+            get {
+                return this.partyNameField;
+            }
+            set {
+                this.partyNameField = value;
+                this.RaisePropertyChanged("PartyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public PostalAddressType PostalAddress {
+            get {
+                return this.postalAddressField;
+            }
+            set {
+                this.postalAddressField = value;
+                this.RaisePropertyChanged("PostalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public TaxSchemeType TaxScheme {
+            get {
+                return this.taxSchemeField;
+            }
+            set {
+                this.taxSchemeField = value;
+                this.RaisePropertyChanged("TaxScheme");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public PartyTypeContact Contact {
+            get {
+                return this.contactField;
+            }
+            set {
+                this.contactField = value;
+                this.RaisePropertyChanged("Contact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public PartyTypePerson Person {
+            get {
+                return this.personField;
+            }
+            set {
+                this.personField = value;
+                this.RaisePropertyChanged("Person");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public PartyTypeAgentParty AgentParty {
+            get {
+                return this.agentPartyField;
+            }
+            set {
+                this.agentPartyField = value;
+                this.RaisePropertyChanged("AgentParty");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypePartyIdentification : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private IDType idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IDType ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class IDType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string schemeIDField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string schemeID {
+            get {
+                return this.schemeIDField;
+            }
+            set {
+                this.schemeIDField = value;
+                this.RaisePropertyChanged("schemeID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PostalAddressType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string roomField;
+        
+        private string streetNameField;
+        
+        private string buildingNameField;
+        
+        private string buildingNumberField;
+        
+        private string citySubdivisionNameField;
+        
+        private string cityNameField;
+        
+        private string postalZoneField;
+        
+        private string regionField;
+        
+        private string countryCodeField;
+        
+        private string countryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Room {
+            get {
+                return this.roomField;
+            }
+            set {
+                this.roomField = value;
+                this.RaisePropertyChanged("Room");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string StreetName {
+            get {
+                return this.streetNameField;
+            }
+            set {
+                this.streetNameField = value;
+                this.RaisePropertyChanged("StreetName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string BuildingName {
+            get {
+                return this.buildingNameField;
+            }
+            set {
+                this.buildingNameField = value;
+                this.RaisePropertyChanged("BuildingName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string BuildingNumber {
+            get {
+                return this.buildingNumberField;
+            }
+            set {
+                this.buildingNumberField = value;
+                this.RaisePropertyChanged("BuildingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string CitySubdivisionName {
+            get {
+                return this.citySubdivisionNameField;
+            }
+            set {
+                this.citySubdivisionNameField = value;
+                this.RaisePropertyChanged("CitySubdivisionName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string CityName {
+            get {
+                return this.cityNameField;
+            }
+            set {
+                this.cityNameField = value;
+                this.RaisePropertyChanged("CityName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string PostalZone {
+            get {
+                return this.postalZoneField;
+            }
+            set {
+                this.postalZoneField = value;
+                this.RaisePropertyChanged("PostalZone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string Region {
+            get {
+                return this.regionField;
+            }
+            set {
+                this.regionField = value;
+                this.RaisePropertyChanged("Region");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string CountryCode {
+            get {
+                return this.countryCodeField;
+            }
+            set {
+                this.countryCodeField = value;
+                this.RaisePropertyChanged("CountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string Country {
+            get {
+                return this.countryField;
+            }
+            set {
+                this.countryField = value;
+                this.RaisePropertyChanged("Country");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class TaxSchemeType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nameField;
+        
+        private string taxTypeCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string TaxTypeCode {
+            get {
+                return this.taxTypeCodeField;
+            }
+            set {
+                this.taxTypeCodeField = value;
+                this.RaisePropertyChanged("TaxTypeCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeContact : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string telephoneField;
+        
+        private string telefaxField;
+        
+        private string electronicMailField;
+        
+        private PartyTypeContactOtherCommunication[] otherCommunicationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Telephone {
+            get {
+                return this.telephoneField;
+            }
+            set {
+                this.telephoneField = value;
+                this.RaisePropertyChanged("Telephone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Telefax {
+            get {
+                return this.telefaxField;
+            }
+            set {
+                this.telefaxField = value;
+                this.RaisePropertyChanged("Telefax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ElectronicMail {
+            get {
+                return this.electronicMailField;
+            }
+            set {
+                this.electronicMailField = value;
+                this.RaisePropertyChanged("ElectronicMail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("OtherCommunication", Order=3)]
+        public PartyTypeContactOtherCommunication[] OtherCommunication {
+            get {
+                return this.otherCommunicationField;
+            }
+            set {
+                this.otherCommunicationField = value;
+                this.RaisePropertyChanged("OtherCommunication");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeContactOtherCommunication : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string channelCodeField;
+        
+        private string channelField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ChannelCode {
+            get {
+                return this.channelCodeField;
+            }
+            set {
+                this.channelCodeField = value;
+                this.RaisePropertyChanged("ChannelCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Channel {
+            get {
+                return this.channelField;
+            }
+            set {
+                this.channelField = value;
+                this.RaisePropertyChanged("Channel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypePerson : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string firstNameField;
+        
+        private string familyNameField;
+        
+        private string titleField;
+        
+        private string middleNameField;
+        
+        private string nameSuffixField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string FamilyName {
+            get {
+                return this.familyNameField;
+            }
+            set {
+                this.familyNameField = value;
+                this.RaisePropertyChanged("FamilyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+                this.RaisePropertyChanged("Title");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string MiddleName {
+            get {
+                return this.middleNameField;
+            }
+            set {
+                this.middleNameField = value;
+                this.RaisePropertyChanged("MiddleName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NameSuffix {
+            get {
+                return this.nameSuffixField;
+            }
+            set {
+                this.nameSuffixField = value;
+                this.RaisePropertyChanged("NameSuffix");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeAgentParty : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string websiteURIField;
+        
+        private PartyTypeAgentPartyPartyIdentification[] partyIdentificationField;
+        
+        private string partyNameField;
+        
+        private PostalAddressType postalAddressField;
+        
+        private TaxSchemeType taxSchemeField;
+        
+        private PartyTypeAgentPartyContact contactField;
+        
+        private PartyTypeAgentPartyPerson personField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string WebsiteURI {
+            get {
+                return this.websiteURIField;
+            }
+            set {
+                this.websiteURIField = value;
+                this.RaisePropertyChanged("WebsiteURI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PartyIdentification", Order=1)]
+        public PartyTypeAgentPartyPartyIdentification[] PartyIdentification {
+            get {
+                return this.partyIdentificationField;
+            }
+            set {
+                this.partyIdentificationField = value;
+                this.RaisePropertyChanged("PartyIdentification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string PartyName {
+            get {
+                return this.partyNameField;
+            }
+            set {
+                this.partyNameField = value;
+                this.RaisePropertyChanged("PartyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public PostalAddressType PostalAddress {
+            get {
+                return this.postalAddressField;
+            }
+            set {
+                this.postalAddressField = value;
+                this.RaisePropertyChanged("PostalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public TaxSchemeType TaxScheme {
+            get {
+                return this.taxSchemeField;
+            }
+            set {
+                this.taxSchemeField = value;
+                this.RaisePropertyChanged("TaxScheme");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public PartyTypeAgentPartyContact Contact {
+            get {
+                return this.contactField;
+            }
+            set {
+                this.contactField = value;
+                this.RaisePropertyChanged("Contact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public PartyTypeAgentPartyPerson Person {
+            get {
+                return this.personField;
+            }
+            set {
+                this.personField = value;
+                this.RaisePropertyChanged("Person");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeAgentPartyPartyIdentification : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private IDType idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IDType ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeAgentPartyContact : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string telephoneField;
+        
+        private string telefaxField;
+        
+        private string electronicMailField;
+        
+        private PartyTypeAgentPartyContactOtherCommunication[] otherCommunicationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Telephone {
+            get {
+                return this.telephoneField;
+            }
+            set {
+                this.telephoneField = value;
+                this.RaisePropertyChanged("Telephone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Telefax {
+            get {
+                return this.telefaxField;
+            }
+            set {
+                this.telefaxField = value;
+                this.RaisePropertyChanged("Telefax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ElectronicMail {
+            get {
+                return this.electronicMailField;
+            }
+            set {
+                this.electronicMailField = value;
+                this.RaisePropertyChanged("ElectronicMail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("OtherCommunication", Order=3)]
+        public PartyTypeAgentPartyContactOtherCommunication[] OtherCommunication {
+            get {
+                return this.otherCommunicationField;
+            }
+            set {
+                this.otherCommunicationField = value;
+                this.RaisePropertyChanged("OtherCommunication");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeAgentPartyContactOtherCommunication : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string channelCodeField;
+        
+        private string channelField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ChannelCode {
+            get {
+                return this.channelCodeField;
+            }
+            set {
+                this.channelCodeField = value;
+                this.RaisePropertyChanged("ChannelCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Channel {
+            get {
+                return this.channelField;
+            }
+            set {
+                this.channelField = value;
+                this.RaisePropertyChanged("Channel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class PartyTypeAgentPartyPerson : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string firstNameField;
+        
+        private string familyNameField;
+        
+        private string titleField;
+        
+        private string middleNameField;
+        
+        private string nameSuffixField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string FamilyName {
+            get {
+                return this.familyNameField;
+            }
+            set {
+                this.familyNameField = value;
+                this.RaisePropertyChanged("FamilyName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+                this.RaisePropertyChanged("Title");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string MiddleName {
+            get {
+                return this.middleNameField;
+            }
+            set {
+                this.middleNameField = value;
+                this.RaisePropertyChanged("MiddleName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NameSuffix {
+            get {
+                return this.nameSuffixField;
+            }
+            set {
+                this.nameSuffixField = value;
+                this.RaisePropertyChanged("NameSuffix");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypePaymentMeans : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string paymentMeansCodeField;
+        
+        private System.DateTime paymentDueDateField;
+        
+        private bool paymentDueDateFieldSpecified;
+        
+        private string paymentChannelCodeField;
+        
+        private string instructionNoteField;
+        
+        private InvoiceTypePaymentMeansPayeeFinancialAccount payeeFinancialAccountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string PaymentMeansCode {
+            get {
+                return this.paymentMeansCodeField;
+            }
+            set {
+                this.paymentMeansCodeField = value;
+                this.RaisePropertyChanged("PaymentMeansCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime PaymentDueDate {
+            get {
+                return this.paymentDueDateField;
+            }
+            set {
+                this.paymentDueDateField = value;
+                this.RaisePropertyChanged("PaymentDueDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PaymentDueDateSpecified {
+            get {
+                return this.paymentDueDateFieldSpecified;
+            }
+            set {
+                this.paymentDueDateFieldSpecified = value;
+                this.RaisePropertyChanged("PaymentDueDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string PaymentChannelCode {
+            get {
+                return this.paymentChannelCodeField;
+            }
+            set {
+                this.paymentChannelCodeField = value;
+                this.RaisePropertyChanged("PaymentChannelCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string InstructionNote {
+            get {
+                return this.instructionNoteField;
+            }
+            set {
+                this.instructionNoteField = value;
+                this.RaisePropertyChanged("InstructionNote");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public InvoiceTypePaymentMeansPayeeFinancialAccount PayeeFinancialAccount {
+            get {
+                return this.payeeFinancialAccountField;
+            }
+            set {
+                this.payeeFinancialAccountField = value;
+                this.RaisePropertyChanged("PayeeFinancialAccount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypePaymentMeansPayeeFinancialAccount : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string currencyCodeField;
+        
+        private string paymentNoteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CurrencyCode {
+            get {
+                return this.currencyCodeField;
+            }
+            set {
+                this.currencyCodeField = value;
+                this.RaisePropertyChanged("CurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string PaymentNote {
+            get {
+                return this.paymentNoteField;
+            }
+            set {
+                this.paymentNoteField = value;
+                this.RaisePropertyChanged("PaymentNote");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypePaymentTerms : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string noteField;
+        
+        private decimal penaltySurchargePercentField;
+        
+        private bool penaltySurchargePercentFieldSpecified;
+        
+        private AmountType amountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Note {
+            get {
+                return this.noteField;
+            }
+            set {
+                this.noteField = value;
+                this.RaisePropertyChanged("Note");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public decimal PenaltySurchargePercent {
+            get {
+                return this.penaltySurchargePercentField;
+            }
+            set {
+                this.penaltySurchargePercentField = value;
+                this.RaisePropertyChanged("PenaltySurchargePercent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PenaltySurchargePercentSpecified {
+            get {
+                return this.penaltySurchargePercentFieldSpecified;
+            }
+            set {
+                this.penaltySurchargePercentFieldSpecified = value;
+                this.RaisePropertyChanged("PenaltySurchargePercentSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public AmountType Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class AmountType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string currencyIDField;
+        
+        private decimal valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string currencyID {
+            get {
+                return this.currencyIDField;
+            }
+            set {
+                this.currencyIDField = value;
+                this.RaisePropertyChanged("currencyID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class AllowanceChargeType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool chargeIndicatorField;
+        
+        private string allowanceChargeReasonField;
+        
+        private decimal multiplierFactorNumericField;
+        
+        private bool multiplierFactorNumericFieldSpecified;
+        
+        private AmountType amountField;
+        
+        private AmountType baseAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool ChargeIndicator {
+            get {
+                return this.chargeIndicatorField;
+            }
+            set {
+                this.chargeIndicatorField = value;
+                this.RaisePropertyChanged("ChargeIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string AllowanceChargeReason {
+            get {
+                return this.allowanceChargeReasonField;
+            }
+            set {
+                this.allowanceChargeReasonField = value;
+                this.RaisePropertyChanged("AllowanceChargeReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public decimal MultiplierFactorNumeric {
+            get {
+                return this.multiplierFactorNumericField;
+            }
+            set {
+                this.multiplierFactorNumericField = value;
+                this.RaisePropertyChanged("MultiplierFactorNumeric");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MultiplierFactorNumericSpecified {
+            get {
+                return this.multiplierFactorNumericFieldSpecified;
+            }
+            set {
+                this.multiplierFactorNumericFieldSpecified = value;
+                this.RaisePropertyChanged("MultiplierFactorNumericSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AmountType Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public AmountType BaseAmount {
+            get {
+                return this.baseAmountField;
+            }
+            set {
+                this.baseAmountField = value;
+                this.RaisePropertyChanged("BaseAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class ExchangeRateType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string sourceCurrencyCodeField;
+        
+        private string targetCurrencyCodeField;
+        
+        private decimal calculationRateField;
+        
+        private System.DateTime dateField;
+        
+        private bool dateFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string SourceCurrencyCode {
+            get {
+                return this.sourceCurrencyCodeField;
+            }
+            set {
+                this.sourceCurrencyCodeField = value;
+                this.RaisePropertyChanged("SourceCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string TargetCurrencyCode {
+            get {
+                return this.targetCurrencyCodeField;
+            }
+            set {
+                this.targetCurrencyCodeField = value;
+                this.RaisePropertyChanged("TargetCurrencyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public decimal CalculationRate {
+            get {
+                return this.calculationRateField;
+            }
+            set {
+                this.calculationRateField = value;
+                this.RaisePropertyChanged("CalculationRate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
+        public System.DateTime Date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+                this.RaisePropertyChanged("Date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DateSpecified {
+            get {
+                return this.dateFieldSpecified;
+            }
+            set {
+                this.dateFieldSpecified = value;
+                this.RaisePropertyChanged("DateSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class TaxTotalType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AmountType taxAmountField;
+        
+        private TaxTotalTypeTaxSubTotal[] taxSubTotalField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AmountType TaxAmount {
+            get {
+                return this.taxAmountField;
+            }
+            set {
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("TaxSubTotal", Order=1)]
+        public TaxTotalTypeTaxSubTotal[] TaxSubTotal {
+            get {
+                return this.taxSubTotalField;
+            }
+            set {
+                this.taxSubTotalField = value;
+                this.RaisePropertyChanged("TaxSubTotal");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class TaxTotalTypeTaxSubTotal : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AmountType taxableAmountField;
+        
+        private AmountType taxAmountField;
+        
+        private decimal calculationSequenceNumericField;
+        
+        private bool calculationSequenceNumericFieldSpecified;
+        
+        private AmountType transactionCurrencyTaxAmountField;
+        
+        private decimal percentField;
+        
+        private bool percentFieldSpecified;
+        
+        private MeasureType baseUnitMeasureField;
+        
+        private AmountType perUnitAmountField;
+        
+        private TaxTotalTypeTaxSubTotalTaxCategory taxCategoryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AmountType TaxableAmount {
+            get {
+                return this.taxableAmountField;
+            }
+            set {
+                this.taxableAmountField = value;
+                this.RaisePropertyChanged("TaxableAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public AmountType TaxAmount {
+            get {
+                return this.taxAmountField;
+            }
+            set {
+                this.taxAmountField = value;
+                this.RaisePropertyChanged("TaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public decimal CalculationSequenceNumeric {
+            get {
+                return this.calculationSequenceNumericField;
+            }
+            set {
+                this.calculationSequenceNumericField = value;
+                this.RaisePropertyChanged("CalculationSequenceNumeric");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CalculationSequenceNumericSpecified {
+            get {
+                return this.calculationSequenceNumericFieldSpecified;
+            }
+            set {
+                this.calculationSequenceNumericFieldSpecified = value;
+                this.RaisePropertyChanged("CalculationSequenceNumericSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AmountType TransactionCurrencyTaxAmount {
+            get {
+                return this.transactionCurrencyTaxAmountField;
+            }
+            set {
+                this.transactionCurrencyTaxAmountField = value;
+                this.RaisePropertyChanged("TransactionCurrencyTaxAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public decimal Percent {
+            get {
+                return this.percentField;
+            }
+            set {
+                this.percentField = value;
+                this.RaisePropertyChanged("Percent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PercentSpecified {
+            get {
+                return this.percentFieldSpecified;
+            }
+            set {
+                this.percentFieldSpecified = value;
+                this.RaisePropertyChanged("PercentSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public MeasureType BaseUnitMeasure {
+            get {
+                return this.baseUnitMeasureField;
+            }
+            set {
+                this.baseUnitMeasureField = value;
+                this.RaisePropertyChanged("BaseUnitMeasure");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public AmountType PerUnitAmount {
+            get {
+                return this.perUnitAmountField;
+            }
+            set {
+                this.perUnitAmountField = value;
+                this.RaisePropertyChanged("PerUnitAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public TaxTotalTypeTaxSubTotalTaxCategory TaxCategory {
+            get {
+                return this.taxCategoryField;
+            }
+            set {
+                this.taxCategoryField = value;
+                this.RaisePropertyChanged("TaxCategory");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class TaxTotalTypeTaxSubTotalTaxCategory : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string taxExemptionReasonField;
+        
+        private TaxSchemeType taxSchemeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string TaxExemptionReason {
+            get {
+                return this.taxExemptionReasonField;
+            }
+            set {
+                this.taxExemptionReasonField = value;
+                this.RaisePropertyChanged("TaxExemptionReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TaxSchemeType TaxScheme {
+            get {
+                return this.taxSchemeField;
+            }
+            set {
+                this.taxSchemeField = value;
+                this.RaisePropertyChanged("TaxScheme");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeLegalMonetaryTotal : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AmountType lineExtensionAmountField;
+        
+        private AmountType taxExclusiveAmountField;
+        
+        private AmountType taxInclusiveAmountField;
+        
+        private AmountType allowanceTotalAmountField;
+        
+        private AmountType chargeTotalAmountField;
+        
+        private AmountType payableRoundingAmountField;
+        
+        private AmountType payableAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AmountType LineExtensionAmount {
+            get {
+                return this.lineExtensionAmountField;
+            }
+            set {
+                this.lineExtensionAmountField = value;
+                this.RaisePropertyChanged("LineExtensionAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public AmountType TaxExclusiveAmount {
+            get {
+                return this.taxExclusiveAmountField;
+            }
+            set {
+                this.taxExclusiveAmountField = value;
+                this.RaisePropertyChanged("TaxExclusiveAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public AmountType TaxInclusiveAmount {
+            get {
+                return this.taxInclusiveAmountField;
+            }
+            set {
+                this.taxInclusiveAmountField = value;
+                this.RaisePropertyChanged("TaxInclusiveAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AmountType AllowanceTotalAmount {
+            get {
+                return this.allowanceTotalAmountField;
+            }
+            set {
+                this.allowanceTotalAmountField = value;
+                this.RaisePropertyChanged("AllowanceTotalAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public AmountType ChargeTotalAmount {
+            get {
+                return this.chargeTotalAmountField;
+            }
+            set {
+                this.chargeTotalAmountField = value;
+                this.RaisePropertyChanged("ChargeTotalAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AmountType PayableRoundingAmount {
+            get {
+                return this.payableRoundingAmountField;
+            }
+            set {
+                this.payableRoundingAmountField = value;
+                this.RaisePropertyChanged("PayableRoundingAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public AmountType PayableAmount {
+            get {
+                return this.payableAmountField;
+            }
+            set {
+                this.payableAmountField = value;
+                this.RaisePropertyChanged("PayableAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeInvoiceLine : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string idField;
+        
+        private string noteField;
+        
+        private QuantityType invoicedQuantityField;
+        
+        private AmountType lineExtensionAmountField;
+        
+        private AllowanceChargeType allowanceChargeField;
+        
+        private TaxTotalType taxTotalField;
+        
+        private InvoiceTypeInvoiceLineItem itemField;
+        
+        private InvoiceTypeInvoiceLinePrice priceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Note {
+            get {
+                return this.noteField;
+            }
+            set {
+                this.noteField = value;
+                this.RaisePropertyChanged("Note");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public QuantityType InvoicedQuantity {
+            get {
+                return this.invoicedQuantityField;
+            }
+            set {
+                this.invoicedQuantityField = value;
+                this.RaisePropertyChanged("InvoicedQuantity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AmountType LineExtensionAmount {
+            get {
+                return this.lineExtensionAmountField;
+            }
+            set {
+                this.lineExtensionAmountField = value;
+                this.RaisePropertyChanged("LineExtensionAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public AllowanceChargeType AllowanceCharge {
+            get {
+                return this.allowanceChargeField;
+            }
+            set {
+                this.allowanceChargeField = value;
+                this.RaisePropertyChanged("AllowanceCharge");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public TaxTotalType TaxTotal {
+            get {
+                return this.taxTotalField;
+            }
+            set {
+                this.taxTotalField = value;
+                this.RaisePropertyChanged("TaxTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public InvoiceTypeInvoiceLineItem Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public InvoiceTypeInvoiceLinePrice Price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+                this.RaisePropertyChanged("Price");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class QuantityType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string unitCodeField;
+        
+        private decimal valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string unitCode {
+            get {
+                return this.unitCodeField;
+            }
+            set {
+                this.unitCodeField = value;
+                this.RaisePropertyChanged("unitCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeInvoiceLineItem : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string descriptionField;
+        
+        private string nameField;
+        
+        private string brandNameField;
+        
+        private string modelNameField;
+        
+        private IDType buyersItemIdentificationField;
+        
+        private IDType sellersItemIdentificationField;
+        
+        private IDType manufacturersItemIdentificationField;
+        
+        private string commodityClassificationCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string BrandName {
+            get {
+                return this.brandNameField;
+            }
+            set {
+                this.brandNameField = value;
+                this.RaisePropertyChanged("BrandName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ModelName {
+            get {
+                return this.modelNameField;
+            }
+            set {
+                this.modelNameField = value;
+                this.RaisePropertyChanged("ModelName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public IDType BuyersItemIdentification {
+            get {
+                return this.buyersItemIdentificationField;
+            }
+            set {
+                this.buyersItemIdentificationField = value;
+                this.RaisePropertyChanged("BuyersItemIdentification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public IDType SellersItemIdentification {
+            get {
+                return this.sellersItemIdentificationField;
+            }
+            set {
+                this.sellersItemIdentificationField = value;
+                this.RaisePropertyChanged("SellersItemIdentification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public IDType ManufacturersItemIdentification {
+            get {
+                return this.manufacturersItemIdentificationField;
+            }
+            set {
+                this.manufacturersItemIdentificationField = value;
+                this.RaisePropertyChanged("ManufacturersItemIdentification");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string CommodityClassificationCode {
+            get {
+                return this.commodityClassificationCodeField;
+            }
+            set {
+                this.commodityClassificationCodeField = value;
+                this.RaisePropertyChanged("CommodityClassificationCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeInvoiceLinePrice : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AmountType priceAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AmountType PriceAmount {
+            get {
+                return this.priceAmountField;
+            }
+            set {
+                this.priceAmountField = value;
+                this.RaisePropertyChanged("PriceAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeExtensions : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string custInvIDField;
+        
+        private string custInvTypeField;
+        
+        private bool isOnBehalfField;
+        
+        private bool isOnBehalfFieldSpecified;
+        
+        private string sourceField;
+        
+        private string systemIDField;
+        
+        private string agentField;
+        
+        private string[] otherField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string CustInvID {
+            get {
+                return this.custInvIDField;
+            }
+            set {
+                this.custInvIDField = value;
+                this.RaisePropertyChanged("CustInvID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CustInvType {
+            get {
+                return this.custInvTypeField;
+            }
+            set {
+                this.custInvTypeField = value;
+                this.RaisePropertyChanged("CustInvType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public bool IsOnBehalf {
+            get {
+                return this.isOnBehalfField;
+            }
+            set {
+                this.isOnBehalfField = value;
+                this.RaisePropertyChanged("IsOnBehalf");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsOnBehalfSpecified {
+            get {
+                return this.isOnBehalfFieldSpecified;
+            }
+            set {
+                this.isOnBehalfFieldSpecified = value;
+                this.RaisePropertyChanged("IsOnBehalfSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Source {
+            get {
+                return this.sourceField;
+            }
+            set {
+                this.sourceField = value;
+                this.RaisePropertyChanged("Source");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SystemID {
+            get {
+                return this.systemIDField;
+            }
+            set {
+                this.systemIDField = value;
+                this.RaisePropertyChanged("SystemID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Agent {
+            get {
+                return this.agentField;
+            }
+            set {
+                this.agentField = value;
+                this.RaisePropertyChanged("Agent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Other", Order=6)]
+        public string[] Other {
+            get {
+                return this.otherField;
+            }
+            set {
+                this.otherField = value;
+                this.RaisePropertyChanged("Other");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceTypeStatus : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string statusCodeField;
+        
+        private string statusDescriptionField;
+        
+        private System.DateTime statusDateField;
+        
+        private string aRTypeField;
+        
+        private System.DateTime insertDateTimeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string StatusCode {
+            get {
+                return this.statusCodeField;
+            }
+            set {
+                this.statusCodeField = value;
+                this.RaisePropertyChanged("StatusCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string StatusDescription {
+            get {
+                return this.statusDescriptionField;
+            }
+            set {
+                this.statusDescriptionField = value;
+                this.RaisePropertyChanged("StatusDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime StatusDate {
+            get {
+                return this.statusDateField;
+            }
+            set {
+                this.statusDateField = value;
+                this.RaisePropertyChanged("StatusDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ARType {
+            get {
+                return this.aRTypeField;
+            }
+            set {
+                this.aRTypeField = value;
+                this.RaisePropertyChanged("ARType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime InsertDateTime {
+            get {
+                return this.insertDateTimeField;
+            }
+            set {
+                this.insertDateTimeField = value;
+                this.RaisePropertyChanged("InsertDateTime");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceListResponseType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uUIDField;
+        
+        private string envUUIDField;
+        
+        private string idField;
+        
+        private string custInvIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string EnvUUID {
+            get {
+                return this.envUUIDField;
+            }
+            set {
+                this.envUUIDField = value;
+                this.RaisePropertyChanged("EnvUUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string CustInvID {
+            get {
+                return this.custInvIDField;
+            }
+            set {
+                this.custInvIDField = value;
+                this.RaisePropertyChanged("CustInvID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class sendInvoiceListRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="sendInvoiceListRequest", Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Invoice", IsNullable=false)]
+        public Foriba.OE.CLIENT.serviceInvoicee.InvoiceType[] sendInvoiceListRequest1;
+        
+        public sendInvoiceListRequest() {
+        }
+        
+        public sendInvoiceListRequest(Foriba.OE.CLIENT.serviceInvoicee.InvoiceType[] sendInvoiceListRequest1) {
+            this.sendInvoiceListRequest1 = sendInvoiceListRequest1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class sendInvoiceListResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="sendInvoiceListResponse", Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("InvoiceListResponse", IsNullable=false)]
+        public Foriba.OE.CLIENT.serviceInvoicee.InvoiceListResponseType[] sendInvoiceListResponse1;
+        
+        public sendInvoiceListResponse() {
+        }
+        
+        public sendInvoiceListResponse(Foriba.OE.CLIENT.serviceInvoicee.InvoiceListResponseType[] sendInvoiceListResponse1) {
+            this.sendInvoiceListResponse1 = sendInvoiceListResponse1;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class getInvoiceListRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string identifierField;
+        
+        private string vKN_TCKNField;
+        
+        private string uUIDField;
+        
+        private string statusField;
+        
+        private string aRTypeField;
+        
+        private System.DateTime fromDateField;
+        
+        private bool fromDateFieldSpecified;
+        
+        private System.DateTime toDateField;
+        
+        private bool toDateFieldSpecified;
+        
+        private bool metadataOnlyField;
+        
+        private bool metadataOnlyFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VKN_TCKN {
+            get {
+                return this.vKN_TCKNField;
+            }
+            set {
+                this.vKN_TCKNField = value;
+                this.RaisePropertyChanged("VKN_TCKN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ARType {
+            get {
+                return this.aRTypeField;
+            }
+            set {
+                this.aRTypeField = value;
+                this.RaisePropertyChanged("ARType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public System.DateTime FromDate {
+            get {
+                return this.fromDateField;
+            }
+            set {
+                this.fromDateField = value;
+                this.RaisePropertyChanged("FromDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FromDateSpecified {
+            get {
+                return this.fromDateFieldSpecified;
+            }
+            set {
+                this.fromDateFieldSpecified = value;
+                this.RaisePropertyChanged("FromDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime ToDate {
+            get {
+                return this.toDateField;
+            }
+            set {
+                this.toDateField = value;
+                this.RaisePropertyChanged("ToDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ToDateSpecified {
+            get {
+                return this.toDateFieldSpecified;
+            }
+            set {
+                this.toDateFieldSpecified = value;
+                this.RaisePropertyChanged("ToDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public bool MetadataOnly {
+            get {
+                return this.metadataOnlyField;
+            }
+            set {
+                this.metadataOnlyField = value;
+                this.RaisePropertyChanged("MetadataOnly");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MetadataOnlySpecified {
+            get {
+                return this.metadataOnlyFieldSpecified;
+            }
+            set {
+                this.metadataOnlyFieldSpecified = value;
+                this.RaisePropertyChanged("MetadataOnlySpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class getInvoiceListResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private InvoiceType[] invoiceListField;
+        
+        private System.DateTime lastDateField;
+        
+        private string pendingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Invoice", IsNullable=false)]
+        public InvoiceType[] InvoiceList {
+            get {
+                return this.invoiceListField;
+            }
+            set {
+                this.invoiceListField = value;
+                this.RaisePropertyChanged("InvoiceList");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime LastDate {
+            get {
+                return this.lastDateField;
+            }
+            set {
+                this.lastDateField = value;
+                this.RaisePropertyChanged("LastDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=2)]
+        public string Pending {
+            get {
+                return this.pendingField;
+            }
+            set {
+                this.pendingField = value;
+                this.RaisePropertyChanged("Pending");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getInvoiceListRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest getInvoiceListRequest;
+        
+        public getInvoiceListRequest1() {
+        }
+        
+        public getInvoiceListRequest1(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest getInvoiceListRequest) {
+            this.getInvoiceListRequest = getInvoiceListRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getInvoiceListResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse getInvoiceListResponse;
+        
+        public getInvoiceListResponse1() {
+        }
+        
+        public getInvoiceListResponse1(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse getInvoiceListResponse) {
+            this.getInvoiceListResponse = getInvoiceListResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class sendARRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uUIDField;
+        
+        private string identifierField;
+        
+        private string vKN_TCKNField;
+        
+        private string arField;
+        
+        private string[] noteField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string VKN_TCKN {
+            get {
+                return this.vKN_TCKNField;
+            }
+            set {
+                this.vKN_TCKNField = value;
+                this.RaisePropertyChanged("VKN_TCKN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string AR {
+            get {
+                return this.arField;
+            }
+            set {
+                this.arField = value;
+                this.RaisePropertyChanged("AR");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Note", Order=4)]
+        public string[] Note {
+            get {
+                return this.noteField;
+            }
+            set {
+                this.noteField = value;
+                this.RaisePropertyChanged("Note");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class sendARResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string envUUIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string EnvUUID {
+            get {
+                return this.envUUIDField;
+            }
+            set {
+                this.envUUIDField = value;
+                this.RaisePropertyChanged("EnvUUID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class sendARRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.sendARRequest sendARRequest;
+        
+        public sendARRequest1() {
+        }
+        
+        public sendARRequest1(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest sendARRequest) {
+            this.sendARRequest = sendARRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class sendARResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.sendARResponse sendARResponse;
+        
+        public sendARResponse1() {
+        }
+        
+        public sendARResponse1(Foriba.OE.CLIENT.serviceInvoicee.sendARResponse sendARResponse) {
+            this.sendARResponse = sendARResponse;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceStatusRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uUIDField;
+        
+        private string custInvIDField;
+        
+        private string identifierField;
+        
+        private string vKN_TCKNField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CustInvID {
+            get {
+                return this.custInvIDField;
+            }
+            set {
+                this.custInvIDField = value;
+                this.RaisePropertyChanged("CustInvID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string VKN_TCKN {
+            get {
+                return this.vKN_TCKNField;
+            }
+            set {
+                this.vKN_TCKNField = value;
+                this.RaisePropertyChanged("VKN_TCKN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class InvoiceStatusResponseType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uUIDField;
+        
+        private string custInvIDField;
+        
+        private string statusCodeField;
+        
+        private string statusDescriptionField;
+        
+        private System.DateTime statusDateField;
+        
+        private string aRTypeField;
+        
+        private System.DateTime insertDateTimeField;
+        
+        private string idField;
+        
+        private string envUUIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UUID {
+            get {
+                return this.uUIDField;
+            }
+            set {
+                this.uUIDField = value;
+                this.RaisePropertyChanged("UUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string CustInvID {
+            get {
+                return this.custInvIDField;
+            }
+            set {
+                this.custInvIDField = value;
+                this.RaisePropertyChanged("CustInvID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string StatusCode {
+            get {
+                return this.statusCodeField;
+            }
+            set {
+                this.statusCodeField = value;
+                this.RaisePropertyChanged("StatusCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string StatusDescription {
+            get {
+                return this.statusDescriptionField;
+            }
+            set {
+                this.statusDescriptionField = value;
+                this.RaisePropertyChanged("StatusDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime StatusDate {
+            get {
+                return this.statusDateField;
+            }
+            set {
+                this.statusDateField = value;
+                this.RaisePropertyChanged("StatusDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string ARType {
+            get {
+                return this.aRTypeField;
+            }
+            set {
+                this.aRTypeField = value;
+                this.RaisePropertyChanged("ARType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public System.DateTime InsertDateTime {
+            get {
+                return this.insertDateTimeField;
+            }
+            set {
+                this.insertDateTimeField = value;
+                this.RaisePropertyChanged("InsertDateTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string ID {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("ID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string EnvUUID {
+            get {
+                return this.envUUIDField;
+            }
+            set {
+                this.envUUIDField = value;
+                this.RaisePropertyChanged("EnvUUID");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getInvoiceStatusRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getInvoiceStatusRequest", Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("InvoiceStatusRequest", IsNullable=false)]
+        public Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusRequestType[] getInvoiceStatusRequest1;
+        
+        public getInvoiceStatusRequest() {
+        }
+        
+        public getInvoiceStatusRequest(Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusRequestType[] getInvoiceStatusRequest1) {
+            this.getInvoiceStatusRequest1 = getInvoiceStatusRequest1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class getInvoiceStatusResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="getInvoiceStatusResponse", Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("InvoiceStatusResponse", IsNullable=false)]
+        public Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusResponseType[] getInvoiceStatusResponse1;
+        
+        public getInvoiceStatusResponse() {
+        }
+        
+        public getInvoiceStatusResponse(Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusResponseType[] getInvoiceStatusResponse1) {
+            this.getInvoiceStatusResponse1 = getInvoiceStatusResponse1;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class storeUBLRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string identifierField;
+        
+        private string vKN_TCKNField;
+        
+        private string typeField;
+        
+        private byte[] docDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Identifier {
+            get {
+                return this.identifierField;
+            }
+            set {
+                this.identifierField = value;
+                this.RaisePropertyChanged("Identifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string VKN_TCKN {
+            get {
+                return this.vKN_TCKNField;
+            }
+            set {
+                this.vKN_TCKNField = value;
+                this.RaisePropertyChanged("VKN_TCKN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=3)]
+        public byte[] DocData {
+            get {
+                return this.docDataField;
+            }
+            set {
+                this.docDataField = value;
+                this.RaisePropertyChanged("DocData");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http:/fitcons.com/eInvoice/")]
+    public partial class storeUBLResponse : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime insertDateTimeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime InsertDateTime {
+            get {
+                return this.insertDateTimeField;
+            }
+            set {
+                this.insertDateTimeField = value;
+                this.RaisePropertyChanged("InsertDateTime");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class storeUBLRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest storeUBLRequest;
+        
+        public storeUBLRequest1() {
+        }
+        
+        public storeUBLRequest1(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest storeUBLRequest) {
+            this.storeUBLRequest = storeUBLRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class storeUBLResponse1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http:/fitcons.com/eInvoice/", Order=0)]
+        public Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse storeUBLResponse;
+        
+        public storeUBLResponse1() {
+        }
+        
+        public storeUBLResponse1(Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse storeUBLResponse) {
+            this.storeUBLResponse = storeUBLResponse;
         }
     }
     
@@ -1582,6 +6534,167 @@ namespace Foriba.OE.CLIENT.serviceInvoicee {
             Foriba.OE.CLIENT.serviceInvoicee.getUserListRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getUserListRequest1();
             inValue.getUserListRequest = getUserListRequest;
             return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getUserListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1 Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getRAWUserList(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1 request) {
+            return base.Channel.getRAWUserList(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse getRAWUserList(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest getRAWUserListRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1();
+            inValue.getRAWUserListRequest = getRAWUserListRequest;
+            Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1 retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getRAWUserList(inValue);
+            return retVal.getRAWUserListResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getRAWUserListAsync(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1 request) {
+            return base.Channel.getRAWUserListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1> getRAWUserListAsync(Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest getRAWUserListRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListRequest1();
+            inValue.getRAWUserListRequest = getRAWUserListRequest;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getRAWUserListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1 Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getInvResponses(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1 request) {
+            return base.Channel.getInvResponses(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse getInvResponses(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest getInvResponsesRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1();
+            inValue.getInvResponsesRequest = getInvResponsesRequest;
+            Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1 retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getInvResponses(inValue);
+            return retVal.getInvResponsesResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getInvResponsesAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1 request) {
+            return base.Channel.getInvResponsesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1> getInvResponsesAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest getInvResponsesRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesRequest1();
+            inValue.getInvResponsesRequest = getInvResponsesRequest;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getInvResponsesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.sendInvoiceList(Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest request) {
+            return base.Channel.sendInvoiceList(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.InvoiceListResponseType[] sendInvoiceList(Foriba.OE.CLIENT.serviceInvoicee.InvoiceType[] sendInvoiceListRequest1) {
+            Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest inValue = new Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest();
+            inValue.sendInvoiceListRequest1 = sendInvoiceListRequest1;
+            Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).sendInvoiceList(inValue);
+            return retVal.sendInvoiceListResponse1;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.sendInvoiceListAsync(Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest request) {
+            return base.Channel.sendInvoiceListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse> sendInvoiceListAsync(Foriba.OE.CLIENT.serviceInvoicee.InvoiceType[] sendInvoiceListRequest1) {
+            Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest inValue = new Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListRequest();
+            inValue.sendInvoiceListRequest1 = sendInvoiceListRequest1;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).sendInvoiceListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1 Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getInvoiceList(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1 request) {
+            return base.Channel.getInvoiceList(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse getInvoiceList(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest getInvoiceListRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1();
+            inValue.getInvoiceListRequest = getInvoiceListRequest;
+            Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1 retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getInvoiceList(inValue);
+            return retVal.getInvoiceListResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getInvoiceListAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1 request) {
+            return base.Channel.getInvoiceListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1> getInvoiceListAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest getInvoiceListRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListRequest1();
+            inValue.getInvoiceListRequest = getInvoiceListRequest;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getInvoiceListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1 Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.sendAR(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1 request) {
+            return base.Channel.sendAR(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.sendARResponse sendAR(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest sendARRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1();
+            inValue.sendARRequest = sendARRequest;
+            Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1 retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).sendAR(inValue);
+            return retVal.sendARResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.sendARAsync(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1 request) {
+            return base.Channel.sendARAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1> sendARAsync(Foriba.OE.CLIENT.serviceInvoicee.sendARRequest sendARRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.sendARRequest1();
+            inValue.sendARRequest = sendARRequest;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).sendARAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getInvoiceStatus(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest request) {
+            return base.Channel.getInvoiceStatus(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusResponseType[] getInvoiceStatus(Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusRequestType[] getInvoiceStatusRequest1) {
+            Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest inValue = new Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest();
+            inValue.getInvoiceStatusRequest1 = getInvoiceStatusRequest1;
+            Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getInvoiceStatus(inValue);
+            return retVal.getInvoiceStatusResponse1;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.getInvoiceStatusAsync(Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest request) {
+            return base.Channel.getInvoiceStatusAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse> getInvoiceStatusAsync(Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusRequestType[] getInvoiceStatusRequest1) {
+            Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest inValue = new Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusRequest();
+            inValue.getInvoiceStatusRequest1 = getInvoiceStatusRequest1;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).getInvoiceStatusAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1 Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.storeUBL(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1 request) {
+            return base.Channel.storeUBL(request);
+        }
+        
+        public Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse storeUBL(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest storeUBLRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1();
+            inValue.storeUBLRequest = storeUBLRequest;
+            Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1 retVal = ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).storeUBL(inValue);
+            return retVal.storeUBLResponse;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1> Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort.storeUBLAsync(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1 request) {
+            return base.Channel.storeUBLAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1> storeUBLAsync(Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest storeUBLRequest) {
+            Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1 inValue = new Foriba.OE.CLIENT.serviceInvoicee.storeUBLRequest1();
+            inValue.storeUBLRequest = storeUBLRequest;
+            return ((Foriba.OE.CLIENT.serviceInvoicee.ClientEInvoiceServicesPort)(this)).storeUBLAsync(inValue);
         }
     }
 }

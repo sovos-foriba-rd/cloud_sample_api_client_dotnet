@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://foriba.com/eSmm/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://foriba.com/eSmm/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sendDocumentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Branch" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="SendDocDetails" type="sendDocumentRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="SendDocumentResponse" type="sendDocumentResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="sendDocumentRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocData" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ViewType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendDocumentResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustDocID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DocData" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ViewData" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ParametersType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getDocumentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="GetDocDetails" type="getDocumentRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="getDocumentResponse" type="getDocumentResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getDocumentRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustDocID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ViewType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDocumentResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CustDocID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ViewType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocData" type="xs:base64Binary" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getReportListRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Year" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Month" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReportListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="getReportList" type="getReportListResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getReportListResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VKN_TCKN" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Year" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Month" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SectionStartDate" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SectionEndDate" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PartNumber" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentCount" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentTotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CanceledDocumentCount" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CanceledDocumentTotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="GIBStatusCode" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="GIBStatusDesc" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getReportDataRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="GetDocReportData" type="getDocumentReportDataRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReportDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="getDocReportData" type="getDocumentReportDataResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getDocumentReportDataRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDocumentReportDataResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="UUID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocData" type="xs:base64Binary" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cancelDocumentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="VKN_TCKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Branch" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="CancelDocDetails" type="cancelDocumentRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cancelDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="cancelDocumentResponse" type="cancelDocumentResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="cancelDocumentRequestType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustDocID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CancelDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelDocumentResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CustDocID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Type" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ResultDescription" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameters" type="ParametersType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

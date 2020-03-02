@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http:/fitcons.com/eInvoice/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http:/fitcons.com/eInvoice/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InvoiceList" type="InvoiceListType" />
+  <xs:complexType name="InvoiceListType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" type="InvoiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" type="InvoiceType" />
+  <xs:complexType name="InvoiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="EnvUUID" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:string" />
+      <xs:element name="ProfileID" type="xs:string" />
+      <xs:element name="CopyIndicator" type="xs:boolean" />
+      <xs:element name="IssueDate" type="xs:date" />
+      <xs:element minOccurs="0" name="IssueTime" type="xs:time" />
+      <xs:element name="InvoiceTypeCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Note" type="xs:string" />
+      <xs:element name="DocumentCurrencyCode" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxCurrencyCode" type="xs:string" />
+      <xs:element minOccurs="0" name="PricingCurrencyCode" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentCurrencyCode" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAlternativeCurrencyCode" type="xs:string" />
+      <xs:element name="LineCountNumeric" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InvoicePeriod">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StartDate" type="xs:date" />
+            <xs:element minOccurs="0" name="EndDate" type="xs:date" />
+            <xs:element minOccurs="0" name="DurationMeasure" type="MeasureType" />
+            <xs:element minOccurs="0" name="Description" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderReference">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ID" type="xs:string" />
+            <xs:element name="IssueDate" type="xs:date" />
+            <xs:element minOccurs="0" name="DocumentReference" type="DocumentReferenceType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DespatchDocumentReference" type="DocumentReferenceType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiptDocumentReference" type="DocumentReferenceType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalDocumentReference" type="DocumentReferenceType" />
+      <xs:element name="AccountingSupplierParty" type="PartyType" />
+      <xs:element name="AccountingCustomerParty" type="PartyType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMeans">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PaymentMeansCode" type="xs:string" />
+            <xs:element minOccurs="0" name="PaymentDueDate" type="xs:date" />
+            <xs:element minOccurs="0" name="PaymentChannelCode" type="xs:string" />
+            <xs:element minOccurs="0" name="InstructionNote" type="xs:string" />
+            <xs:element minOccurs="0" name="PayeeFinancialAccount">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="CurrencyCode" type="xs:string" />
+                  <xs:element minOccurs="0" name="PaymentNote" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PaymentTerms">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Note" type="xs:string" />
+            <xs:element minOccurs="0" name="PenaltySurchargePercent" type="xs:decimal" />
+            <xs:element minOccurs="0" name="Amount" type="AmountType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AllowanceCharge" type="AllowanceChargeType" />
+      <xs:element minOccurs="0" name="TaxExchangeRate" type="ExchangeRateType" />
+      <xs:element minOccurs="0" name="PricingExchangeRate" type="ExchangeRateType" />
+      <xs:element minOccurs="0" name="PaymentExchangeRate" type="ExchangeRateType" />
+      <xs:element minOccurs="0" name="PaymentAlternativeExchangeRate" type="ExchangeRateType" />
+      <xs:element maxOccurs="unbounded" name="TaxTotal" type="TaxTotalType" />
+      <xs:element name="LegalMonetaryTotal">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LineExtensionAmount" type="AmountType" />
+            <xs:element name="TaxExclusiveAmount" type="AmountType" />
+            <xs:element name="TaxInclusiveAmount" type="AmountType" />
+            <xs:element minOccurs="0" name="AllowanceTotalAmount" type="AmountType" />
+            <xs:element minOccurs="0" name="ChargeTotalAmount" type="AmountType" />
+            <xs:element minOccurs="0" name="PayableRoundingAmount" type="AmountType" />
+            <xs:element name="PayableAmount" type="AmountType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" name="InvoiceLine">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ID" type="xs:string" />
+            <xs:element minOccurs="0" name="Note" type="xs:string" />
+            <xs:element name="InvoicedQuantity" type="QuantityType" />
+            <xs:element name="LineExtensionAmount" type="AmountType" />
+            <xs:element minOccurs="0" name="AllowanceCharge" type="AllowanceChargeType" />
+            <xs:element minOccurs="0" name="TaxTotal" type="TaxTotalType" />
+            <xs:element name="Item">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Description" type="xs:string" />
+                  <xs:element name="Name" type="xs:string" />
+                  <xs:element minOccurs="0" name="BrandName" type="xs:string" />
+                  <xs:element minOccurs="0" name="ModelName" type="xs:string" />
+                  <xs:element minOccurs="0" name="BuyersItemIdentification" type="IDType" />
+                  <xs:element minOccurs="0" name="SellersItemIdentification" type="IDType" />
+                  <xs:element minOccurs="0" name="ManufacturersItemIdentification" type="IDType" />
+                  <xs:element minOccurs="0" name="CommodityClassificationCode" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Price">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PriceAmount" type="AmountType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Extensions">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CustInvID" type="xs:string" />
+            <xs:element minOccurs="0" name="CustInvType" type="xs:string" />
+            <xs:element minOccurs="0" name="IsOnBehalf" type="xs:boolean" />
+            <xs:element minOccurs="0" name="Source" type="xs:string" />
+            <xs:element minOccurs="0" name="SystemID" type="xs:string" />
+            <xs:element minOccurs="0" name="Agent" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Other" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Status">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="StatusCode" type="xs:string" />
+            <xs:element name="StatusDescription" type="xs:string" />
+            <xs:element name="StatusDate" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="ARType" type="xs:string" />
+            <xs:element name="InsertDateTime" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AllowanceChargeType">
+    <xs:sequence>
+      <xs:element name="ChargeIndicator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowanceChargeReason" type="xs:string" />
+      <xs:element minOccurs="0" name="MultiplierFactorNumeric" type="xs:decimal" />
+      <xs:element name="Amount" type="AmountType" />
+      <xs:element minOccurs="0" name="BaseAmount" type="AmountType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmountType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="currencyID" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DocumentReferenceType">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:string" />
+      <xs:element name="IssueDate" type="xs:date" />
+      <xs:element minOccurs="0" name="DocumentTypeCode" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" type="xs:string" />
+      <xs:element minOccurs="0" name="Attachment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ExternalReference">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="URI" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="EmbeddedDocumentBinaryObject" type="EmbeddedDocumentBinaryObjectType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmbeddedDocumentBinaryObjectType">
+    <xs:simpleContent>
+      <xs:extension base="xs:base64Binary">
+        <xs:attribute name="format" type="xs:string" use="optional" />
+        <xs:attribute name="mimeCode" type="xs:string" use="required" />
+        <xs:attribute name="encodingCode" type="xs:string" use="optional" />
+        <xs:attribute name="characterSetCode" type="xs:string" use="optional" />
+        <xs:attribute name="uri" type="xs:string" use="optional" />
+        <xs:attribute name="filename" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ExchangeRateType">
+    <xs:sequence>
+      <xs:element name="SourceCurrencyCode" type="xs:string" />
+      <xs:element name="TargetCurrencyCode" type="xs:string" />
+      <xs:element name="CalculationRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Date" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IDType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="schemeID" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="MeasureType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="unitCode" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PartyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identifier" type="xs:string" />
+      <xs:element minOccurs="0" name="WebsiteURI" type="xs:string" />
+      <xs:element maxOccurs="unbounded" name="PartyIdentification">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ID" type="IDType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="PartyName" type="xs:string" />
+      <xs:element name="PostalAddress" type="PostalAddressType" />
+      <xs:element minOccurs="0" name="TaxScheme" type="TaxSchemeType" />
+      <xs:element minOccurs="0" name="Contact">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Telephone" type="xs:string" />
+            <xs:element minOccurs="0" name="Telefax" type="xs:string" />
+            <xs:element minOccurs="0" name="ElectronicMail" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherCommunication">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ChannelCode" type="xs:string" />
+                  <xs:element minOccurs="0" name="Channel" type="xs:string" />
+                  <xs:element name="Value" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="Person">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="FirstName" type="xs:string" />
+            <xs:element name="FamilyName" type="xs:string" />
+            <xs:element minOccurs="0" name="Title" type="xs:string" />
+            <xs:element minOccurs="0" name="MiddleName" type="xs:string" />
+            <xs:element minOccurs="0" name="NameSuffix" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="AgentParty">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="WebsiteURI" type="xs:string" />
+            <xs:element maxOccurs="unbounded" name="PartyIdentification">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" type="IDType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="PartyName" type="xs:string" />
+            <xs:element name="PostalAddress" type="PostalAddressType" />
+            <xs:element minOccurs="0" name="TaxScheme" type="TaxSchemeType" />
+            <xs:element minOccurs="0" name="Contact">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Telephone" type="xs:string" />
+                  <xs:element minOccurs="0" name="Telefax" type="xs:string" />
+                  <xs:element minOccurs="0" name="ElectronicMail" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherCommunication">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ChannelCode" type="xs:string" />
+                        <xs:element minOccurs="0" name="Channel" type="xs:string" />
+                        <xs:element name="Value" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" name="Person">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FirstName" type="xs:string" />
+                  <xs:element name="FamilyName" type="xs:string" />
+                  <xs:element minOccurs="0" name="Title" type="xs:string" />
+                  <xs:element minOccurs="0" name="MiddleName" type="xs:string" />
+                  <xs:element minOccurs="0" name="NameSuffix" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostalAddressType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:string" />
+      <xs:element minOccurs="0" name="Room" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingName" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNumber" type="xs:string" />
+      <xs:element name="CitySubdivisionName" type="xs:string" />
+      <xs:element name="CityName" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalZone" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" type="xs:string" />
+      <xs:element name="Country" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuantityType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="unitCode" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TaxSchemeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxTypeCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaxTotalType">
+    <xs:sequence>
+      <xs:element name="TaxAmount" type="AmountType" />
+      <xs:element maxOccurs="unbounded" name="TaxSubTotal">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TaxableAmount" type="AmountType" />
+            <xs:element name="TaxAmount" type="AmountType" />
+            <xs:element minOccurs="0" name="CalculationSequenceNumeric" type="xs:decimal" />
+            <xs:element minOccurs="0" name="TransactionCurrencyTaxAmount" type="AmountType" />
+            <xs:element minOccurs="0" name="Percent" type="xs:decimal" />
+            <xs:element minOccurs="0" name="BaseUnitMeasure" type="MeasureType" />
+            <xs:element minOccurs="0" name="PerUnitAmount" type="AmountType" />
+            <xs:element name="TaxCategory">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="TaxExemptionReason" type="xs:string" />
+                  <xs:element name="TaxScheme" type="TaxSchemeType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
