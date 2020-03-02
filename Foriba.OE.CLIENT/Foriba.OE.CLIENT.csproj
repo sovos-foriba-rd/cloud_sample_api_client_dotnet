@@ -60,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\serviceSmm\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -230,10 +235,31 @@
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getEnvelopeStatusResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvoiceListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvoiceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvoiceViewResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvoiceViewResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getInvResponsesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getRAWUserListResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getUBLListResponse.datasource">
@@ -248,20 +274,82 @@
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.getUserListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.InvoiceListResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.InvoiceStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.sendARResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.sendARResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.sendInvoiceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.sendUBLResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.SendUBLResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.storeUBLResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\serviceInvoicee\Foriba.OE.CLIENT.serviceInvoicee.UserType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\serviceInvoicee\InvoiceList-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\serviceSmm\ClientESmmServicesTypes-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.cancelDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.cancelDocumentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.getDocumentReportDataResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.getDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.getDocumentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.getReportDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.getReportListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.getReportListResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.sendDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\Foriba.OE.CLIENT.serviceSmm.sendDocumentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\serviceSmm\ForibaCommonTypes-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\serviceSmm\ForibaESmmServices.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\serviceArchive\" />
     <WCFMetadataStorage Include="Service References\serviceDespatch\" />
     <WCFMetadataStorage Include="Service References\serviceInvoicee\" />
+    <WCFMetadataStorage Include="Service References\serviceSmm\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\serviceDespatch\configuration91.svcinfo" />
@@ -271,6 +359,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\serviceDespatch\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\serviceArchive\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\serviceArchive\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\serviceArchive\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -288,13 +388,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\serviceArchive\configuration91.svcinfo" />
+    <None Include="Service References\serviceSmm\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\serviceArchive\configuration.svcinfo" />
+    <None Include="Service References\serviceSmm\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\serviceArchive\Reference.svcmap">
+    <None Include="Service References\serviceSmm\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
