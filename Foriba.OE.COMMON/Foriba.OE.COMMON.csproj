@@ -60,6 +60,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="TLSSetting.cs" />
+    <Compile Include="UBLSerializer\MmSerializer.cs" />
+    <Compile Include="UBLSerializer\SmmSerializer.cs" />
     <Compile Include="WebServices\ArchiveWebService.cs" />
     <Compile Include="WebServices\DespatchWebService.cs" />
     <Compile Include="WebServices\InvoiceWebService.cs" />
@@ -67,6 +69,8 @@
     <Compile Include="UBLSerializer\InvoiceSerializer.cs" />
     <Compile Include="UBLSerializer\ReceiptAdviceSerializer.cs" />
     <Compile Include="UBLSerializer\UBLBaseSerializer.cs" />
+    <Compile Include="WebServices\MmWebService.cs" />
+    <Compile Include="WebServices\SmmWebService.cs" />
     <Compile Include="Zip\ZipUtility.cs" />
   </ItemGroup>
   <ItemGroup>

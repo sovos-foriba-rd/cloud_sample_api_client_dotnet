@@ -44,14 +44,18 @@
     <Compile Include="UBLCreate\ArchiveUBL.cs" />
     <Compile Include="UBLCreate\BaseInvoiceUBL.cs" />
     <Compile Include="UBLCreate\InvoiceUBL.cs" />
+    <Compile Include="UBLCreate\MmUBL.cs" />
     <Compile Include="UBLCreate\ReceiptAdviceUBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UBLCreate\DespatchAdviceUBL.cs" />
     <Compile Include="UBLCreate\ApplicationResponseUBL.cs" />
+    <Compile Include="UBLCreate\SmmUBL.cs" />
     <Compile Include="UBLObject\UBL-ApplicationResponse-2_1.cs" />
     <Compile Include="UBLObject\UBL-DespatchAdvice-2_1.cs" />
     <Compile Include="UBLObject\UBL-Invoice-2_1_1.cs" />
+    <Compile Include="UBLObject\MmObject\UBL-Mm-1_0.cs" />
     <Compile Include="UBLObject\UBL-ReceiptAdvice-2_1.cs" />
+    <Compile Include="UBLObject\UBL-Smm-1_0.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

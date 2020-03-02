@@ -38,7 +38,7 @@ namespace Foriba.OE.COMMON.WebServices
         /// Textbox a girilen TCKN veya VKN numarası ile sisteme kayıtlı mükellef sorgulaması yapar.
         /// </summary>
         /// <returns>Mükellef Listesi</returns>
-        public UserType[] MukellefSorgula(TextModel m,string filterVknTckn,ArrayList sslList)
+        public getRAWUserListResponse MukellefSorgula(TextModel m,ArrayList sslList)
         {
             try
             {
@@ -51,16 +51,13 @@ namespace Foriba.OE.COMMON.WebServices
                         WebOperationContext.Current.OutgoingRequest.Headers.Add(HttpRequestHeader.Authorization,
                             Authorization.GetAuthorization(m.Kullanici, m.Sifre));
 
-                   
-
-                    var request = new getUserListRequest
+                    var request = new getRAWUserListRequest
                     {
                         Identifier = m.GbEtiketi, //kullanıcı etiketi
                         VKN_TCKN = m.VknTckn,   //kullanıcı vkn vaya tckn
-                        Role = "PK",             //sorgulanacak GB veya PK etiketi
-                        Filter_VKN_TCKN = filterVknTckn  // sorgulanacak mükellefin vkn veya tckn si ( Filter_VKN_TCKN--> opsiyoneldir requeste eklenmeyebilir)
+                        Role = "PK"            //sorgulanacak GB veya PK etiketi
                     };
-                   return WsClient.getUserList(request);
+                   return WsClient.getRAWUserList(request);
                    
                 }
 
