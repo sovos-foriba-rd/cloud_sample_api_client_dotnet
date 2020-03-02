@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="79d14671-fcd4-4a09-9a72-0bb4ceac9f41" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\oguz.akdeniz\Desktop\SampleProject\Foriba.OE.UI\wsdl\ForibaESmmServices.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ForibaCommonTypes-1.xsd" MetadataType="Schema" ID="78dcc947-4e72-4208-a1e9-eca94a6029c2" SourceId="1" SourceUrl="file:///C:/Users/oguz.akdeniz/Desktop/SampleProject/Foriba.OE.UI/wsdl/ForibaCommonTypes-1.0.xsd" />
+    <MetadataFile FileName="ClientESmmServicesTypes-1.xsd" MetadataType="Schema" ID="9cc6559d-0c7a-42b7-9673-7665ac45f07f" SourceId="1" SourceUrl="file:///C:/Users/oguz.akdeniz/Desktop/SampleProject/Foriba.OE.UI/wsdl/ClientESmmServicesTypes-1.0.xsd" />
+    <MetadataFile FileName="ForibaESmmServices.wsdl" MetadataType="Wsdl" ID="3da184b8-c077-48bf-8356-3e822a91f6e7" SourceId="1" SourceUrl="file:///C:/Users/oguz.akdeniz/Desktop/SampleProject/Foriba.OE.UI/wsdl/ForibaESmmServices.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
