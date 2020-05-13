@@ -47,7 +47,7 @@ namespace Foriba.OE.UI
             {
                 if (item.GetType() != typeof(TextBox)) continue;
                 var t = (TextBox)item;
-                if (string.IsNullOrEmpty(t.Text.Trim()))
+                if (string.IsNullOrEmpty(t.Text.Trim()) && t.Name != "txtIrsaliyeId")
                     check = false;
             }
             return check;
@@ -132,7 +132,8 @@ namespace Foriba.OE.UI
                 IssueDate = new DateTime(dtpIrsaliyeTarih1.Value.Year, dtpIrsaliyeTarih1.Value.Month,
                     dtpIrsaliyeTarih1.Value.Day, 00, 00, 00),
                 EndDate = new DateTime(dtpIrsaliyeTarih2.Value.Year, dtpIrsaliyeTarih2.Value.Month,
-                    dtpIrsaliyeTarih2.Value.Day, 23, 59, 59)
+                    dtpIrsaliyeTarih2.Value.Day, 23, 59, 59),
+                FaturaID = txtIrsaliyeId.Text != null || txtIrsaliyeId.Text != "" ? txtIrsaliyeId.Text : null
             };
             return textModel;
         }
@@ -258,6 +259,7 @@ namespace Foriba.OE.UI
                 var despatch = new DespatchWebService();
                 var result = despatch.IrsaliyeGonder(SetTextModel(), CheckedSSL());
                 grdListIrsaliye.DataSource = result.Response;
+                txtIrsaliyeId.Text = null;
                 lblBaslik.Text = "İrsaliye Gönderildi.";
                 MessageBox.Show("e-İrsaliye başarıyla gönderildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -771,7 +773,7 @@ namespace Foriba.OE.UI
 
                 List<string> allUUID = new List<string>();
                 var despatch = new DespatchWebService();
-                
+
                 foreach (DataGridViewRow item in grdListIrsaliye.Rows)
                 {
                     allUUID.Add(item.Cells[0].Value.ToString());
