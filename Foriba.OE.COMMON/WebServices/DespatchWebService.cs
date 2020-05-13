@@ -59,7 +59,7 @@ namespace Foriba.OE.COMMON.WebServices
         public sendDesUBLResponse IrsaliyeGonder(TextModel m, ArrayList sslList)
         {
             DespatchAdvice despatchAdvice = new DespatchAdvice();
-            var createdUBL = despatchAdvice.CreateDespactAdvice(m.VknTckn, m.IssueDate); // İrsaliye UBL i oluşturulur
+            var createdUBL = despatchAdvice.CreateDespactAdvice(m.VknTckn, m.IssueDate, m.FaturaID); // İrsaliye UBL i oluşturulur
             UBLBaseSerializer serializer = new DespatchAdviceSerializer(); // UBL  XML e dönüştürülür
             var strIrsaliye = serializer.GetXmlAsString(createdUBL); // XML byte tipinden string tipine dönüştürülür
             byte[] zipliFile = ZipUtility.CompressFile(Encoding.UTF8.GetBytes(strIrsaliye), createdUBL.UUID.Value); // XML  ziplenir
@@ -363,7 +363,7 @@ namespace Foriba.OE.COMMON.WebServices
                     VKN_TCKN = m.VknTckn, // gönderici VKN veya TCKN
                 };
 
-               
+
                 foreach (var item in UUID)
                 {
 
@@ -384,7 +384,7 @@ namespace Foriba.OE.COMMON.WebServices
 
                 return wsClient.getDesView(req); // Yazılan her UUID için istenilen dosya tipinde data dönülür.
 
-                }
+            }
         }
 
 
@@ -412,7 +412,7 @@ namespace Foriba.OE.COMMON.WebServices
                 };
 
                 return wsClient.getDesUBL(req); // UBL in zipli base64 formatındaki datası döner
-                
+
             }
 
         }
