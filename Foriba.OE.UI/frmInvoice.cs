@@ -48,7 +48,7 @@ namespace Foriba.OE.UI
             {
                 if (item.GetType() != typeof(TextBox)) continue;
                 var t = (TextBox)item;
-                if (string.IsNullOrEmpty(t.Text.Trim()))
+                if (string.IsNullOrEmpty(t.Text.Trim()) && t.Name != "txtFaturaId")
                     check = false;
             }
 
@@ -101,7 +101,7 @@ namespace Foriba.OE.UI
             btnFaturaUblIndir.Enabled = ubl;
         }
 
-        
+
 
         /// <summary>
         /// Text ve grid alanlarını temizleme
@@ -174,7 +174,8 @@ namespace Foriba.OE.UI
                 IssueDate = new DateTime(dtpFaturaTarih1.Value.Year, dtpFaturaTarih1.Value.Month,
                     dtpFaturaTarih1.Value.Day, 00, 00, 00),
                 EndDate = new DateTime(dtpFaturaTarih2.Value.Year, dtpFaturaTarih2.Value.Month,
-                    dtpFaturaTarih2.Value.Day, 23, 59, 59)
+                    dtpFaturaTarih2.Value.Day, 23, 59, 59),
+                FaturaID = txtFaturaId.Text != null || txtFaturaId.Text != "" ? txtFaturaId.Text : null
             };
 
             return model;
@@ -198,7 +199,7 @@ namespace Foriba.OE.UI
                 grdListFatura.DataSource = null;
 
                 InvoiceWebService invoice = new InvoiceWebService();
-                var result = invoice.MukellefSorgula(SetValue(),CheckedSSL()).DocData;
+                var result = invoice.MukellefSorgula(SetValue(), CheckedSSL()).DocData;
                 var zippedStream = new MemoryStream(result);
                 using (var archive = new ZipArchive(zippedStream))
                 {
@@ -308,7 +309,7 @@ namespace Foriba.OE.UI
         /// <returns> Gelen e-Fatura Listesi</returns>
         private void btnGelFatura_Click(object sender, EventArgs e)
         {
-           
+
             ClearText();
 
             try
@@ -528,6 +529,7 @@ namespace Foriba.OE.UI
                 grdListFatura.DataSource = result;
                 lblBaslik.Text = "Fatura Gönderildi.";
                 MessageBox.Show("e-Fatura başarıyla gönderildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtFaturaId.Text = null;
             }
             catch (CheckConnParamException ex)
             {
@@ -536,7 +538,7 @@ namespace Foriba.OE.UI
             catch (FaultException<ProcessingFault> ex)
             {
 
-                MessageBox.Show(ex.Detail.Message+"    "+ex.Detail.Code, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Detail.Message + "    " + ex.Detail.Code, "ProcessingFault", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (FaultException ex)
             {
@@ -617,7 +619,7 @@ namespace Foriba.OE.UI
         /// </summary>
         /// <returns>e-Fatura Durum Sorgulama</returns>
         private void btnZarfDurumSorgula_Click(object sender, EventArgs e)
-        {         
+        {
             ButtonAktifPasif(false, false, false);
 
             try
@@ -628,7 +630,7 @@ namespace Foriba.OE.UI
 
 
                 List<string> allUUID = new List<string>();
-                List<getEnvelopeStatusResponseType> resultList = new List<getEnvelopeStatusResponseType>(); 
+                List<getEnvelopeStatusResponseType> resultList = new List<getEnvelopeStatusResponseType>();
                 var fatura = new InvoiceWebService();
 
 
@@ -680,7 +682,8 @@ namespace Foriba.OE.UI
                     }
                     grdListFatura.DataSource = dt;
 
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Sorgulanacak Zarf Bulunamadı.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -866,7 +869,8 @@ namespace Foriba.OE.UI
                         }
 
                         MessageBox.Show("Fatura UBL İndirme Başarılı", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("İndirilecek Fatura UBL'i Bulunamadı.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -897,7 +901,7 @@ namespace Foriba.OE.UI
                 }
             }
         }
-                           
+
 
 
 
@@ -907,7 +911,8 @@ namespace Foriba.OE.UI
         /// <returns>OLuşturulan e-Fatura UBL'i </returns>
         private BaseInvoiceUBL GetUBLInvoiceData()
         {
-            BaseInvoiceUBL ublInvoice = new InvoiceUBL("TICARIFATURA", "SATIS", "TRY");
+            string faturaId = txtFaturaId.Text != null || txtFaturaId.Text != "" ? txtFaturaId.Text : null;
+            BaseInvoiceUBL ublInvoice = new InvoiceUBL("TICARIFATURA", "SATIS", "TRY", faturaId);
             ublInvoice.SetCustInvIdDocumentReference();
             ublInvoice.SetSignature();
             ublInvoice.SetInvoiceLines(ublInvoice.GetInvoiceLines());
@@ -959,7 +964,7 @@ namespace Foriba.OE.UI
         private void comboBoxUrlAdres_SelectedIndexChanged(object sender, EventArgs e)
         {
             UrlModel.SelectedItem = comboBoxUrlAdres.SelectedItem.ToString();
-            linkLabel1.Text = UrlModel.SelectedItem != "INGeF" ? "https://efaturawstest.fitbulut.com/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc" 
+            linkLabel1.Text = UrlModel.SelectedItem != "INGeF" ? "https://efaturawstest.fitbulut.com/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc"
                 : "https://ingefservicestest.ingbank.com.tr/ClientEInvoiceServices/ClientEInvoiceServicesPort.svc";
 
         }

@@ -78,6 +78,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTcVkn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblFaturaId = new System.Windows.Forms.Label();
+            this.txtFaturaId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -98,7 +100,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 682);
             this.panel1.TabIndex = 0;
@@ -108,10 +110,10 @@
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 133);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(0, 206);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(961, 547);
+            this.panel3.Size = new System.Drawing.Size(961, 474);
             this.panel3.TabIndex = 1;
             // 
             // panel5
@@ -119,9 +121,9 @@
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(961, 547);
+            this.panel5.Size = new System.Drawing.Size(961, 474);
             this.panel5.TabIndex = 0;
             // 
             // panel7
@@ -131,9 +133,9 @@
             this.panel7.Controls.Add(this.panel6);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(961, 547);
+            this.panel7.Size = new System.Drawing.Size(961, 474);
             this.panel7.TabIndex = 1;
             // 
             // grdListFatura
@@ -143,11 +145,11 @@
             this.grdListFatura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdListFatura.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.grdListFatura.Location = new System.Drawing.Point(0, 36);
-            this.grdListFatura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdListFatura.Margin = new System.Windows.Forms.Padding(2);
             this.grdListFatura.MultiSelect = false;
             this.grdListFatura.Name = "grdListFatura";
             this.grdListFatura.RowTemplate.Height = 24;
-            this.grdListFatura.Size = new System.Drawing.Size(757, 511);
+            this.grdListFatura.Size = new System.Drawing.Size(757, 438);
             this.grdListFatura.TabIndex = 3;
             this.grdListFatura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListFatura_CellClick);
             this.grdListFatura.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdListFatura_DataBindingComplete);
@@ -171,9 +173,9 @@
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(757, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(204, 547);
+            this.panel6.Size = new System.Drawing.Size(204, 474);
             this.panel6.TabIndex = 0;
             // 
             // panel8
@@ -199,9 +201,9 @@
             this.panel8.Controls.Add(this.btnGelFatura);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(204, 547);
+            this.panel8.Size = new System.Drawing.Size(204, 474);
             this.panel8.TabIndex = 2;
             // 
             // label11
@@ -406,9 +408,9 @@
             this.panel2.Controls.Add(this.panelControls);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(961, 133);
+            this.panel2.Size = new System.Drawing.Size(961, 206);
             this.panel2.TabIndex = 0;
             // 
             // panel4
@@ -418,9 +420,9 @@
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(757, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(204, 133);
+            this.panel4.Size = new System.Drawing.Size(204, 206);
             this.panel4.TabIndex = 1;
             // 
             // lblAPI
@@ -450,6 +452,8 @@
             // panelControls
             // 
             this.panelControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelControls.Controls.Add(this.txtFaturaId);
+            this.panelControls.Controls.Add(this.lblFaturaId);
             this.panelControls.Controls.Add(this.comboBoxUrlAdres);
             this.panelControls.Controls.Add(this.label13);
             this.panelControls.Controls.Add(this.linkLabel1);
@@ -471,17 +475,17 @@
             this.panelControls.Controls.Add(this.label2);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControls.Location = new System.Drawing.Point(0, 0);
-            this.panelControls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelControls.Margin = new System.Windows.Forms.Padding(2);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(961, 133);
+            this.panelControls.Size = new System.Drawing.Size(961, 206);
             this.panelControls.TabIndex = 0;
             this.panelControls.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControls_Paint);
             // 
             // comboBoxUrlAdres
             // 
             this.comboBoxUrlAdres.FormattingEnabled = true;
-            this.comboBoxUrlAdres.Location = new System.Drawing.Point(16, 73);
-            this.comboBoxUrlAdres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxUrlAdres.Location = new System.Drawing.Point(16, 61);
+            this.comboBoxUrlAdres.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxUrlAdres.Name = "comboBoxUrlAdres";
             this.comboBoxUrlAdres.Size = new System.Drawing.Size(133, 21);
             this.comboBoxUrlAdres.TabIndex = 102;
@@ -491,7 +495,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(166, 108);
+            this.label13.Location = new System.Drawing.Point(201, 181);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 15);
@@ -504,7 +508,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.MediumBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(230, 108);
+            this.linkLabel1.Location = new System.Drawing.Point(268, 181);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(474, 15);
@@ -517,8 +521,8 @@
             // checkboxTLS11
             // 
             this.checkboxTLS11.AutoSize = true;
-            this.checkboxTLS11.Location = new System.Drawing.Point(16, 107);
-            this.checkboxTLS11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkboxTLS11.Location = new System.Drawing.Point(16, 99);
+            this.checkboxTLS11.Margin = new System.Windows.Forms.Padding(2);
             this.checkboxTLS11.Name = "checkboxTLS11";
             this.checkboxTLS11.Size = new System.Drawing.Size(70, 17);
             this.checkboxTLS11.TabIndex = 80;
@@ -530,7 +534,7 @@
             this.dtpFaturaTarih2.CalendarMonthBackground = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtpFaturaTarih2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpFaturaTarih2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFaturaTarih2.Location = new System.Drawing.Point(600, 73);
+            this.dtpFaturaTarih2.Location = new System.Drawing.Point(615, 73);
             this.dtpFaturaTarih2.Name = "dtpFaturaTarih2";
             this.dtpFaturaTarih2.Size = new System.Drawing.Size(113, 22);
             this.dtpFaturaTarih2.TabIndex = 78;
@@ -540,8 +544,8 @@
             this.checkboxTLS12.AutoSize = true;
             this.checkboxTLS12.Checked = true;
             this.checkboxTLS12.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkboxTLS12.Location = new System.Drawing.Point(86, 107);
-            this.checkboxTLS12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkboxTLS12.Location = new System.Drawing.Point(86, 99);
+            this.checkboxTLS12.Margin = new System.Windows.Forms.Padding(2);
             this.checkboxTLS12.Name = "checkboxTLS12";
             this.checkboxTLS12.Size = new System.Drawing.Size(70, 17);
             this.checkboxTLS12.TabIndex = 81;
@@ -552,7 +556,7 @@
             // 
             this.txtSifre.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSifre.Location = new System.Drawing.Point(432, 73);
+            this.txtSifre.Location = new System.Drawing.Point(460, 73);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(128, 22);
             this.txtSifre.TabIndex = 77;
@@ -561,7 +565,7 @@
             // 
             this.txtPostaKutusu.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtPostaKutusu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPostaKutusu.Location = new System.Drawing.Point(168, 73);
+            this.txtPostaKutusu.Location = new System.Drawing.Point(203, 73);
             this.txtPostaKutusu.Name = "txtPostaKutusu";
             this.txtPostaKutusu.Size = new System.Drawing.Size(235, 22);
             this.txtPostaKutusu.TabIndex = 76;
@@ -571,7 +575,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(598, 55);
+            this.label8.Location = new System.Drawing.Point(613, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 15);
             this.label8.TabIndex = 75;
@@ -582,7 +586,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(598, 6);
+            this.label7.Location = new System.Drawing.Point(613, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 15);
             this.label7.TabIndex = 74;
@@ -593,7 +597,7 @@
             this.dtpFaturaTarih1.CalendarMonthBackground = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtpFaturaTarih1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dtpFaturaTarih1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFaturaTarih1.Location = new System.Drawing.Point(597, 24);
+            this.dtpFaturaTarih1.Location = new System.Drawing.Point(612, 24);
             this.dtpFaturaTarih1.Name = "dtpFaturaTarih1";
             this.dtpFaturaTarih1.Size = new System.Drawing.Size(116, 22);
             this.dtpFaturaTarih1.TabIndex = 68;
@@ -603,7 +607,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(430, 55);
+            this.label6.Location = new System.Drawing.Point(458, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 15);
             this.label6.TabIndex = 73;
@@ -613,7 +617,7 @@
             // 
             this.txtKullanici.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullanici.Location = new System.Drawing.Point(432, 23);
+            this.txtKullanici.Location = new System.Drawing.Point(460, 23);
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.Size = new System.Drawing.Size(128, 22);
             this.txtKullanici.TabIndex = 67;
@@ -623,7 +627,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(430, 8);
+            this.label5.Location = new System.Drawing.Point(458, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 15);
             this.label5.TabIndex = 72;
@@ -634,7 +638,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(166, 55);
+            this.label4.Location = new System.Drawing.Point(201, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 15);
             this.label4.TabIndex = 71;
@@ -644,7 +648,7 @@
             // 
             this.txtGonBirim.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtGonBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtGonBirim.Location = new System.Drawing.Point(168, 23);
+            this.txtGonBirim.Location = new System.Drawing.Point(203, 23);
             this.txtGonBirim.Name = "txtGonBirim";
             this.txtGonBirim.Size = new System.Drawing.Size(235, 22);
             this.txtGonBirim.TabIndex = 66;
@@ -655,7 +659,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(166, 8);
+            this.label3.Location = new System.Drawing.Point(201, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 15);
             this.label3.TabIndex = 70;
@@ -681,6 +685,26 @@
             this.label2.TabIndex = 69;
             this.label2.Text = "VKN / TCKN ";
             // 
+            // lblFaturaId
+            // 
+            this.lblFaturaId.AutoSize = true;
+            this.lblFaturaId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblFaturaId.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFaturaId.Location = new System.Drawing.Point(202, 108);
+            this.lblFaturaId.Name = "lblFaturaId";
+            this.lblFaturaId.Size = new System.Drawing.Size(64, 15);
+            this.lblFaturaId.TabIndex = 106;
+            this.lblFaturaId.Text = "Fatura Id";
+            // 
+            // txtFaturaId
+            // 
+            this.txtFaturaId.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtFaturaId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtFaturaId.Location = new System.Drawing.Point(203, 126);
+            this.txtFaturaId.Name = "txtFaturaId";
+            this.txtFaturaId.Size = new System.Drawing.Size(235, 22);
+            this.txtFaturaId.TabIndex = 107;
+            // 
             // FrmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -691,7 +715,7 @@
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(979, 686);
             this.Name = "FrmInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -765,5 +789,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBoxUrlAdres;
+        private System.Windows.Forms.Label lblFaturaId;
+        private System.Windows.Forms.TextBox txtFaturaId;
     }
 }
