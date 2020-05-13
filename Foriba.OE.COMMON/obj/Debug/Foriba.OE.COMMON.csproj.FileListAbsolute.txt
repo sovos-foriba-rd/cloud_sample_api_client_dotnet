@@ -1,0 +1,11 @@
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.COMMON.dll
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.COMMON.pdb
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.CLIENT.dll
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.UBL.dll
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.CLIENT.pdb
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.CLIENT.dll.config
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\bin\Debug\Foriba.OE.UBL.pdb
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\obj\Debug\Foriba.OE.COMMON.csprojAssemblyReference.cache
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\obj\Debug\Foriba.OE.COMMON.csproj.CopyComplete
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\obj\Debug\Foriba.OE.COMMON.dll
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.COMMON\obj\Debug\Foriba.OE.COMMON.pdb
