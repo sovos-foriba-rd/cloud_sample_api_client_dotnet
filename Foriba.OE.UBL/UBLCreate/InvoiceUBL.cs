@@ -13,14 +13,11 @@ namespace Foriba.OE.UBL.UBLCreate
 {
     public class InvoiceUBL : BaseInvoiceUBL
     {
-        public InvoiceUBL(string profileId, string invoiceTypeCode, string documentCurrencyCode)
-            : base(profileId, invoiceTypeCode, documentCurrencyCode)
+        public InvoiceUBL(string profileId, string invoiceTypeCode, string documentCurrencyCode, string faturaId = null)
+            : base(profileId, invoiceTypeCode, documentCurrencyCode,faturaId)
         {
-           // BaseUBL.ID = new IDType { Value = "FIT2018000000001" }; //Fatura ID sistem tarafından otomatik üretilecek ise bu alan kullanılmamalı.
+            // BaseUBL.ID = new IDType { Value = "FIT2018000000001" }; //Fatura ID sistem tarafından otomatik üretilecek ise bu alan kullanılmamalı.
             //AdditionalDocumentReference tagı içerisinde CUST_INV_ID alanı gönderilmelidir.
-
         }
     }
-
 }
-

@@ -1,0 +1,5 @@
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.UBL\bin\Debug\Foriba.OE.UBL.dll
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.UBL\bin\Debug\Foriba.OE.UBL.pdb
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.UBL\obj\Debug\Foriba.OE.UBL.csprojAssemblyReference.cache
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.UBL\obj\Debug\Foriba.OE.UBL.dll
+C:\Users\onuruzun\Desktop\cloud_sample_api_client_dotnet\Foriba.OE.UBL\obj\Debug\Foriba.OE.UBL.pdb

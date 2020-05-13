@@ -21,13 +21,13 @@ namespace Foriba.OE.UBL.UBLObject
         ///  Sevk irsaliyesi'nin(Despatch Advice) UBL' ini oluşturma
         /// </summary>
         /// <returns>Sevk İrsaliyesi UBL'i</returns>
-        public DespatchAdviceType CreateDespactAdvice(string vknTckn, DateTime tarih1)
+        public DespatchAdviceType CreateDespactAdvice(string vknTckn, DateTime tarih1, string irsaliyeId = null)
         {
             //Sevk irsaliyesi kalem sayısını random olarak üretme
             Random rnd = new Random();
             int lineNumber = rnd.Next(1, 10);
 
-            DespatchAdviceType eIrsaliye = GetDespatchHeader(lineNumber, tarih1);
+            DespatchAdviceType eIrsaliye = GetDespatchHeader(lineNumber, tarih1, irsaliyeId);
             eIrsaliye.OrderReference = GetOrderReference();
             eIrsaliye.AdditionalDocumentReference = GetDocumentReference();
             eIrsaliye.Signature = GetSignature();
@@ -53,7 +53,7 @@ namespace Foriba.OE.UBL.UBLObject
         ///  Sevk irsaliyesi (Despatch Advice) UBL'inin ilk alanlarını oluşturma
         /// </summary>
         /// <returns>UBL'in Alanları</returns>
-        private DespatchAdviceType GetDespatchHeader(int lineNumber, DateTime tarih1)
+        private DespatchAdviceType GetDespatchHeader(int lineNumber, DateTime tarih1, string irsaliyeId = null)
         {
 
             XmlDocument doc = new XmlDocument();
@@ -70,7 +70,7 @@ namespace Foriba.OE.UBL.UBLObject
                 UBLVersionID = new UBLVersionIDType { Value = "2.1" },  // uluslararası fatura standardı 2.1
                 CustomizationID = new CustomizationIDType { Value = "TR1.2.1" }, // GİB UBLTR olarak isimlendirdiği Türkiye'ye özgü 1.2.1 eİrsaliye formatını kullanıyor.
                 ProfileID = new ProfileIDType { Value = "TEMELIRSALIYE" }, //Kullanılan Senaryo
-                                                                           // ID = new IDType { Value = "GIB2018000000001" },   //Sevk irsaliyesine Ait Numara  
+                ID = irsaliyeId != null || irsaliyeId != "" ? new IDType { Value = irsaliyeId } : null,  // ID = new IDType { Value = "GIB2018000000001" },   //Sevk irsaliyesine Ait Numara  
                 CopyIndicator = new CopyIndicatorType { Value = false }, // Sevk İrsaliyesinin Asıl veya Suret Bilgisi 
                 UUID = new UUIDType { Value = Guid.NewGuid().ToString() },  //Sevk İrsaliyesinin Evrensel Tekliğini Sağlayan Numara 
                 IssueDate = new IssueDateType { Value = tarih1 },  //Sevk İrsaliyesinin Düzenleme Tarihi
@@ -385,7 +385,7 @@ namespace Foriba.OE.UBL.UBLObject
             {
                 ID = new IDType { Value = "" },  // Kargo numarası girilir.
                 GoodsItem = new[] { new GoodsItemType { ValueAmount = new ValueAmountType { currencyID = "TRY", Value = 20000 * kalemSayisi } } },
-                ShipmentStage = new []  // Gönderinin hangi aşamada olduğu bilgisi girilir. Ayrıca taşıyıcı (plaka, şoför) gibi detay bilgiler girilir.
+                ShipmentStage = new[]  // Gönderinin hangi aşamada olduğu bilgisi girilir. Ayrıca taşıyıcı (plaka, şoför) gibi detay bilgiler girilir.
                    {
                     new ShipmentStageType
                     {

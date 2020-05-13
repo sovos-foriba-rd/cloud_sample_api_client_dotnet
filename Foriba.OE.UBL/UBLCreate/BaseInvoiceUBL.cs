@@ -17,18 +17,18 @@ namespace Foriba.OE.UBL.UBLCreate
     {
         public InvoiceType BaseUBL { get; protected set; }
         public List<DocumentReferenceType> DocRefList { get; set; }
-        protected BaseInvoiceUBL(string profileId, string invoiceTypeCode, string documentCurrencyCode)
+        protected BaseInvoiceUBL(string profileId, string invoiceTypeCode, string documentCurrencyCode, string faturaId = null)
         {
             DocRefList = new List<DocumentReferenceType>();
             BaseUBL = new InvoiceType { IssueDate = new IssueDateType { Value = DateTime.Now } };
-            CreateInvoiceHeader(profileId, invoiceTypeCode, documentCurrencyCode);
+            CreateInvoiceHeader(profileId, invoiceTypeCode, documentCurrencyCode, faturaId);
 
         }
 
         /// <summary>
         /// Fatura header alanlarını ekleme
         /// </summary>
-        private void CreateInvoiceHeader(string profileId, string invoiceTypeCode, string documentCurrencyCode)
+        private void CreateInvoiceHeader(string profileId, string invoiceTypeCode, string documentCurrencyCode, string faturaId = null)
         {
 
             var doc = new XmlDocument();
@@ -49,7 +49,7 @@ namespace Foriba.OE.UBL.UBLCreate
             BaseUBL.ProfileID = new ProfileIDType { Value = profileId };
             BaseUBL.CopyIndicator = new CopyIndicatorType { Value = false };
             BaseUBL.UUID = new UUIDType { Value = Guid.NewGuid().ToString() };
-
+            BaseUBL.ID = faturaId != null || faturaId != "" ? new IDType { Value = faturaId } : null;  // ID = new IDType { Value = "GIB2018000000001" },
         }
 
         /// <summary>
