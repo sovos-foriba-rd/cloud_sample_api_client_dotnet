@@ -26,6 +26,10 @@ namespace Foriba.OE.COMMON.WebServices
             {
                 WsClient.Endpoint.Address = new EndpointAddress("https://earsivtest.ingbank.com.tr/ClientESmmServicesPort.svc");
             }
+            else
+            {
+                WsClient.Endpoint.Address = new EndpointAddress("https://earsivwstest.fitbulut.com/ClientEMmServicesPort.svc");
+            }
         }
 
         public string GetHashInfo(byte[] ziplifatura)
