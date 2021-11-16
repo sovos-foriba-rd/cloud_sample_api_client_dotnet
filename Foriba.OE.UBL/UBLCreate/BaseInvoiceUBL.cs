@@ -377,6 +377,14 @@ namespace Foriba.OE.UBL.UBLCreate
                 }
 
             }
+
+            /* Opsiyonel : Dip toplam değerlerinin virgülden sonra 2 haneye yuvarlanması */
+            legalMonetaryTotal.LineExtensionAmount.Value = Math.Round(legalMonetaryTotal.LineExtensionAmount.Value, 2);
+            legalMonetaryTotal.TaxExclusiveAmount.Value = Math.Round(legalMonetaryTotal.TaxExclusiveAmount.Value, 2);
+            legalMonetaryTotal.TaxInclusiveAmount.Value = Math.Round(legalMonetaryTotal.TaxInclusiveAmount.Value, 2);
+            legalMonetaryTotal.AllowanceTotalAmount.Value = Math.Round(legalMonetaryTotal.AllowanceTotalAmount.Value, 2);
+            legalMonetaryTotal.PayableAmount.Value = Math.Round(legalMonetaryTotal.PayableAmount.Value, 2);
+
             return legalMonetaryTotal;
         }
 
